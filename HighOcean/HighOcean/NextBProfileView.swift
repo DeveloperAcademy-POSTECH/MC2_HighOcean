@@ -49,7 +49,7 @@ struct NextBProfileView: View {
                     Spacer()
                     
                     
-                    NavigationLink(destination: Text("호호")){
+                    NavigationLink(destination: NextCProfileView()){
                         Text("다음")
                             .frame(width: 354.0, height:54.0)
                             .font(.system(size: 18))
