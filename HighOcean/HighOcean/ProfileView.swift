@@ -27,12 +27,14 @@ struct ProfileView: View {
                     Text("반가워요!")
                         .font(.system(size: 28))
                         .fontWeight(.bold)
+                        .foregroundColor(ColorManager.TitelColor)
                         
                         .offset(y: 110)
                     Text("이름을 입력해주세요")
                         .font(.system(size: 28))
                         .fontWeight(.bold)
                         .offset(y: 110)
+                        .foregroundColor(ColorManager.TitelColor)
                     
                     VStack(){
                         TextField("이름", text: $name)
@@ -50,6 +52,7 @@ struct ProfileView: View {
                         .padding(.horizontal)
                         .frame(width: 354, height:54)
                         .background(RoundedRectangle(cornerRadius: 10).fill(ColorManager.PrimaryColor))
+                        .foregroundColor(ColorManager.TitelColor)
                     
                     
                 }
