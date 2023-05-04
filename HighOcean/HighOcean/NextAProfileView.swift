@@ -1,19 +1,11 @@
-//
-//  ContentView.swift
-//  HighOcean
-//
-//  Created by apple on 2023/05/03.
-//
-
 import SwiftUI
 
-struct ProfileView: View {
+struct NextAProfileView: View {
     //이름 변수 저장
     @State var name: String = ""
     
     var body: some View {
-        NavigationView{
-             
+            
             ZStack(){
                 Color("Secondary").ignoresSafeArea()
                 
@@ -40,7 +32,7 @@ struct ProfileView: View {
                     }
                     Spacer()
 
-                    NavigationLink(destination: NextAProfileView()){
+                    NavigationLink(destination: Text("호호")){
                         Text("다음")
                             .frame(width: 354.0, height:54.0)
                             .font(.system(size: 18))
@@ -51,20 +43,12 @@ struct ProfileView: View {
                 }
             }
                 
-        }
     }
 }
-
 
 // 미리보기
-struct ContentView_Previews: PreviewProvider {
+struct ContentView_NextAPreviews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        NextAProfileView()
     }
 }
-
-
-
-
-
-
