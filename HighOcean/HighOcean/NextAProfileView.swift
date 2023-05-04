@@ -1,37 +1,48 @@
 import SwiftUI
 
 struct NextAProfileView: View {
-    //이름 변수 저장
-    @State var name: String = ""
     
     var body: some View {
             
             ZStack(){
                 Color("Secondary").ignoresSafeArea()
                 
-                VStack(){
+                VStack(alignment: .leading){
                     VStack(alignment: .leading) {
-                        Text("반가워요!")
+                        Text("Name님은")
                             .font(.system(size: 28))
                             .fontWeight(.bold)
                             .foregroundColor(Color("Primary"))
-                            .offset(y: 110)
+                            .padding(EdgeInsets(top: 70, leading: 0, bottom: 0, trailing: 0))
                         
-                        Text("이름을 입력해주세요")
+                        Text("누구신가요?")
                             .font(.system(size: 28))
                             .fontWeight(.bold)
                             .foregroundColor(Color("Primary"))
-                            .offset(y: 110)
                         
-                        TextField("이름", text: $name)
-                            .frame(width: 338.0, height:62.0)
-                            .padding(.leading,16)
-                            .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
-                            .offset(y: 300)
-                    
+                        Text("어떤 역할을 하고 계신지 알려주세요.")
+                            .font(.system(size: 16))
+                            
+                            .foregroundColor(Color("Disabled"))
+                            .padding(EdgeInsets(top: 18, leading: 0, bottom: 0, trailing: 0))
+                        
+                        HStack(){
+                            
+                            
+                            Text("Name님은")
+                                .frame(width: 164.0, height:194.0)
+                            Text("Name님은")
+                                .frame(width: 164.0, height:194.0)
+                               
+                        }
+                            .padding(EdgeInsets(top: 66, leading: 0, bottom: 0, trailing: 0))
                     }
+                   
                     Spacer()
 
+                 
+                    
+                    
                     NavigationLink(destination: Text("호호")){
                         Text("다음")
                             .frame(width: 354.0, height:54.0)

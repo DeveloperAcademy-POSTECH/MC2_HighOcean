@@ -17,25 +17,24 @@ struct ProfileView: View {
             ZStack(){
                 Color("Secondary").ignoresSafeArea()
                 
-                VStack(){
+                VStack(alignment: .leading){
                     VStack(alignment: .leading) {
                         Text("반가워요!")
                             .font(.system(size: 28))
                             .fontWeight(.bold)
                             .foregroundColor(Color("Primary"))
-                            .offset(y: 110)
+                            .padding(EdgeInsets(top: 110, leading: 0, bottom: 0, trailing: 0))
                         
                         Text("이름을 입력해주세요")
                             .font(.system(size: 28))
                             .fontWeight(.bold)
                             .foregroundColor(Color("Primary"))
-                            .offset(y: 110)
                         
                         TextField("이름", text: $name)
                             .frame(width: 338.0, height:62.0)
                             .padding(.leading,16)
                             .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
-                            .offset(y: 300)
+                            .padding(EdgeInsets(top: 150, leading: 0, bottom: 0, trailing: 0))
                     
                     }
                     Spacer()
