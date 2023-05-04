@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct NextAProfileView: View {
+struct NextBProfileView: View {
 
     @State private var leftToggle = false
     
@@ -11,42 +11,45 @@ struct NextAProfileView: View {
             
             VStack(alignment: .leading){
                 VStack(alignment: .leading) {
-                    Text("Name님은")
+                    Text("언제 집에")
                         .font(.system(size: 28))
                         .fontWeight(.bold)
                         .foregroundColor(Color("Primary"))
                         .padding(EdgeInsets(top: 70, leading: 0, bottom: 0, trailing: 0))
                     
-                    Text("누구신가요?")
+                    Text("들어오시나요?")
                         .font(.system(size: 28))
                         .fontWeight(.bold)
                         .foregroundColor(Color("Primary"))
                     
-                    Text("어떤 역할을 하고 계신지 알려주세요.")
+                    Text("데일리 퇴근 시간을 파악하기 위함이에요.")
                         .font(.system(size: 16))
                         .foregroundColor(Color("Disabled"))
                         .padding(EdgeInsets(top: 18, leading: 0, bottom: 0, trailing: 0))
                     
-                    HStack(spacing: 24){
-                        Button("부모") {
-                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                    VStack(alignment: .center){
+                        Form {
+                            Section {
+                                Text("근무요일설정")
+                            }
+                            Section {
+                                Text("퇴근시간설정")
+                                Picker(selection: /*@START_MENU_TOKEN@*/.constant(1)/*@END_MENU_TOKEN@*/, label: /*@START_MENU_TOKEN@*/Text("Picker")/*@END_MENU_TOKEN@*/) {
+                                    /*@START_MENU_TOKEN@*/Text("1").tag(1)/*@END_MENU_TOKEN@*/
+                                    /*@START_MENU_TOKEN@*/Text("2").tag(2)/*@END_MENU_TOKEN@*/
+                                }
+                            }
+                    
                         }
-                        .frame(width: 164.0, height:194.0)
-                        .background(Color.white)
-                        
-                        Button("아이") {
-                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-                        }
-                        .frame(width: 164.0, height:194.0)
-                        .background(Color.white)
                     }
-                    .padding(EdgeInsets(top: 66, leading: 0, bottom: 0, trailing: 0))
-                    .foregroundColor(Color("Disabled"))
+                    .padding(EdgeInsets(top: 18, leading: 0, bottom: 0, trailing: 0))
+                    .frame(width: 350, height:465.0)
+                    .foregroundColor(Color("Primary"))
                     
                     Spacer()
                     
                     
-                    NavigationLink(destination: NextBProfileView()){
+                    NavigationLink(destination: Text("호호")){
                         Text("다음")
                             .frame(width: 354.0, height:54.0)
                             .font(.system(size: 18))
@@ -61,9 +64,9 @@ struct NextAProfileView: View {
     }
     
     // 미리보기
-    struct ContentView_NextAPreviews: PreviewProvider {
+    struct ContentView_NextBPreviews: PreviewProvider {
         static var previews: some View {
-            NextAProfileView()
+            NextBProfileView()
         }
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		99AB9FD02A03E18700F17E5E /* NextAProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AB9FCF2A03E18700F17E5E /* NextAProfileView.swift */; };
+		99C802342A04227800DA32B5 /* NextBProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C802332A04227800DA32B5 /* NextBProfileView.swift */; };
 		FF4087AF2A01FC88003BED80 /* HighOceanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */; };
 		FF4087B12A01FC88003BED80 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4087B02A01FC88003BED80 /* ProfileView.swift */; };
 		FF4087B32A01FC89003BED80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4087B22A01FC89003BED80 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		99AB9FCF2A03E18700F17E5E /* NextAProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextAProfileView.swift; sourceTree = "<group>"; };
+		99C802332A04227800DA32B5 /* NextBProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextBProfileView.swift; sourceTree = "<group>"; };
 		FF4087AB2A01FC88003BED80 /* HighOcean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HighOcean.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighOceanApp.swift; sourceTree = "<group>"; };
 		FF4087B02A01FC88003BED80 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; usesTabs = 0; };
@@ -56,6 +58,7 @@
 				FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */,
 				FF4087B02A01FC88003BED80 /* ProfileView.swift */,
 				99AB9FCF2A03E18700F17E5E /* NextAProfileView.swift */,
+				99C802332A04227800DA32B5 /* NextBProfileView.swift */,
 				FF4087B22A01FC89003BED80 /* Assets.xcassets */,
 				FF4087B42A01FC89003BED80 /* Preview Content */,
 			);
@@ -142,6 +145,7 @@
 			files = (
 				FF4087B12A01FC88003BED80 /* ProfileView.swift in Sources */,
 				99AB9FD02A03E18700F17E5E /* NextAProfileView.swift in Sources */,
+				99C802342A04227800DA32B5 /* NextBProfileView.swift in Sources */,
 				FF4087AF2A01FC88003BED80 /* HighOceanApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

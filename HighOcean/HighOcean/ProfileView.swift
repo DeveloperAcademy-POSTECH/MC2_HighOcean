@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct ProfileView: View {
-    //이름 변수 저장
     @State var name: String = ""
-    
+        
     var body: some View {
         NavigationView{
-             
+    
             ZStack(){
                 Color("Secondary").ignoresSafeArea()
                 
@@ -39,6 +38,7 @@ struct ProfileView: View {
                     }
                     Spacer()
 
+
                     NavigationLink(destination: NextAProfileView()){
                         Text("다음")
                             .frame(width: 354.0, height:54.0)
@@ -51,6 +51,7 @@ struct ProfileView: View {
             }
                 
         }
+        
     }
 }
 
@@ -61,9 +62,3 @@ struct ContentView_Previews: PreviewProvider {
         ProfileView()
     }
 }
-
-
-
-
-
-
