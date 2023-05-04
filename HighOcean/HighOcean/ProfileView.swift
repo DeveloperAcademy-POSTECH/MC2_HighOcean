@@ -7,10 +7,9 @@
 
 import SwiftUI
 struct ColorManager {
-    static let BackgroundColor = Color("BackcolorA")
-    static let PrimaryColor = Color("PrimaryA")
-    
-    static let TitelColor = Color("TitelColorA")
+//    static let BackgroundColor = Color("BackcolorA")
+//    static let PrimaryColor = Color("PrimaryA")
+//    static let TitelColor = Color("TitelColorA")
 }
 
 
@@ -21,20 +20,20 @@ struct ProfileView: View {
         NavigationView {
             
             ZStack(){
-                ColorManager.BackgroundColor.ignoresSafeArea()
+//                ColorManager.BackgroundColor.ignoresSafeArea()
                 VStack(alignment: .leading) {
                     
                     Text("반가워요!")
                         .font(.system(size: 28))
                         .fontWeight(.bold)
-                        .foregroundColor(ColorManager.TitelColor)
+//                        .foregroundColor(ColorManager.TitelColor)
                         
                         .offset(y: 110)
                     Text("이름을 입력해주세요")
                         .font(.system(size: 28))
                         .fontWeight(.bold)
                         .offset(y: 110)
-                        .foregroundColor(ColorManager.TitelColor)
+//                        .foregroundColor(ColorManager.TitelColor)
                     
                     VStack(){
                         TextField("이름", text: $name)
@@ -51,8 +50,7 @@ struct ProfileView: View {
                     Button("다음"){}
                         .padding(.horizontal)
                         .frame(width: 354, height:54)
-                        .background(RoundedRectangle(cornerRadius: 10).fill(ColorManager.PrimaryColor))
-                        .foregroundColor(ColorManager.TitelColor)
+//                        .background(RoundedRectangle(cornerRadius: 10).fill())
                     
                     
                 }
