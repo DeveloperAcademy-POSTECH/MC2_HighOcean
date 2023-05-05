@@ -21,20 +21,50 @@ struct NextCProfileView: View {
                         .font(.system(size: 28))
                         .fontWeight(.bold)
                         .foregroundColor(Color("Primary"))
+                        
                     
+                    VStack(alignment: .leading){
+                        Text("링크생성공간")//밑줄 입력법?
+                            .padding(EdgeInsets(top: 40, leading:24, bottom: 0, trailing: 0))
+                            .foregroundColor(Color("Primary"))
+                        
+                        Spacer()
+                        
+                        Button(action: {}) {
+                            Text("복사하기")
+                                .frame(width: 116.0, height: 54.0)
+                                .background(Color("Secondary"))
+                                .foregroundColor(Color("Accent"))
+                                .cornerRadius(1)
+//                                .border(Color("Accent"), width: 1) //stroke line Edit
+                                .padding(EdgeInsets(top: 0, leading: 0, bottom: 27, trailing: 0))
+                            
+                        }
+                        .frame(width: 353)
+                        
+                        
+                    }
+                    .frame(height: 212.0)
+                    .background(Color.white)
+                    .cornerRadius(10)
                     
-                            Section {
-                                Text("근무요일설정")
-                                
-                                Button("아이") {
-                                
-                                }
+                    .padding(EdgeInsets(top: 66, leading: 0, bottom: 0, trailing: 0))
+//                            .multilineTextAlignment(.leading)
+//
+//
+//                        Spacer()
+//
+//                        .frame(width: 304, height:80.0)
+//                        .padding(24)
+                    
+//                    .background(Color.white)
+//                    .frame(width: 353, height:212.0)
+//
+//                    .foregroundColor(Color("Primary"))
+//                    .cornerRadius(10)
+//                    .padding(EdgeInsets(top: 66, leading: 0, bottom: 0, trailing: 0))
 
-                            }
-
-                                .frame(width: 353, height:212.0)
-                                .background(Color.white)
-                                .foregroundColor(Color("Primary"))
+                                
                     
                     Spacer()
                     

@@ -34,7 +34,7 @@ struct NextAProfileView: View {
                         .frame(width: 164.0, height:194.0)
                         .background(Color.white)
                         
-                        Button("아") {
+                        Button("아이") {
                             /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
                         }
                         .frame(width: 164.0, height:194.0)
