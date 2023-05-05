@@ -27,7 +27,7 @@ struct NextCProfileView: View {
                                 Text("근무요일설정")
                                 
                                 Button("아이") {
-                                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                                
                                 }
 
                             }

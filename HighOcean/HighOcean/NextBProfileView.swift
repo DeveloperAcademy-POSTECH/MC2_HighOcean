@@ -31,6 +31,7 @@ struct NextBProfileView: View {
                         Form {
                             Section {
                                 Text("근무요일설정")
+                                Text("어똑캍지)")
                             }
                             Section {
                                 Text("퇴근시간설정")
