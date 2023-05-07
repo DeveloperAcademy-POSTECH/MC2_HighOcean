@@ -9,16 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
+        NavigationView{
+    
+            VStack {
+                NavigationLink(destination: TotalCardCollectionView()){
+                        Text("카드모아보기")
+                        .frame(width: 120.0, height:40.0)
+                        .font(.system(size: 16))
+                        .background(Color("Accent"))
+                        .foregroundColor(Color.white)
+                }
+            }
+           
+  }
+ }
 }
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
