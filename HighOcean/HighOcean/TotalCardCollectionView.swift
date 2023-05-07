@@ -46,9 +46,13 @@ struct cardsView : View {
         
         switch cardIist {
         case .dis:
-            Text("수신카드영역")
+            ScrollView{
+                CollectionView()
+            }
         case .out:
-            Text("발신카드영역")
+            ScrollView{
+                CollectionView()
+            }
             
         }
     }
