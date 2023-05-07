@@ -13,30 +13,47 @@ enum tapInfo : String, CaseIterable {
 }
 
 struct TotalCardCollectionView: View {
+    
     @State private var selectedPicker: tapInfo = .dis
     
     var body: some View {
-        NavigationView{
+        ZStack(alignment:.top){
+                Color("Secondary").ignoresSafeArea()
             
-            VStack{
-                Picker("Pick", selection: $selectedPicker){
-                    ForEach(tapInfo.allCases, id: \.self) {
-                        Text($0.rawValue)
+                VStack{
+                    Picker("Pick", selection: $selectedPicker){
+                        ForEach(tapInfo.allCases, id: \.self) {
+                            Text($0.rawValue)
+                        }
                     }
+                    .pickerStyle(.segmented)
+                    .padding()
+                    
+                    cardsView(cardIist: selectedPicker)
                 }
-                .pickerStyle(.segmented)
-                .padding()
-                
-                Spacer()
-                
+    
             }
-            
-        }
-        .navigationTitle("모아보기")
-    
-    
+            .navigationTitle("전체 카드")
+        
     }
  }
+
+// 카드 내용 변경
+struct cardsView : View {
+    
+    var cardIist : tapInfo
+    var body: some View{
+        
+        switch cardIist {
+        case .dis:
+            Text("수신카드영역")
+        case .out:
+            Text("발신카드영역")
+            
+        }
+    }
+}
+
 
 //미리보기
 struct TotalCardCollectionView_Previews: PreviewProvider {
@@ -44,8 +61,3 @@ struct TotalCardCollectionView_Previews: PreviewProvider {
         TotalCardCollectionView()
     }
 }
-
-//VStack {
-//    Text("23")
-//
-//}
