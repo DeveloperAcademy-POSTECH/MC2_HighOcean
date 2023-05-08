@@ -17,13 +17,13 @@ class Cards: ObservableObject {
     @Published var likedCards: [Card] = []
 
     @Published var cards: [Card] = [
-        Card(context: "보고싶어요!", image: "image.png", createdDate: "22-04-31", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: true, show: false),
-        Card(context: "보고싶어요2!", image: "image.png", createdDate: "22-04-31", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: false, show: false),
-        Card(context: "보고싶어요3!", image: "image.png", createdDate: "22-04-31", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: false, show: false),
-        Card(context: "보고싶어요4!", image: "image.png", createdDate: "22-04-31", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: true, show: false),
-        Card(context: "보고싶어요5!", image: "image.png", createdDate: "22-04-31", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: false, show: false),
-        Card(context: "보고싶어요6!", image: "image.png", createdDate: "22-04-31", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: false, show: false),
-        Card(context: "보고싶어요7!", image: "image.png", createdDate: "22-04-31", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: true, show: false)
+        Card(context: "보고싶어요!", image: "image", createdDate: "22-04-31", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: true, show: false),
+        Card(context: "보고싶어요2!", image: "image", createdDate: "22-04-31", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: false, show: false),
+        Card(context: "보고싶어요3!", image: "image", createdDate: "22-04-31", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: false, show: false),
+        Card(context: "보고싶어요4!", image: "image", createdDate: "22-04-31", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: true, show: false),
+        Card(context: "보고싶어요5!", image: "image", createdDate: "22-04-31", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: false, show: false),
+        Card(context: "보고싶어요6!", image: "image", createdDate: "22-04-31", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: false, show: false),
+        Card(context: "보고싶어요7!", image: "image", createdDate: "22-04-31", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: true, show: false)
     ]
     
     init() {

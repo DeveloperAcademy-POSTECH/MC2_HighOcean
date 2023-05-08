@@ -26,7 +26,7 @@ struct Home : View {
                 Spacer()
                 HStack(spacing: 30){
                     ForEach(cards){i in
-                        CardView(data: i)
+                        CardView(card: i)
                         .offset(x: self.x)
                         .highPriorityGesture(DragGesture()
                         .onChanged({ (value) in

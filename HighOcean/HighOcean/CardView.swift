@@ -10,9 +10,9 @@ import SwiftUI
 
 struct CardView: View {
 
-    @State var data : Card
-    @State var backDegree = 0.0
-    @State var frontDegree = -90.0
+    @State var card : Card
+    @State var frontDegree = 0.0
+    @State var backDegree = -90.0
     @State var isFlipped = false
     
     let durationAndDelay : CGFloat = 0.3
@@ -21,17 +21,17 @@ struct CardView: View {
         isFlipped = !isFlipped
         if isFlipped {
             withAnimation(.linear(duration: durationAndDelay)) {
-                backDegree = 90
-            }
-            withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)){
-                frontDegree = 0
-            }
-        } else {
-            withAnimation(.linear(duration: durationAndDelay)) {
-                frontDegree = -90
+                frontDegree = 90
             }
             withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)){
                 backDegree = 0
+            }
+        } else {
+            withAnimation(.linear(duration: durationAndDelay)) {
+                backDegree = -90
+            }
+            withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)){
+                frontDegree = 0
             }
         }
     }
@@ -39,10 +39,16 @@ struct CardView: View {
     var body: some View {
         
         ZStack{
-            CardFrontView(degree: $frontDegree)
-            CardBackView(degree: $backDegree)
+            CardFrontView(degree: $frontDegree, card: $card)
+            CardBackView(degree: $backDegree, card: $card)
+                .onAppear(){
+                    card.changeIschecked()
+                    
+                    print(card)
+                }
+        
         }
-        .frame(width: UIScreen.main.bounds.width - 100, height: data.show ? 500 : 440)
+        .frame(width: UIScreen.main.bounds.width - 100, height: card.show ? 500 : 440)
         .onTapGesture {
             flipCard()
         }
