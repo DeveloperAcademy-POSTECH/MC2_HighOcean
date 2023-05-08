@@ -37,7 +37,6 @@
 		FF4087A22A01FC88003BED80 = {
 			isa = PBXGroup;
 			children = (
-				E501BEF42A08FC6800FA4433 /* ProfileData.swift */,
 				FF4087AD2A01FC88003BED80 /* HighOcean */,
 				FF4087AC2A01FC88003BED80 /* Products */,
 			);
@@ -56,6 +55,7 @@
 			children = (
 				FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */,
 				FF4087B02A01FC88003BED80 /* ContentView.swift */,
+				E501BEF42A08FC6800FA4433 /* ProfileData.swift */,
 				FF4087B22A01FC89003BED80 /* Assets.xcassets */,
 				FF4087B42A01FC89003BED80 /* Preview Content */,
 			);
