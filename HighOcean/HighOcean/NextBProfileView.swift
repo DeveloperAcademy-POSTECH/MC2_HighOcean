@@ -28,19 +28,6 @@ struct NextBProfileView: View {
                         .padding(EdgeInsets(top: 18, leading: 0, bottom: 0, trailing: 0))
                     
                     VStack(alignment: .center){
-                        Form {
-                            Section {
-                            // 파인 작업 예정
-                            DatePicker(selection: /*@START_MENU_TOKEN@*/.constant(Date())/*@END_MENU_TOKEN@*/, label: { /*@START_MENU_TOKEN@*/Text("Date")/*@END_MENU_TOKEN@*/ })
-                                Text("퇴근시간설정")
-                                Picker(selection: /*@START_MENU_TOKEN@*/.constant(1)/*@END_MENU_TOKEN@*/, label: /*@START_MENU_TOKEN@*/Text("Picker")/*@END_MENU_TOKEN@*/) {
-                                    /*@START_MENU_TOKEN@*/Text("1").tag(1)/*@END_MENU_TOKEN@*/
-                                    /*@START_MENU_TOKEN@*/Text("2").tag(2)/*@END_MENU_TOKEN@*/
-                                    
-                                }
-                            }
-                    
-                        }
                     }
                     .padding(EdgeInsets(top: 18, leading: 0, bottom: 0, trailing: 0))
                     .frame(width: 350, height:465.0)

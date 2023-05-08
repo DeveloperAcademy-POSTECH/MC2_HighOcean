@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @State var name: String = ""
-        
+    @EnvironmentObject var userName: user
+    
     var body: some View {
         NavigationView{
     
@@ -29,19 +29,20 @@ struct ProfileView: View {
                             .fontWeight(.bold)
                             .foregroundColor(Color("Primary"))
                         
-                        TextField("이름", text: $name)
+                        TextField("Ocean", text: $userName.name)
                             .frame(width: 338.0, height:62.0)
                             .padding(.leading,16)
                             .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
                             .padding(EdgeInsets(top: 150, leading: 0, bottom: 0, trailing: 0))
                         
+                        Text("\(userName.name)")
+                            
                         
-                    
                     }
                     Spacer()
 
 
-                    NavigationLink(destination: NextAProfileView(name: name)){
+                    NavigationLink(destination: NextAProfileView()){
                         Text("다음")
                             .frame(width: 354.0, height:54.0)
                             .font(.system(size: 18))
@@ -57,10 +58,10 @@ struct ProfileView: View {
     }
 }
 
-
 // 미리보기
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
+            .environmentObject(user())
     }
 }

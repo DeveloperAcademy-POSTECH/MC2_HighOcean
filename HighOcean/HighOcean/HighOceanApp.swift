@@ -12,6 +12,7 @@ struct HighOceanApp: App {
     var body: some Scene {
         WindowGroup {
             ProfileView()
+                .environmentObject(user())
         }
     }
 }

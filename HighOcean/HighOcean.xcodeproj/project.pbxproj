@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		991D64682A0930DB0007EEA8 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991D64672A0930DB0007EEA8 /* ActivityView.swift */; };
 		993A02A42A04292B002AAB15 /* NextCProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993A02A32A04292B002AAB15 /* NextCProfileView.swift */; };
 		99AB9FD02A03E18700F17E5E /* NextAProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AB9FCF2A03E18700F17E5E /* NextAProfileView.swift */; };
 		99C802342A04227800DA32B5 /* NextBProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C802332A04227800DA32B5 /* NextBProfileView.swift */; };
+		99D3A92C2A092BFD0059107C /* FamilyDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D3A92B2A092BFD0059107C /* FamilyDB.swift */; };
 		FF4087AF2A01FC88003BED80 /* HighOceanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */; };
 		FF4087B12A01FC88003BED80 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4087B02A01FC88003BED80 /* ProfileView.swift */; };
 		FF4087B32A01FC89003BED80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4087B22A01FC89003BED80 /* Assets.xcassets */; };
@@ -17,9 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		991D64672A0930DB0007EEA8 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		993A02A32A04292B002AAB15 /* NextCProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextCProfileView.swift; sourceTree = "<group>"; };
 		99AB9FCF2A03E18700F17E5E /* NextAProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextAProfileView.swift; sourceTree = "<group>"; };
 		99C802332A04227800DA32B5 /* NextBProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextBProfileView.swift; sourceTree = "<group>"; };
+		99D3A92B2A092BFD0059107C /* FamilyDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDB.swift; sourceTree = "<group>"; };
 		FF4087AB2A01FC88003BED80 /* HighOcean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HighOcean.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighOceanApp.swift; sourceTree = "<group>"; };
 		FF4087B02A01FC88003BED80 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; usesTabs = 0; };
@@ -62,6 +66,8 @@
 				99AB9FCF2A03E18700F17E5E /* NextAProfileView.swift */,
 				99C802332A04227800DA32B5 /* NextBProfileView.swift */,
 				993A02A32A04292B002AAB15 /* NextCProfileView.swift */,
+				991D64672A0930DB0007EEA8 /* ActivityView.swift */,
+				99D3A92B2A092BFD0059107C /* FamilyDB.swift */,
 				FF4087B22A01FC89003BED80 /* Assets.xcassets */,
 				FF4087B42A01FC89003BED80 /* Preview Content */,
 			);
@@ -149,6 +155,8 @@
 				FF4087B12A01FC88003BED80 /* ProfileView.swift in Sources */,
 				99AB9FD02A03E18700F17E5E /* NextAProfileView.swift in Sources */,
 				99C802342A04227800DA32B5 /* NextBProfileView.swift in Sources */,
+				99D3A92C2A092BFD0059107C /* FamilyDB.swift in Sources */,
+				991D64682A0930DB0007EEA8 /* ActivityView.swift in Sources */,
 				993A02A42A04292B002AAB15 /* NextCProfileView.swift in Sources */,
 				FF4087AF2A01FC88003BED80 /* HighOceanApp.swift in Sources */,
 			);

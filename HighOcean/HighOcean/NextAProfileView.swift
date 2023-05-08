@@ -1,10 +1,8 @@
 import SwiftUI
 
 struct NextAProfileView: View {
-    let name: String
     
-    @State private var leftToggle = false
-    
+    @EnvironmentObject var userName: user
     
     var body: some View {
 
@@ -13,7 +11,7 @@ struct NextAProfileView: View {
             
             VStack(alignment: .leading){
                 VStack(alignment: .leading) {
-                    Text("\(name)님은")
+                    Text("님은")
                         .font(.system(size: 28))
                         .fontWeight(.bold)
                         .foregroundColor(Color("Primary"))
@@ -29,17 +27,23 @@ struct NextAProfileView: View {
                         .foregroundColor(Color("Disabled"))
                         .padding(EdgeInsets(top: 18, leading: 0, bottom: 0, trailing: 0))
                     
-                    HStack(spacing: 24){
-                        Button("부모") {
-                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                    VStack(spacing: 24){
+                        Button("어무이") {
+                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/ // 엄마
                         }
-                        .frame(width: 164.0, height:194.0)
+                        .frame(width: 340.0, height:80.0)
+                        .background(Color.white)
+                        
+                        Button("아뷰지") {
+                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/// 아빠
+                        }
+                        .frame(width: 340.0, height:80.0)
                         .background(Color.white)
                         
                         Button("아이") {
-                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*///아이 7
                         }
-                        .frame(width: 164.0, height:194.0)
+                        .frame(width: 340.0, height:80.0)
                         .background(Color.white)
                     }
                     .padding(EdgeInsets(top: 66, leading: 0, bottom: 0, trailing: 0))
@@ -47,6 +51,9 @@ struct NextAProfileView: View {
                     
                     Spacer()
                     
+                    //데이터 확인용 테스트 영역 ------
+                    Text("아이 이름은 \(userName.name)")
+                    //데이터 확인용 테스트 영역 ------
                     
                     NavigationLink(destination: NextBProfileView()){
                         Text("다음")
@@ -61,11 +68,12 @@ struct NextAProfileView: View {
             
         }
     }
-    
+
     // 미리보기
     struct ContentView_NextAPreviews: PreviewProvider {
         static var previews: some View {
-            NextAProfileView(name: "Name")
+            NextAProfileView()
+                .environmentObject(user()) //테스트용 추후 삭제
         }
     }
 }
