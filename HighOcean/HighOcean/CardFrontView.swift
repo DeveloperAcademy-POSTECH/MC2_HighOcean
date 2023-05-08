@@ -10,8 +10,11 @@ import SwiftUI
 struct CardFrontView: View {
     @Binding var degree : Double
     
-    @State private var image = UIImage()
-    @State private var createdDate = Date()
+    @Binding var card: Card
+//    @EnvironmentObject var cards: Card
+    
+//    @State private var image = UIImage()
+//    @State private var createdDate = Date()
     
     var body: some View {
         ZStack{
@@ -19,7 +22,7 @@ struct CardFrontView: View {
                 .fill(.white)
                 .shadow(radius: 3)
                 .frame(width: 292, height: 480)
-            Image(uiImage: self.image)
+            Image(card.image)
                 .resizable()
                 .frame(width: 254, height: 437)
             LinearGradient(
@@ -53,6 +56,7 @@ struct CardFrontView: View {
         }
         .padding(.bottom, 50)
         .frame(width: 254, height: 437)
-        }
     }
+    
+}
 

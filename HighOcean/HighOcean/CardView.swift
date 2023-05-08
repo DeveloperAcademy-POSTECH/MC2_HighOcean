@@ -11,7 +11,10 @@ import SwiftUI
 struct CardView: View {
     
 //    var data: Card
-    @State var data:Card = Card(context: "안녕 아들아", image: UIImage(systemName: "bolt")!, createdDate: Date(), from: "엄마가", isLike: false, isCheck: true, show:false)
+//    @State var cards = Cards()
+    @Binding var card: Card
+    @EnvironmentObject var cards: Cards
+    
     @State var backDegree = 0.0
     @State var frontDegree = -90.0
     @State var isFlipped = false
@@ -21,20 +24,20 @@ struct CardView: View {
     func flipCard(){
         isFlipped = !isFlipped
         if isFlipped {
-                    withAnimation(.linear(duration: durationAndDelay)) {
-                        backDegree = 90
-                    }
-                    withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)){
-                        frontDegree = 0
-                    }
-                } else {
-                    withAnimation(.linear(duration: durationAndDelay)) {
-                        frontDegree = -90
-                    }
-                    withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)){
-                        backDegree = 0
-                    }
-                }
+            withAnimation(.linear(duration: durationAndDelay)) {
+                backDegree = 90
+            }
+            withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)){
+                frontDegree = 0
+            }
+        } else {
+            withAnimation(.linear(duration: durationAndDelay)) {
+                frontDegree = -90
+            }
+            withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)){
+                backDegree = 0
+            }
+        }
     }
     
     var body: some View {
@@ -43,7 +46,7 @@ struct CardView: View {
             CardFrontView(degree: $frontDegree)
             CardBackView(degree: $backDegree)
         }
-        .frame(width: UIScreen.main.bounds.width - 100, height: data.show ? 500 : 440)
+        .frame(width: UIScreen.main.bounds.width - 100, height: card.show ? 500 : 440)
         .onTapGesture {
             flipCard()
         }
@@ -53,8 +56,8 @@ struct CardView: View {
 
 
 
-struct CardView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardView()
-    }
-}
+//struct CardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CardView()
+//    }
+//}

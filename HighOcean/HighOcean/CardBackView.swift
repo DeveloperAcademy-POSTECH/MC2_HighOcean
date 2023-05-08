@@ -13,6 +13,8 @@ struct CardBackView: View {
     
     @Binding var degree : Double
     
+    @Binding var card: Card
+    
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 20)
@@ -30,14 +32,14 @@ struct CardBackView: View {
                 ZStack{
                     Image("ToPersonBg")
                         .offset(y: 6)
-                    Text("To. 오션에게")
+                    Text("To. \(card.to)")
                         .fontWeight(.semibold)
                         .foregroundColor(Color("Primary"))
                 }
                 Spacer()
             }
             Spacer()
-            Text("본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문")
+            Text(card.context)
                 .foregroundColor(Color("Primary"))
                 .multilineTextAlignment(.leading)
                 .lineSpacing(5)
@@ -53,11 +55,11 @@ struct CardBackView: View {
                     ZStack{
                         Image("FromPersonBg")
                             .offset(y: 6)
-                        Text("From. 엄마가")
+                        Text("From. \(card.from)")
                             .fontWeight(.semibold)
                             .foregroundColor(Color("Primary"))
                     }
-                    Text("2023. 5. 5.")
+                    Text(card.createdDate)
                         .foregroundColor(Color("Primary"))
                         .lineLimit(nil)
                 }

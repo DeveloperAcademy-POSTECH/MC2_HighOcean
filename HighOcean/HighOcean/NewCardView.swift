@@ -20,7 +20,12 @@ struct Home : View {
     @State var screen = UIScreen.main.bounds.width - 100
     @State var op : CGFloat = 0
     
-    @State var cards = Cards().unCheckedCards
+//    @State var cards = Cards().uncheckedCards
+    
+    
+    @Binding var card: Card
+    @EnvironmentObject var cards: Cards
+//    @State private var
 
     
     var body : some View{
@@ -33,12 +38,13 @@ struct Home : View {
                 
                 HStack(spacing: 30){
                     
-                    ForEach(cards){i in
+                    ForEach($cards.uncheckedCards){ $card in
                         
-                        CardView(data: i)
-                        .offset(x: self.x)
-                        .highPriorityGesture(DragGesture()
-                        
+                        CardView(card: $card)
+                            .environmentObject(cards)
+                            .offset(x: self.x)
+                            .highPriorityGesture(DragGesture()
+                                             
                             .onChanged({ (value) in
                                 
                                 if value.translation.width > 0{
@@ -71,7 +77,7 @@ struct Home : View {
                                 else{
                                     
                                     
-                                    if -value.translation.width > ((self.screen - 80) / 2) && Int(self.count) !=  (self.cards.count - 1){
+                                    if -value.translation.width > ((self.screen - 80) / 2) && Int(self.count) !=  (self.$cards.count - 1){
                                         
                                         self.count += 1
                                         self.updateHeight(value: Int(self.count))
@@ -98,7 +104,7 @@ struct Home : View {
                 
                 self.op = ((self.screen + 15) * CGFloat(self.cards.count / 2)) - (self.cards.count % 2 == 0 ? ((self.screen + 15) / 2) : 0)
                 
-                self.cards[0].show = true
+                self.$cards[0].show = true
             }
         }
     }
@@ -106,12 +112,12 @@ struct Home : View {
     func updateHeight(value : Int){
         
         
-        for i in 0..<cards.count{
+        for i in 0..<$cards.count{
             
             cards[i].show = false
         }
         
-        cards[value].show = true
+        $cards[value].show = true
     }
 }
 
