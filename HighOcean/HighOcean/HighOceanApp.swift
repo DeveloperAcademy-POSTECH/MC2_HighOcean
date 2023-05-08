@@ -11,7 +11,7 @@ import SwiftUI
 struct HighOceanApp: App {
     var body: some Scene {
         WindowGroup {
-            CardView()
+            NewCardView()
         }
     }
 }

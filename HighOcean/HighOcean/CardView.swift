@@ -11,7 +11,7 @@ import SwiftUI
 struct CardView: View {
     
 //    var data: Card
-    
+    @State var data:Card = Card(context: "안녕 아들아", image: UIImage(systemName: "bolt")!, createdDate: Date(), from: "엄마가", isLike: false, isCheck: true, show:false)
     @State var backDegree = 0.0
     @State var frontDegree = -90.0
     @State var isFlipped = false
@@ -38,10 +38,12 @@ struct CardView: View {
     }
     
     var body: some View {
+        
         ZStack{
             CardFrontView(degree: $frontDegree)
             CardBackView(degree: $backDegree)
         }
+        .frame(width: UIScreen.main.bounds.width - 100, height: data.show ? 500 : 440)
         .onTapGesture {
             flipCard()
         }
