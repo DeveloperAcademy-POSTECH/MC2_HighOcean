@@ -7,22 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D1953322A035B1500353602 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1953312A035B1500353602 /* CardView.swift */; };
-		2DB7263E2A04B2DF007D7A17 /* CardFrontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB7263D2A04B2DF007D7A17 /* CardFrontView.swift */; };
-		2DB726442A04C515007D7A17 /* NewCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB726432A04C515007D7A17 /* NewCardView.swift */; };
-		2DB726462A04C558007D7A17 /* CardBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB726452A04C558007D7A17 /* CardBackView.swift */; };
-		2DB7264A2A0890FC007D7A17 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB726492A0890FC007D7A17 /* Cards.swift */; };
+		0AA009932A089C4200F7A297 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA009922A089C4200F7A297 /* Card.swift */; };
+		0AA009952A089E5B00F7A297 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA009942A089E5B00F7A297 /* Cards.swift */; }
 		FF4087AF2A01FC88003BED80 /* HighOceanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */; };
 		FF4087B32A01FC89003BED80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4087B22A01FC89003BED80 /* Assets.xcassets */; };
 		FF4087B62A01FC89003BED80 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4087B52A01FC89003BED80 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2D1953312A035B1500353602 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		2DB7263D2A04B2DF007D7A17 /* CardFrontView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFrontView.swift; sourceTree = "<group>"; };
-		2DB726432A04C515007D7A17 /* NewCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardView.swift; sourceTree = "<group>"; };
-		2DB726452A04C558007D7A17 /* CardBackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBackView.swift; sourceTree = "<group>"; };
-		2DB726492A0890FC007D7A17 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		0AA009922A089C4200F7A297 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		0AA009942A089E5B00F7A297 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 		FF4087AB2A01FC88003BED80 /* HighOcean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HighOcean.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighOceanApp.swift; sourceTree = "<group>"; };
 		FF4087B22A01FC89003BED80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,6 +61,8 @@
 				2DB726432A04C515007D7A17 /* NewCardView.swift */,
 				FF4087B22A01FC89003BED80 /* Assets.xcassets */,
 				FF4087B42A01FC89003BED80 /* Preview Content */,
+				0AA009922A089C4200F7A297 /* Card.swift */,
+				0AA009942A089E5B00F7A297 /* Cards.swift */,
 			);
 			path = HighOcean;
 			sourceTree = "<group>";
@@ -149,12 +145,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF4087B12A01FC88003BED80 /* ContentView.swift in Sources */,
+				0AA009932A089C4200F7A297 /* Card.swift in Sources */,
 				FF4087AF2A01FC88003BED80 /* HighOceanApp.swift in Sources */,
-				2DB726462A04C558007D7A17 /* CardBackView.swift in Sources */,
-				2D1953322A035B1500353602 /* CardView.swift in Sources */,
-				2DB7264A2A0890FC007D7A17 /* Cards.swift in Sources */,
-				2DB7263E2A04B2DF007D7A17 /* CardFrontView.swift in Sources */,
-				2DB726442A04C515007D7A17 /* NewCardView.swift in Sources */,
+				0AA009952A089E5B00F7A297 /* Cards.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
