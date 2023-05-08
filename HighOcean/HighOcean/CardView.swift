@@ -12,7 +12,7 @@ struct CardView: View {
 
     @State var card : Card
     @State var frontDegree = 0.0
-    @State var backDegree = -90.0
+    @State var backDegree = 90.0
     @State var isFlipped = false
     
     let durationAndDelay : CGFloat = 0.3
@@ -21,14 +21,14 @@ struct CardView: View {
         isFlipped = !isFlipped
         if isFlipped {
             withAnimation(.linear(duration: durationAndDelay)) {
-                frontDegree = 90
+                frontDegree = -90
             }
             withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)){
                 backDegree = 0
             }
         } else {
             withAnimation(.linear(duration: durationAndDelay)) {
-                backDegree = -90
+                backDegree = 90
             }
             withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)){
                 frontDegree = 0
@@ -43,23 +43,18 @@ struct CardView: View {
             CardBackView(degree: $backDegree, card: $card)
                 .onAppear(){
                     card.changeIschecked()
-                    
                     print(card)
                 }
-        
         }
-        .frame(width: UIScreen.main.bounds.width - 100, height: card.show ? 500 : 440)
+        .frame(width: UIScreen.main.bounds.width - 90, height: card.show ? 480 : 300)
         .onTapGesture {
             flipCard()
         }
     }
-        
 }
 
-
-
-//struct CardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CardView()
-//    }
-//}
+struct CardView_Previews: PreviewProvider {
+    static var previews: some View {
+        NewCardView()
+    }
+}

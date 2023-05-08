@@ -57,3 +57,8 @@ struct CardFrontView: View {
         }
     }
 
+struct CardFrontView_Previews: PreviewProvider {
+    static var previews: some View {
+        NewCardView()
+    }
+}

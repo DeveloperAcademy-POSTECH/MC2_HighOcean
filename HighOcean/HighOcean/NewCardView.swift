@@ -16,15 +16,21 @@ struct Home : View {
     
     @State var x : CGFloat = 0
     @State var count : CGFloat = 0
-    @State var screen = UIScreen.main.bounds.width - 100
+    @State var screen = UIScreen.main.bounds.width - 90
     @State var op : CGFloat = 0
     @State var cards = Cards().uncheckedCards
     
+    
+    var number : Int = 0
+    
     var body : some View{
         NavigationView{
+            
+            let number = Int(self.count)
+            
             VStack{
                 Spacer()
-                HStack(spacing: 30){
+                HStack(spacing: 20){
                     ForEach(cards){i in
                         CardView(card: i)
                         .offset(x: self.x)
@@ -66,9 +72,29 @@ struct Home : View {
                 .frame(width: UIScreen.main.bounds.width)
                 .offset(x: self.op)
                 Spacer()
+                HStack{ //page Indicator
+                    Text("\(number + 1)")
+                        .foregroundColor(Color("Accent"))
+                        .offset(x: 5)
+                    Text("/\(cards.count)")
+                        .kerning(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
+                }
+                Spacer()
+                Button {
+                
+                } label: {
+                    Text("내용보기")
+                        .fontWeight(.medium)
+                        .foregroundColor(Color.white)
+                        .frame(width: 330, height: 54)
+                        .background(RoundedRectangle(cornerRadius: 10).fill(Color("Accent")))
+                }
+
+                
             }
-            .background(Color("Secondary").edgesIgnoringSafeArea(.bottom))
-            .navigationBarTitle("New Card View")
+            .background(Color("Secondary"))
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitle("새 포토카드 보기")
             .animation(.spring(), value: self.x)
             .onAppear {
                 self.op = ((self.screen + 15) * CGFloat(self.cards.count / 2)) - (self.cards.count % 2 == 0 ? ((self.screen + 15) / 2) : 0)
@@ -76,6 +102,7 @@ struct Home : View {
             }
         }
     }
+
     func updateHeight(value : Int){
         for i in 0..<cards.count{
             cards[i].show = false
