@@ -9,12 +9,8 @@ import SwiftUI
 
 
 struct CardView: View {
-    
-//    var data: Card
-//    @State var cards = Cards()
-    @Binding var card: Card
-    @EnvironmentObject var cards: Cards
-    
+
+    @State var data : Card
     @State var backDegree = 0.0
     @State var frontDegree = -90.0
     @State var isFlipped = false
@@ -46,7 +42,7 @@ struct CardView: View {
             CardFrontView(degree: $frontDegree)
             CardBackView(degree: $backDegree)
         }
-        .frame(width: UIScreen.main.bounds.width - 100, height: card.show ? 500 : 440)
+        .frame(width: UIScreen.main.bounds.width - 100, height: data.show ? 500 : 440)
         .onTapGesture {
             flipCard()
         }
