@@ -40,6 +40,4 @@ class Cards: ObservableObject {
             .filter { $0.isLiked }                                // 좋아요한 카드 필터링
             .sorted{ $0.createdDate > $1.createdDate }            // 최신순 소팅
     }
-    
-    
 }
