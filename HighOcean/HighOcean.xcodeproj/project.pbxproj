@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E501BEF52A08FC6800FA4433 /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E501BEF42A08FC6800FA4433 /* ProfileData.swift */; };
 		FF4087AF2A01FC88003BED80 /* HighOceanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */; };
 		FF4087B12A01FC88003BED80 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4087B02A01FC88003BED80 /* ContentView.swift */; };
 		FF4087B32A01FC89003BED80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4087B22A01FC89003BED80 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E501BEF42A08FC6800FA4433 /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
 		FF4087AB2A01FC88003BED80 /* HighOcean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HighOcean.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighOceanApp.swift; sourceTree = "<group>"; };
 		FF4087B02A01FC88003BED80 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,6 +37,7 @@
 		FF4087A22A01FC88003BED80 = {
 			isa = PBXGroup;
 			children = (
+				E501BEF42A08FC6800FA4433 /* ProfileData.swift */,
 				FF4087AD2A01FC88003BED80 /* HighOcean */,
 				FF4087AC2A01FC88003BED80 /* Products */,
 			);
@@ -139,6 +142,7 @@
 			files = (
 				FF4087B12A01FC88003BED80 /* ContentView.swift in Sources */,
 				FF4087AF2A01FC88003BED80 /* HighOceanApp.swift in Sources */,
+				E501BEF52A08FC6800FA4433 /* ProfileData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
