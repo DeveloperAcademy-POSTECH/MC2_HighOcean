@@ -30,14 +30,13 @@ struct NextBProfileView: View {
                     VStack(alignment: .center){
                         Form {
                             Section {
-                                Text("근무요일설정")
-                                Text("어똑캍지)")
-                            }
-                            Section {
+                            // 파인 작업 예정
+                            DatePicker(selection: /*@START_MENU_TOKEN@*/.constant(Date())/*@END_MENU_TOKEN@*/, label: { /*@START_MENU_TOKEN@*/Text("Date")/*@END_MENU_TOKEN@*/ })
                                 Text("퇴근시간설정")
                                 Picker(selection: /*@START_MENU_TOKEN@*/.constant(1)/*@END_MENU_TOKEN@*/, label: /*@START_MENU_TOKEN@*/Text("Picker")/*@END_MENU_TOKEN@*/) {
                                     /*@START_MENU_TOKEN@*/Text("1").tag(1)/*@END_MENU_TOKEN@*/
                                     /*@START_MENU_TOKEN@*/Text("2").tag(2)/*@END_MENU_TOKEN@*/
+                                    
                                 }
                             }
                     

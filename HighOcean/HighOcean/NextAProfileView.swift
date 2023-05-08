@@ -1,8 +1,10 @@
 import SwiftUI
 
 struct NextAProfileView: View {
-
+    let name: String
+    
     @State private var leftToggle = false
+    
     
     var body: some View {
 
@@ -11,7 +13,7 @@ struct NextAProfileView: View {
             
             VStack(alignment: .leading){
                 VStack(alignment: .leading) {
-                    Text("Name님은")
+                    Text("\(name)님은")
                         .font(.system(size: 28))
                         .fontWeight(.bold)
                         .foregroundColor(Color("Primary"))
@@ -63,7 +65,7 @@ struct NextAProfileView: View {
     // 미리보기
     struct ContentView_NextAPreviews: PreviewProvider {
         static var previews: some View {
-            NextAProfileView()
+            NextAProfileView(name: "Name")
         }
     }
 }

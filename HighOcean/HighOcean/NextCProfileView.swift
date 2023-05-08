@@ -36,7 +36,6 @@ struct NextCProfileView: View {
                                 .background(Color("Secondary"))
                                 .foregroundColor(Color("Accent"))
                                 .cornerRadius(1)
-//                                .border(Color("Accent"), width: 1) //stroke line Edit
                                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 27, trailing: 0))
                             
                         }
@@ -47,27 +46,9 @@ struct NextCProfileView: View {
                     .frame(height: 212.0)
                     .background(Color.white)
                     .cornerRadius(10)
-                    
                     .padding(EdgeInsets(top: 66, leading: 0, bottom: 0, trailing: 0))
-//                            .multilineTextAlignment(.leading)
-//
-//
-//                        Spacer()
-//
-//                        .frame(width: 304, height:80.0)
-//                        .padding(24)
-                    
-//                    .background(Color.white)
-//                    .frame(width: 353, height:212.0)
-//
-//                    .foregroundColor(Color("Primary"))
-//                    .cornerRadius(10)
-//                    .padding(EdgeInsets(top: 66, leading: 0, bottom: 0, trailing: 0))
-
-                                
                     
                     Spacer()
-                    
                     
                     NavigationLink(destination: Text("홈 화면")){
                         Text("공유하기")
