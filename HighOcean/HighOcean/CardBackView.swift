@@ -13,6 +13,7 @@ struct CardBackView: View {
     
     @Binding var degree : Double
     @Binding var card: Card
+    @EnvironmentObject var cards: Cards
     
     var body: some View {
         ZStack{
@@ -45,9 +46,13 @@ struct CardBackView: View {
 
             Spacer()
             HStack{
-                ZStack{
-                    Image("IconHeartEmpty")
-                    Image("IconHeartFilled")
+                HStack{
+                    Button {
+                        card.isLiked.toggle()
+                        cards.dataSort()
+                    } label: {
+                        Text(card.isLiked ? "IconHeartFilled" : "IconHeartEmpty")
+                    }
                 }
                 Spacer()
                 VStack(alignment: .leading, spacing: 4){

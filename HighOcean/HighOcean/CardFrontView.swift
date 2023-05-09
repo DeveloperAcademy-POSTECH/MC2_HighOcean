@@ -54,8 +54,15 @@ struct CardFrontView: View {
         }
         .padding(.bottom, 50)
         .frame(width: 254, height: 437)
-        }
     }
+    
+//    func remakeDate() -> String {
+//        let date = card.createdDate
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "dd"
+//        return formatter.string(from: date)
+//    }
+}
 
 struct CardFrontView_Previews: PreviewProvider {
     static var previews: some View {

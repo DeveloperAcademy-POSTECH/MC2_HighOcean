@@ -46,7 +46,7 @@ struct CardView: View {
                     print(card)
                 }
         }
-        .frame(width: UIScreen.main.bounds.width - 90, height: card.show ? 480 : 300)
+        .frame(width: UIScreen.main.bounds.width - 90, height: card.show ? 500 : 300)
         .onTapGesture {
             flipCard()
         }

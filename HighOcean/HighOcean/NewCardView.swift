@@ -28,80 +28,74 @@ struct Home : View {
             
             let number = Int(self.count)
             
-            VStack{
-                Spacer()
-                HStack(spacing: 20){
-                    ForEach(cards){i in
-                        CardView(card: i)
-                        .offset(x: self.x)
-                        .highPriorityGesture(DragGesture()
-                        .onChanged({ (value) in
-                                if value.translation.width > 0{
-                                    self.x = value.location.x
-                                }
-                                else{
-                                    self.x = value.location.x - self.screen
-                                }
-                            })
-                            .onEnded({ (value) in
-                                if value.translation.width > 0{
-                                    if value.translation.width > ((self.screen - 80) / 2) && Int(self.count) != 0{
-                                        self.count -= 1
-                                        self.updateHeight(value: Int(self.count))
-                                        self.x = -((self.screen + 15) * self.count)
+            ZStack {
+                Color("Secondary").ignoresSafeArea()
+                VStack(spacing: 140){
+                    HStack(spacing: 18){
+                        ForEach(cards){i in
+                            CardView(card: i)
+                            .offset(x: self.x)
+                            .highPriorityGesture(DragGesture()
+                            .onChanged({ (value) in
+                                    if value.translation.width > 0{
+                                        self.x = value.location.x
                                     }
                                     else{
-                                        self.x = -((self.screen + 15) * self.count)
+                                        self.x = value.location.x - self.screen
                                     }
-                                }
-                                else{
-                                    if -value.translation.width > ((self.screen - 80) / 2) && Int(self.count) !=  (self.cards.count - 1){
-                                        
-                                        self.count += 1
-                                        self.updateHeight(value: Int(self.count))
-                                        self.x = -((self.screen + 15) * self.count)
+                                })
+                                .onEnded({ (value) in
+                                    if value.translation.width > 0{
+                                        if value.translation.width > ((self.screen - 80) / 2) && Int(self.count) != 0{
+                                            self.count -= 1
+                                            self.updateHeight(value: Int(self.count))
+                                            self.x = -((self.screen + 15) * self.count)
+                                        }
+                                        else{
+                                            self.x = -((self.screen + 15) * self.count)
+                                        }
                                     }
                                     else{
-                                        self.x = -((self.screen + 15) * self.count)
+                                        if -value.translation.width > ((self.screen - 80) / 2) && Int(self.count) !=  (self.cards.count - 1){
+                                            
+                                            self.count += 1
+                                            self.updateHeight(value: Int(self.count))
+                                            self.x = -((self.screen + 15) * self.count)
+                                        }
+                                        else{
+                                            self.x = -((self.screen + 15) * self.count)
+                                        }
                                     }
-                                }
-                            })
-                        )
+                                })
+                            )
+                        }
                     }
-                }
-                .frame(width: UIScreen.main.bounds.width)
-                .offset(x: self.op)
-                Spacer()
-                HStack{ //page Indicator
-                    Text("\(number + 1)")
-                        .foregroundColor(Color("Accent"))
-                        .offset(x: 5)
-                    Text("/\(cards.count)")
-                        .kerning(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
-                }
-                Spacer()
-                Button {
-                
-                } label: {
-                    Text("내용보기")
-                        .fontWeight(.medium)
-                        .foregroundColor(Color.white)
-                        .frame(width: 330, height: 54)
-                        .background(RoundedRectangle(cornerRadius: 10).fill(Color("Accent")))
-                }
+                    .frame(width: UIScreen.main.bounds.width)
+                    .offset(x: self.op)
+                    HStack{ //page Indicator
+                        Text("\(number + 1)")
+                            .foregroundColor(Color("Accent"))
+                            .offset(x: 5)
+                        Text("/\(cards.count)")
+                            .kerning(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
+                    }
+                    
 
-                
+                    
+                }
+                .padding(.top, 30)
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationBarTitle("새 포토카드 보기")
+                .animation(.spring(), value: self.x)
+                .onAppear {
+                    self.op = ((self.screen + 15) * CGFloat(self.cards.count / 2)) - (self.cards.count % 2 == 0 ? ((self.screen + 15) / 2) : 0)
+                    self.cards[0].show = true
             }
-            .background(Color("Secondary"))
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarTitle("새 포토카드 보기")
-            .animation(.spring(), value: self.x)
-            .onAppear {
-                self.op = ((self.screen + 15) * CGFloat(self.cards.count / 2)) - (self.cards.count % 2 == 0 ? ((self.screen + 15) / 2) : 0)
-                self.cards[0].show = true
             }
+
         }
     }
+    
 
     func updateHeight(value : Int){
         for i in 0..<cards.count{
