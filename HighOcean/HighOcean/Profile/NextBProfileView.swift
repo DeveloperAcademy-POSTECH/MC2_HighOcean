@@ -27,11 +27,46 @@ struct NextBProfileView: View {
                         .foregroundColor(Color("Disabled"))
                         .padding(EdgeInsets(top: 18, leading: 0, bottom: 0, trailing: 0))
                     
-                    VStack(alignment: .center){
+                    VStack(alignment: .leading){
+                        
+                        Text("근무 요일 설정")
+                            .font(.system(size: 18))
+                        
+                        HStack(){
+                            Button("일"){}
+                            Button("월"){}
+                            Button("화"){}
+                            Button("수"){}
+                            Button("목"){}
+                            Button("금"){}
+                            Button("토"){}
+                        }
+                        .frame(width: 350, height: 97.0)
+                        
+                        Text("퇴근시간 설정")
+                            .font(.system(size: 18))
+                        HStack(){
+                            Picker(selection: .constant(1)/*@END_MENU_TOKEN@*/, label: /*@START_MENU_TOKEN@*/Text("Picker")) {
+                                Text("1").tag(1)
+                                Text("2").tag(2)
+                            }
+                            Spacer()
+                            Picker(selection: .constant(1), label: Text("Picker")) {
+                                Text("1").tag(1)
+                                Text("2").tag(2)
+                            }
+                            Spacer()
+                            Picker(selection: .constant(1)/*@END_MENU_TOKEN@*/, label: /*@START_MENU_TOKEN@*/Text("Picker")) {
+                                Text("1").tag(1)
+                                Text("2").tag(2)
+                            }
+                        }
+                        
                     }
-                    .padding(EdgeInsets(top: 18, leading: 0, bottom: 0, trailing: 0))
-                    .frame(width: 350, height:465.0)
-                    .foregroundColor(Color("Primary"))
+                    
+                    .padding(EdgeInsets(top: 40, leading: 0, bottom: 0, trailing: 0))
+//                    .frame(width: 350, height:465.0)
+//                    .foregroundColor(Color("Primary"))
                     
                     Spacer()
                     
