@@ -37,7 +37,7 @@ struct CardFrontView: View {
     var DateAndDay: some View {
         VStack {
             Spacer()
-            Text("24")
+            Text(remakedDate())
                 .font(.title2)
                 .fontWeight(.semibold)
                 .foregroundColor(Color("Secondary"))
@@ -47,7 +47,7 @@ struct CardFrontView: View {
                 .frame(width: 50, height: 2)
                 .background(Color("Secondary"))
                 .shadow(radius: 2)
-            Text("월요일")
+            Text(remakedDay())
                 .fontWeight(.medium)
                 .foregroundColor(Color("Secondary"))
                 .shadow(radius: 2)
@@ -56,12 +56,28 @@ struct CardFrontView: View {
         .frame(width: 254, height: 437)
     }
     
-//    func remakeDate() -> String {
-//        let date = card.createdDate
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "dd"
-//        return formatter.string(from: date)
-//    }
+    func remakedDate() -> String {
+        let dateString = card.createdDate
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yy-MM-dd"
+        guard let date = formatter.date(from: dateString) else {
+            return ""
+        }
+        formatter.dateFormat = "dd"
+        return formatter.string(from: date)
+    }
+    
+    func remakedDay() -> String {
+        let dateString = card.createdDate
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yy-MM-dd"
+        guard let date = formatter.date(from: dateString) else {
+            return ""
+        }
+        formatter.locale = Locale(identifier: "ko")
+        formatter.dateFormat = "E요일"
+        return formatter.string(from: date)
+    }
 }
 
 struct CardFrontView_Previews: PreviewProvider {
