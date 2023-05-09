@@ -13,18 +13,22 @@ struct Card: Identifiable, Equatable{
     let image: String
     let createdDate: String
     let from: String
+    let to: String
     let creator: String
     var isLiked: Bool
     var isChecked: Bool
+    var show: Bool
     
-    init(context: String, image: String, createdDate: String, from: String, creator: String, isLiked: Bool, isChecked: Bool){
+    init(context: String, image: String, createdDate: String, from: String, to: String, creator: String, isLiked: Bool, isChecked: Bool, show: Bool){
         self.context = context
         self.image = image
         self.createdDate = createdDate
         self.from = from
+        self.to = to
         self.creator = creator
         self.isLiked = isLiked
         self.isChecked = isChecked
+        self.show = show
     }
     
     mutating func changeIschecked(){

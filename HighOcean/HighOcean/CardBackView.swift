@@ -12,6 +12,8 @@ import SwiftUI
 struct CardBackView: View {
     
     @Binding var degree : Double
+    @Binding var card: Card
+    @EnvironmentObject var cards: Cards
     
     var body: some View {
         ZStack{
@@ -30,39 +32,49 @@ struct CardBackView: View {
                 ZStack{
                     Image("ToPersonBg")
                         .offset(y: 6)
-                    Text("To. 오션에게")
+                    Text("To. \(card.to)")
                         .fontWeight(.semibold)
                         .foregroundColor(Color("Primary"))
                 }
                 Spacer()
             }
             Spacer()
-            Text("본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문")
+            Text(card.context)
                 .foregroundColor(Color("Primary"))
                 .multilineTextAlignment(.leading)
                 .lineSpacing(5)
 
             Spacer()
             HStack{
-                ZStack{
-                    Image("IconHeartEmpty")
-                    Image("IconHeartFilled")
+                HStack{
+                    Button {
+                        card.isLiked.toggle()
+                        cards.dataSort()
+                    } label: {
+                        Text(card.isLiked ? "IconHeartFilled" : "IconHeartEmpty")
+                    }
                 }
                 Spacer()
                 VStack(alignment: .leading, spacing: 4){
                     ZStack{
                         Image("FromPersonBg")
                             .offset(y: 6)
-                        Text("From. 엄마가")
+                        Text("From. \(card.from)")
                             .fontWeight(.semibold)
                             .foregroundColor(Color("Primary"))
                     }
-                    Text("2023. 5. 5.")
+                    Text(card.createdDate)
                         .foregroundColor(Color("Primary"))
                         .lineLimit(nil)
                 }
             }
             }
         .frame(width: 254, height: 437)
+    }
+}
+
+struct CardBackView_Previews: PreviewProvider {
+    static var previews: some View {
+        NewCardView()
     }
 }
