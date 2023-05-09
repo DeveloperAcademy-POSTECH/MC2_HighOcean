@@ -13,6 +13,7 @@
 		2DB726442A04C515007D7A17 /* NewCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB726432A04C515007D7A17 /* NewCardView.swift */; };
 		2DB726462A04C558007D7A17 /* CardBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB726452A04C558007D7A17 /* CardBackView.swift */; };
 		2DB7264A2A0890FC007D7A17 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB726492A0890FC007D7A17 /* Cards.swift */; };
+		62B80CAB2A0A5FAB00FCD1EC /* LikedCardCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B80CAA2A0A5FAB00FCD1EC /* LikedCardCollection.swift */; };
 		FF4087AF2A01FC88003BED80 /* HighOceanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */; };
 		FF4087B32A01FC89003BED80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4087B22A01FC89003BED80 /* Assets.xcassets */; };
 		FFDCB86F2A09F20A00477C51 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB86E2A09F20A00477C51 /* CollectionView.swift */; };
@@ -33,6 +34,7 @@
 		2DB726432A04C515007D7A17 /* NewCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardView.swift; sourceTree = "<group>"; };
 		2DB726452A04C558007D7A17 /* CardBackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBackView.swift; sourceTree = "<group>"; };
 		2DB726492A0890FC007D7A17 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		62B80CAA2A0A5FAB00FCD1EC /* LikedCardCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedCardCollection.swift; sourceTree = "<group>"; };
 		FF4087AB2A01FC88003BED80 /* HighOcean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HighOcean.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighOceanApp.swift; sourceTree = "<group>"; };
 		FF4087B22A01FC89003BED80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		62B80CA92A0A5F5000FCD1EC /* LikedCard */ = {
+			isa = PBXGroup;
+			children = (
+				62B80CAA2A0A5FAB00FCD1EC /* LikedCardCollection.swift */,
+			);
+			path = LikedCard;
+			sourceTree = "<group>";
+		};
 		FF4087A22A01FC88003BED80 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +89,7 @@
 			children = (
 				FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */,
 				2DB726432A04C515007D7A17 /* NewCardView.swift */,
+				62B80CA92A0A5F5000FCD1EC /* LikedCard */,
 				FFDCB8862A09F2E300477C51 /* TotalCard */,
 				FFDCB8852A09F29E00477C51 /* Card */,
 				FFDCB8842A09F28200477C51 /* Profile */,
@@ -205,6 +216,7 @@
 				FFDCB8832A09F25C00477C51 /* TotalCardCollectionView.swift in Sources */,
 				2DB7263E2A04B2DF007D7A17 /* CardFrontView.swift in Sources */,
 				FFDCB8752A09F21C00477C51 /* FamilyDB.swift in Sources */,
+				62B80CAB2A0A5FAB00FCD1EC /* LikedCardCollection.swift in Sources */,
 				2DB726442A04C515007D7A17 /* NewCardView.swift in Sources */,
 				FFDCB87D2A09F24300477C51 /* NextCProfileView.swift in Sources */,
 			);
@@ -334,7 +346,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				/* DEVELOPMENT_ASSET_PATHS = "\"HighOcean/Preview Content\""; */
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -363,7 +374,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				/* DEVELOPMENT_ASSET_PATHS = "\"HighOcean/Preview Content\""; */
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
