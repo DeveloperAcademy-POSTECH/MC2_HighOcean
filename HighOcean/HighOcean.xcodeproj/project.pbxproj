@@ -13,15 +13,17 @@
 		2DB726442A04C515007D7A17 /* NewCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB726432A04C515007D7A17 /* NewCardView.swift */; };
 		2DB726462A04C558007D7A17 /* CardBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB726452A04C558007D7A17 /* CardBackView.swift */; };
 		2DB7264A2A0890FC007D7A17 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB726492A0890FC007D7A17 /* Cards.swift */; };
-		9949A6AF2A09D63C00AB8800 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9949A6AE2A09D63C00AB8800 /* ActivityView.swift */; };
-		9949A6B12A09D68B00AB8800 /* FamilyDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9949A6B02A09D68B00AB8800 /* FamilyDB.swift */; };
-		9949A6B32A09D69A00AB8800 /* NextAProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9949A6B22A09D69A00AB8800 /* NextAProfileView.swift */; };
-		9949A6B52A09D69F00AB8800 /* NextBProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9949A6B42A09D69F00AB8800 /* NextBProfileView.swift */; };
-		9949A6B72A09D6A400AB8800 /* NextCProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9949A6B62A09D6A400AB8800 /* NextCProfileView.swift */; };
-		9949A6BB2A09D6CB00AB8800 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9949A6BA2A09D6CB00AB8800 /* ProfileView.swift */; };
 		FF4087AF2A01FC88003BED80 /* HighOceanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */; };
 		FF4087B32A01FC89003BED80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4087B22A01FC89003BED80 /* Assets.xcassets */; };
-		FF4087B62A01FC89003BED80 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4087B52A01FC89003BED80 /* Preview Assets.xcassets */; };
+		FFDCB86F2A09F20A00477C51 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB86E2A09F20A00477C51 /* CollectionView.swift */; };
+		FFDCB8712A09F20F00477C51 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8702A09F20F00477C51 /* ActivityView.swift */; };
+		FFDCB8732A09F21600477C51 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8722A09F21600477C51 /* ContentView.swift */; };
+		FFDCB8752A09F21C00477C51 /* FamilyDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8742A09F21C00477C51 /* FamilyDB.swift */; };
+		FFDCB8792A09F22C00477C51 /* NextAProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8782A09F22C00477C51 /* NextAProfileView.swift */; };
+		FFDCB87B2A09F23C00477C51 /* NextBProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB87A2A09F23C00477C51 /* NextBProfileView.swift */; };
+		FFDCB87D2A09F24300477C51 /* NextCProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB87C2A09F24300477C51 /* NextCProfileView.swift */; };
+		FFDCB8812A09F25700477C51 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8802A09F25700477C51 /* ProfileView.swift */; };
+		FFDCB8832A09F25C00477C51 /* TotalCardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8822A09F25C00477C51 /* TotalCardCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,16 +33,18 @@
 		2DB726432A04C515007D7A17 /* NewCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardView.swift; sourceTree = "<group>"; };
 		2DB726452A04C558007D7A17 /* CardBackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBackView.swift; sourceTree = "<group>"; };
 		2DB726492A0890FC007D7A17 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
-		9949A6AE2A09D63C00AB8800 /* ActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityView.swift; path = HighOcean/ActivityView.swift; sourceTree = SOURCE_ROOT; };
-		9949A6B02A09D68B00AB8800 /* FamilyDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamilyDB.swift; sourceTree = "<group>"; };
-		9949A6B22A09D69A00AB8800 /* NextAProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextAProfileView.swift; sourceTree = "<group>"; };
-		9949A6B42A09D69F00AB8800 /* NextBProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextBProfileView.swift; sourceTree = "<group>"; };
-		9949A6B62A09D6A400AB8800 /* NextCProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextCProfileView.swift; sourceTree = "<group>"; };
-		9949A6BA2A09D6CB00AB8800 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		FF4087AB2A01FC88003BED80 /* HighOcean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HighOcean.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighOceanApp.swift; sourceTree = "<group>"; };
 		FF4087B22A01FC89003BED80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FF4087B52A01FC89003BED80 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FFDCB86E2A09F20A00477C51 /* CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		FFDCB8702A09F20F00477C51 /* ActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		FFDCB8722A09F21600477C51 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FFDCB8742A09F21C00477C51 /* FamilyDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamilyDB.swift; sourceTree = "<group>"; };
+		FFDCB8782A09F22C00477C51 /* NextAProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextAProfileView.swift; sourceTree = "<group>"; };
+		FFDCB87A2A09F23C00477C51 /* NextBProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextBProfileView.swift; sourceTree = "<group>"; };
+		FFDCB87C2A09F24300477C51 /* NextCProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextCProfileView.swift; sourceTree = "<group>"; };
+		FFDCB8802A09F25700477C51 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		FFDCB8822A09F25C00477C51 /* TotalCardCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalCardCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,27 +78,48 @@
 			isa = PBXGroup;
 			children = (
 				FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */,
-				FF4087B02A01FC88003BED80 /* ContentView.swift */,
-				996D01FB2A078822009F8FC8 /* TotalCardCollectionView.swift */,
-				996D01FF2A07F8D3009F8FC8 /* CollectionView.swift */,
-				9949A6BA2A09D6CB00AB8800 /* ProfileView.swift */,
-				9949A6B42A09D69F00AB8800 /* NextBProfileView.swift */,
-				9949A6B22A09D69A00AB8800 /* NextAProfileView.swift */,
-				9949A6B62A09D6A400AB8800 /* NextCProfileView.swift */,
-				9949A6AE2A09D63C00AB8800 /* ActivityView.swift */,
-				9949A6B02A09D68B00AB8800 /* FamilyDB.swift */,
 				2DB726432A04C515007D7A17 /* NewCardView.swift */,
-				2D1953312A035B1500353602 /* CardView.swift */,
-				2DB726492A0890FC007D7A17 /* Cards.swift */,
-				0A4791722A08A85B007E1B2F /* Card.swift */,
-				2DB726452A04C558007D7A17 /* CardBackView.swift */,
-				2DB7263D2A04B2DF007D7A17 /* CardFrontView.swift */,
-				996D01FB2A078822009F8FC8 /* TotalCardCollectionView.swift */,
-				996D01FF2A07F8D3009F8FC8 /* CollectionView.swift */,
+				FFDCB8862A09F2E300477C51 /* TotalCard */,
+				FFDCB8852A09F29E00477C51 /* Card */,
+				FFDCB8842A09F28200477C51 /* Profile */,
 				FF4087B22A01FC89003BED80 /* Assets.xcassets */,
-				FF4087B52A01FC89003BED80 /* Preview Assets.xcassets */,
 			);
 			path = HighOcean;
+			sourceTree = "<group>";
+		};
+		FFDCB8842A09F28200477C51 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FFDCB8702A09F20F00477C51 /* ActivityView.swift */,
+				FFDCB8742A09F21C00477C51 /* FamilyDB.swift */,
+				FFDCB8782A09F22C00477C51 /* NextAProfileView.swift */,
+				FFDCB87A2A09F23C00477C51 /* NextBProfileView.swift */,
+				FFDCB87C2A09F24300477C51 /* NextCProfileView.swift */,
+				FFDCB8802A09F25700477C51 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		FFDCB8852A09F29E00477C51 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				2DB726492A0890FC007D7A17 /* Cards.swift */,
+				0A4791722A08A85B007E1B2F /* Card.swift */,
+				2D1953312A035B1500353602 /* CardView.swift */,
+				2DB726452A04C558007D7A17 /* CardBackView.swift */,
+				2DB7263D2A04B2DF007D7A17 /* CardFrontView.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		FFDCB8862A09F2E300477C51 /* TotalCard */ = {
+			isa = PBXGroup;
+			children = (
+				FFDCB8722A09F21600477C51 /* ContentView.swift */,
+				FFDCB8822A09F25C00477C51 /* TotalCardCollectionView.swift */,
+				FFDCB86E2A09F20A00477C51 /* CollectionView.swift */,
+			);
+			path = TotalCard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,7 +180,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF4087B62A01FC89003BED80 /* Preview Assets.xcassets in Resources */,
 				FF4087B32A01FC89003BED80 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,24 +191,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9949A6B52A09D69F00AB8800 /* NextBProfileView.swift in Sources */,
-				9949A6B12A09D68B00AB8800 /* FamilyDB.swift in Sources */,
-				9949A6B32A09D69A00AB8800 /* NextAProfileView.swift in Sources */,
-				9949A6B72A09D6A400AB8800 /* NextCProfileView.swift in Sources */,
+				FFDCB86F2A09F20A00477C51 /* CollectionView.swift in Sources */,
+				FFDCB8732A09F21600477C51 /* ContentView.swift in Sources */,
 				FF4087AF2A01FC88003BED80 /* HighOceanApp.swift in Sources */,
-				E501BEF52A08FC6800FA4433 /* ProfileData.swift in Sources */,
-				996D02002A07F8D3009F8FC8 /* CollectionView.swift in Sources */,
-				996D01FC2A078822009F8FC8 /* TotalCardCollectionView.swift in Sources */,
-				9949A6AF2A09D63C00AB8800 /* ActivityView.swift in Sources */,
-				9949A6BB2A09D6CB00AB8800 /* ProfileView.swift in Sources */,
 				2DB726462A04C558007D7A17 /* CardBackView.swift in Sources */,
+				FFDCB8712A09F20F00477C51 /* ActivityView.swift in Sources */,
 				0A4791732A08A85B007E1B2F /* Card.swift in Sources */,
+				FFDCB87B2A09F23C00477C51 /* NextBProfileView.swift in Sources */,
+				FFDCB8792A09F22C00477C51 /* NextAProfileView.swift in Sources */,
+				FFDCB8812A09F25700477C51 /* ProfileView.swift in Sources */,
 				2D1953322A035B1500353602 /* CardView.swift in Sources */,
 				2DB7264A2A0890FC007D7A17 /* Cards.swift in Sources */,
+				FFDCB8832A09F25C00477C51 /* TotalCardCollectionView.swift in Sources */,
 				2DB7263E2A04B2DF007D7A17 /* CardFrontView.swift in Sources */,
+				FFDCB8752A09F21C00477C51 /* FamilyDB.swift in Sources */,
 				2DB726442A04C515007D7A17 /* NewCardView.swift in Sources */,
-				996D02002A07F8D3009F8FC8 /* CollectionView.swift in Sources */,
-				996D01FC2A078822009F8FC8 /* TotalCardCollectionView.swift in Sources */,
+				FFDCB87D2A09F24300477C51 /* NextCProfileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
