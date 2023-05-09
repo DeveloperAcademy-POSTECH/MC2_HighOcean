@@ -90,12 +90,12 @@
 		FFDCB8842A09F28200477C51 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				FFDCB8702A09F20F00477C51 /* ActivityView.swift */,
-				FFDCB8742A09F21C00477C51 /* FamilyDB.swift */,
+				FFDCB8802A09F25700477C51 /* ProfileView.swift */,
 				FFDCB8782A09F22C00477C51 /* NextAProfileView.swift */,
 				FFDCB87A2A09F23C00477C51 /* NextBProfileView.swift */,
 				FFDCB87C2A09F24300477C51 /* NextCProfileView.swift */,
-				FFDCB8802A09F25700477C51 /* ProfileView.swift */,
+				FFDCB8702A09F20F00477C51 /* ActivityView.swift */,
+				FFDCB8742A09F21C00477C51 /* FamilyDB.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -334,7 +334,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				/* DEVELOPMENT_ASSET_PATHS = "\"HighOcean/Preview Content\""; */
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -363,7 +362,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				/* DEVELOPMENT_ASSET_PATHS = "\"HighOcean/Preview Content\""; */
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
