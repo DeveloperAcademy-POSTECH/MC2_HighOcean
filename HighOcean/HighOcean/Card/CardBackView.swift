@@ -51,7 +51,7 @@ struct CardBackView: View {
                         card.isLiked.toggle()
                         cards.dataSort()
                     } label: {
-                        Text(card.isLiked ? "IconHeartFilled" : "IconHeartEmpty")
+                        Image(card.isLiked ? "IconHeartFilled" : "IconHeartEmpty")
                     }
                 }
                 Spacer()
@@ -75,6 +75,7 @@ struct CardBackView: View {
 
 struct CardBackView_Previews: PreviewProvider {
     static var previews: some View {
-        NewCardView()
+        CardBackView(degree: .constant(0), card: .constant(Cards().cards[0]))
+            .environmentObject(Cards())
     }
 }

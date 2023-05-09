@@ -82,6 +82,7 @@ struct CardFrontView: View {
 
 struct CardFrontView_Previews: PreviewProvider {
     static var previews: some View {
-        NewCardView()
+        CardFrontView(degree: .constant(0), card: .constant(Cards().cards[0]))
+            .environmentObject(Cards())
     }
 }
