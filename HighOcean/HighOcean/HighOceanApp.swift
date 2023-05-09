@@ -11,8 +11,12 @@ import SwiftUI
 struct HighOceanApp: App {
     var body: some Scene {
         WindowGroup {
+<<<<<<< HEAD
             ProfileView()
                 .environmentObject(user())
+=======
+            NewCardView()
+>>>>>>> origin/develop
         }
     }
 }
