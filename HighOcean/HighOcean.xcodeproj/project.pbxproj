@@ -65,6 +65,7 @@
 			children = (
 				FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */,
 				FF4087B02A01FC88003BED80 /* ContentView.swift */,
+<<<<<<< HEAD
 				E501BEF42A08FC6800FA4433 /* ProfileData.swift */,
 				2DB726492A0890FC007D7A17 /* Cards.swift */,
 				0A4791722A08A85B007E1B2F /* Card.swift */,
@@ -72,6 +73,10 @@
 				2DB726452A04C558007D7A17 /* CardBackView.swift */,
 				2DB7263D2A04B2DF007D7A17 /* CardFrontView.swift */,
 				2DB726432A04C515007D7A17 /* NewCardView.swift */,
+=======
+				996D01FB2A078822009F8FC8 /* TotalCardCollectionView.swift */,
+				996D01FF2A07F8D3009F8FC8 /* CollectionView.swift */,
+>>>>>>> 9-make-totalcardcollectionview
 				FF4087B22A01FC89003BED80 /* Assets.xcassets */,
 				FF4087B42A01FC89003BED80 /* Preview Content */,
 			);
@@ -157,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF4087AF2A01FC88003BED80 /* HighOceanApp.swift in Sources */,
+<<<<<<< HEAD
 				E501BEF52A08FC6800FA4433 /* ProfileData.swift in Sources */,
 				2DB726462A04C558007D7A17 /* CardBackView.swift in Sources */,
 				0A4791732A08A85B007E1B2F /* Card.swift in Sources */,
@@ -164,6 +170,10 @@
 				2DB7264A2A0890FC007D7A17 /* Cards.swift in Sources */,
 				2DB7263E2A04B2DF007D7A17 /* CardFrontView.swift in Sources */,
 				2DB726442A04C515007D7A17 /* NewCardView.swift in Sources */,
+=======
+				996D02002A07F8D3009F8FC8 /* CollectionView.swift in Sources */,
+				996D01FC2A078822009F8FC8 /* TotalCardCollectionView.swift in Sources */,
+>>>>>>> 9-make-totalcardcollectionview
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
