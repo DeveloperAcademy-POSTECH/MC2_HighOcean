@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CardFrontView: View {
     @Binding var degree : Double
+    @Binding var card: Card
     
     @State private var image = UIImage()
     @State private var createdDate = Date()
@@ -19,7 +20,7 @@ struct CardFrontView: View {
                 .fill(.white)
                 .shadow(radius: 3)
                 .frame(width: 292, height: 480)
-            Image(uiImage: self.image)
+            Image(card.image)
                 .resizable()
                 .frame(width: 254, height: 437)
             LinearGradient(
@@ -53,6 +54,18 @@ struct CardFrontView: View {
         }
         .padding(.bottom, 50)
         .frame(width: 254, height: 437)
-        }
     }
+    
+//    func remakeDate() -> String {
+//        let date = card.createdDate
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "dd"
+//        return formatter.string(from: date)
+//    }
+}
 
+struct CardFrontView_Previews: PreviewProvider {
+    static var previews: some View {
+        NewCardView()
+    }
+}
