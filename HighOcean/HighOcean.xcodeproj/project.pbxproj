@@ -7,26 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E501BEF52A08FC6800FA4433 /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E501BEF42A08FC6800FA4433 /* ProfileData.swift */; };
 		0A4791732A08A85B007E1B2F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4791722A08A85B007E1B2F /* Card.swift */; };
 		2D1953322A035B1500353602 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1953312A035B1500353602 /* CardView.swift */; };
 		2DB7263E2A04B2DF007D7A17 /* CardFrontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB7263D2A04B2DF007D7A17 /* CardFrontView.swift */; };
 		2DB726442A04C515007D7A17 /* NewCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB726432A04C515007D7A17 /* NewCardView.swift */; };
 		2DB726462A04C558007D7A17 /* CardBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB726452A04C558007D7A17 /* CardBackView.swift */; };
 		2DB7264A2A0890FC007D7A17 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB726492A0890FC007D7A17 /* Cards.swift */; };
+		9949A6AF2A09D63C00AB8800 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9949A6AE2A09D63C00AB8800 /* ActivityView.swift */; };
+		9949A6B12A09D68B00AB8800 /* FamilyDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9949A6B02A09D68B00AB8800 /* FamilyDB.swift */; };
+		9949A6B32A09D69A00AB8800 /* NextAProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9949A6B22A09D69A00AB8800 /* NextAProfileView.swift */; };
+		9949A6B52A09D69F00AB8800 /* NextBProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9949A6B42A09D69F00AB8800 /* NextBProfileView.swift */; };
+		9949A6B72A09D6A400AB8800 /* NextCProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9949A6B62A09D6A400AB8800 /* NextCProfileView.swift */; };
+		9949A6BB2A09D6CB00AB8800 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9949A6BA2A09D6CB00AB8800 /* ProfileView.swift */; };
 		FF4087AF2A01FC88003BED80 /* HighOceanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */; };
 		FF4087B32A01FC89003BED80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4087B22A01FC89003BED80 /* Assets.xcassets */; };
 		FF4087B62A01FC89003BED80 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4087B52A01FC89003BED80 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E501BEF42A08FC6800FA4433 /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
 		0A4791722A08A85B007E1B2F /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		2D1953312A035B1500353602 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		2DB7263D2A04B2DF007D7A17 /* CardFrontView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFrontView.swift; sourceTree = "<group>"; };
 		2DB726432A04C515007D7A17 /* NewCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardView.swift; sourceTree = "<group>"; };
 		2DB726452A04C558007D7A17 /* CardBackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBackView.swift; sourceTree = "<group>"; };
 		2DB726492A0890FC007D7A17 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		9949A6AE2A09D63C00AB8800 /* ActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityView.swift; path = HighOcean/ActivityView.swift; sourceTree = SOURCE_ROOT; };
+		9949A6B02A09D68B00AB8800 /* FamilyDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamilyDB.swift; sourceTree = "<group>"; };
+		9949A6B22A09D69A00AB8800 /* NextAProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextAProfileView.swift; sourceTree = "<group>"; };
+		9949A6B42A09D69F00AB8800 /* NextBProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextBProfileView.swift; sourceTree = "<group>"; };
+		9949A6B62A09D6A400AB8800 /* NextCProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextCProfileView.swift; sourceTree = "<group>"; };
+		9949A6BA2A09D6CB00AB8800 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		FF4087AB2A01FC88003BED80 /* HighOcean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HighOcean.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighOceanApp.swift; sourceTree = "<group>"; };
 		FF4087B22A01FC89003BED80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,26 +74,22 @@
 			isa = PBXGroup;
 			children = (
 				FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */,
-				FF4087B02A01FC88003BED80 /* ContentView.swift */,
-				E501BEF42A08FC6800FA4433 /* ProfileData.swift */,
+				9949A6BA2A09D6CB00AB8800 /* ProfileView.swift */,
+				9949A6B42A09D69F00AB8800 /* NextBProfileView.swift */,
+				9949A6B22A09D69A00AB8800 /* NextAProfileView.swift */,
+				9949A6B62A09D6A400AB8800 /* NextCProfileView.swift */,
+				9949A6AE2A09D63C00AB8800 /* ActivityView.swift */,
+				9949A6B02A09D68B00AB8800 /* FamilyDB.swift */,
+				2DB726432A04C515007D7A17 /* NewCardView.swift */,
+				2D1953312A035B1500353602 /* CardView.swift */,
 				2DB726492A0890FC007D7A17 /* Cards.swift */,
 				0A4791722A08A85B007E1B2F /* Card.swift */,
-				2D1953312A035B1500353602 /* CardView.swift */,
 				2DB726452A04C558007D7A17 /* CardBackView.swift */,
 				2DB7263D2A04B2DF007D7A17 /* CardFrontView.swift */,
-				2DB726432A04C515007D7A17 /* NewCardView.swift */,
 				FF4087B22A01FC89003BED80 /* Assets.xcassets */,
-				FF4087B42A01FC89003BED80 /* Preview Content */,
-			);
-			path = HighOcean;
-			sourceTree = "<group>";
-		};
-		FF4087B42A01FC89003BED80 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
 				FF4087B52A01FC89003BED80 /* Preview Assets.xcassets */,
 			);
-			path = "Preview Content";
+			path = HighOcean;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,8 +162,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9949A6B52A09D69F00AB8800 /* NextBProfileView.swift in Sources */,
+				9949A6B12A09D68B00AB8800 /* FamilyDB.swift in Sources */,
+				9949A6B32A09D69A00AB8800 /* NextAProfileView.swift in Sources */,
+				9949A6B72A09D6A400AB8800 /* NextCProfileView.swift in Sources */,
 				FF4087AF2A01FC88003BED80 /* HighOceanApp.swift in Sources */,
-				E501BEF52A08FC6800FA4433 /* ProfileData.swift in Sources */,
+				9949A6AF2A09D63C00AB8800 /* ActivityView.swift in Sources */,
+				9949A6BB2A09D6CB00AB8800 /* ProfileView.swift in Sources */,
 				2DB726462A04C558007D7A17 /* CardBackView.swift in Sources */,
 				0A4791732A08A85B007E1B2F /* Card.swift in Sources */,
 				2D1953322A035B1500353602 /* CardView.swift in Sources */,
