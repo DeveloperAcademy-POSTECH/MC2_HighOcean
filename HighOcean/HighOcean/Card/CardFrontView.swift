@@ -11,9 +11,6 @@ struct CardFrontView: View {
     @Binding var degree : Double
     @Binding var card: Card
     
-    @State private var image = UIImage()
-    @State private var createdDate = Date()
-    
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 20)
@@ -26,9 +23,9 @@ struct CardFrontView: View {
             LinearGradient(
                 gradient: Gradient(colors: [Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))]),
                 startPoint: .top, endPoint: .bottom)
-            .frame(width: 254, height: 437)
-            .opacity(0.3)
-            .blendMode(.multiply)
+                .frame(width: 254, height: 437)
+                .opacity(0.3)
+                .blendMode(.multiply)
             DateAndDay
         }
         .rotation3DEffect(Angle(degrees: degree), axis: (x: 0, y: 1, z: 0))

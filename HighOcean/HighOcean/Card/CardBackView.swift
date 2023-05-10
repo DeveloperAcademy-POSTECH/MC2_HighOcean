@@ -11,7 +11,7 @@ import SwiftUI
 
 struct CardBackView: View {
     
-    @Binding var degree : Double
+    @Binding var degree: Double
     @Binding var card: Card
     @EnvironmentObject var cards: Cards
     
