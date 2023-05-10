@@ -13,6 +13,7 @@
 		2DB726442A04C515007D7A17 /* NewCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB726432A04C515007D7A17 /* NewCardView.swift */; };
 		2DB726462A04C558007D7A17 /* CardBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB726452A04C558007D7A17 /* CardBackView.swift */; };
 		2DB7264A2A0890FC007D7A17 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB726492A0890FC007D7A17 /* Cards.swift */; };
+		62E351CD2A0B64A200899A46 /* TotalThumbnailCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E351CC2A0B64A200899A46 /* TotalThumbnailCardView.swift */; };
 		FF4087AF2A01FC88003BED80 /* HighOceanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */; };
 		FF4087B32A01FC89003BED80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4087B22A01FC89003BED80 /* Assets.xcassets */; };
 		FFDCB86F2A09F20A00477C51 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB86E2A09F20A00477C51 /* CollectionView.swift */; };
@@ -33,6 +34,7 @@
 		2DB726432A04C515007D7A17 /* NewCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardView.swift; sourceTree = "<group>"; };
 		2DB726452A04C558007D7A17 /* CardBackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBackView.swift; sourceTree = "<group>"; };
 		2DB726492A0890FC007D7A17 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		62E351CC2A0B64A200899A46 /* TotalThumbnailCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalThumbnailCardView.swift; sourceTree = "<group>"; };
 		FF4087AB2A01FC88003BED80 /* HighOcean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HighOcean.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighOceanApp.swift; sourceTree = "<group>"; };
 		FF4087B22A01FC89003BED80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				FFDCB8722A09F21600477C51 /* ContentView.swift */,
 				FFDCB8822A09F25C00477C51 /* TotalCardCollectionView.swift */,
 				FFDCB86E2A09F20A00477C51 /* CollectionView.swift */,
+				62E351CC2A0B64A200899A46 /* TotalThumbnailCardView.swift */,
 			);
 			path = TotalCard;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				FFDCB8752A09F21C00477C51 /* FamilyDB.swift in Sources */,
 				2DB726442A04C515007D7A17 /* NewCardView.swift in Sources */,
 				FFDCB87D2A09F24300477C51 /* NextCProfileView.swift in Sources */,
+				62E351CD2A0B64A200899A46 /* TotalThumbnailCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,7 +338,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				/* DEVELOPMENT_ASSET_PATHS = "\"HighOcean/Preview Content\""; */
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -363,7 +366,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				/* DEVELOPMENT_ASSET_PATHS = "\"HighOcean/Preview Content\""; */
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
