@@ -38,16 +38,16 @@ struct CardContentView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 NavigationLink(destination: CardPreView(content: $content, to: $to, from: $from)) {
                     Text("다음")
+                    }
                 }
-            }
             }
         }
     }
 
-struct Content_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            ContentView()
-        }.accentColor(Color("Accent"))
-    }
-}
+//struct Content_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationView {
+//            ContentView()
+//        }.accentColor(Color("Accent"))
+//    }
+//}

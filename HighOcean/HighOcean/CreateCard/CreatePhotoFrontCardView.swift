@@ -43,6 +43,13 @@ struct CreatePhotoFrontCardView: View {
             .sheet(isPresented: $isShowingImagePicker) {
                 ImagePicker(selectedImage: $selectedImage, isSelected: $isImagePick)
             }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: CardContentView()) {
+                        Text("다음")
+                        }
+                    }
+            }
         }
     }
 }

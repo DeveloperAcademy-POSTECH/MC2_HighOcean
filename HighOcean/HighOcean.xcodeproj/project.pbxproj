@@ -20,6 +20,8 @@
 		FFB969D12A0B789900086C18 /* CreatePhotoFrontCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969D02A0B789900086C18 /* CreatePhotoFrontCardView.swift */; };
 		FFB969D32A0B873A00086C18 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969D22A0B873A00086C18 /* PhotoPicker.swift */; };
 		FFB969D52A0BB6DE00086C18 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969D42A0BB6DE00086C18 /* SettingsView.swift */; };
+		FFB969DA2A0BBD4900086C18 /* CardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969D82A0BBD4900086C18 /* CardContentView.swift */; };
+		FFB969DB2A0BBD4900086C18 /* CardPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969D92A0BBD4900086C18 /* CardPreview.swift */; };
 		FFDCB86F2A09F20A00477C51 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB86E2A09F20A00477C51 /* CollectionView.swift */; };
 		FFDCB8712A09F20F00477C51 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8702A09F20F00477C51 /* ActivityView.swift */; };
 		FFDCB8732A09F21600477C51 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8722A09F21600477C51 /* ContentView.swift */; };
@@ -46,6 +48,8 @@
 		FFB969D02A0B789900086C18 /* CreatePhotoFrontCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePhotoFrontCardView.swift; sourceTree = "<group>"; };
 		FFB969D22A0B873A00086C18 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		FFB969D42A0BB6DE00086C18 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FFB969D82A0BBD4900086C18 /* CardContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardContentView.swift; sourceTree = "<group>"; };
+		FFB969D92A0BBD4900086C18 /* CardPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPreview.swift; sourceTree = "<group>"; };
 		FFDCB86E2A09F20A00477C51 /* CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		FFDCB8702A09F20F00477C51 /* ActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		FFDCB8722A09F21600477C51 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,8 +93,7 @@
 			children = (
 				FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */,
 				2DB726432A04C515007D7A17 /* NewCardView.swift */,
-				FFB969D02A0B789900086C18 /* CreatePhotoFrontCardView.swift */,
-				FFB969D22A0B873A00086C18 /* PhotoPicker.swift */,
+				FFB969DC2A0BBD5D00086C18 /* CreateCard */,
 				FFB969D42A0BB6DE00086C18 /* SettingsView.swift */,
 				FFB969942A0A2B4700086C18 /* Home */,
 				FFDCB8862A09F2E300477C51 /* TotalCard */,
@@ -108,6 +111,17 @@
 				FFB969922A0A2A9800086C18 /* EmojiButtonView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		FFB969DC2A0BBD5D00086C18 /* CreateCard */ = {
+			isa = PBXGroup;
+			children = (
+				FFB969D02A0B789900086C18 /* CreatePhotoFrontCardView.swift */,
+				FFB969D22A0B873A00086C18 /* PhotoPicker.swift */,
+				FFB969D82A0BBD4900086C18 /* CardContentView.swift */,
+				FFB969D92A0BBD4900086C18 /* CardPreview.swift */,
+			);
+			path = CreateCard;
 			sourceTree = "<group>";
 		};
 		FFDCB8842A09F28200477C51 /* Profile */ = {
@@ -225,6 +239,7 @@
 				FFB969932A0A2A9800086C18 /* EmojiButtonView.swift in Sources */,
 				FF4DAE7A2A0A16D200B2B546 /* HomeView.swift in Sources */,
 				0A4791732A08A85B007E1B2F /* Card.swift in Sources */,
+				FFB969DB2A0BBD4900086C18 /* CardPreview.swift in Sources */,
 				FFDCB87B2A09F23C00477C51 /* NextBProfileView.swift in Sources */,
 				FFDCB8792A09F22C00477C51 /* NextAProfileView.swift in Sources */,
 				FFDCB8812A09F25700477C51 /* ProfileView.swift in Sources */,
@@ -234,6 +249,7 @@
 				2DB7263E2A04B2DF007D7A17 /* CardFrontView.swift in Sources */,
 				FFDCB8752A09F21C00477C51 /* FamilyDB.swift in Sources */,
 				2DB726442A04C515007D7A17 /* NewCardView.swift in Sources */,
+				FFB969DA2A0BBD4900086C18 /* CardContentView.swift in Sources */,
 				FFDCB87D2A09F24300477C51 /* NextCProfileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
