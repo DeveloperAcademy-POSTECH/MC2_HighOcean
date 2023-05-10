@@ -10,7 +10,7 @@ import SwiftUI
 
 struct LikedCardCollection: View {
     
-    @Binding var card: Card
+//    @Binding var card: Card
     @State private var selectedCard: Card?
     @EnvironmentObject var cards: Cards
 
@@ -32,7 +32,7 @@ struct LikedCardCollection: View {
                             self.selectedCard = card
 //                            self.showModal = true
                         } label: {
-                            CardView(card: card)
+                            ThumbnailCardView(degree: .constant(0), card: $card)
                         }
                         .buttonStyle(PlainButtonStyle())
                     }
@@ -45,5 +45,25 @@ struct LikedCardCollection: View {
 //            .opacity(self.showModal ? 1 : 0)
 //            .animation(.easeInOut)
         }
+    }
+}
+
+
+//extension View {
+//    func snapshot() -> UIImage {
+//        let controller = UIHostingController(rootView: self.edgesIgnoringSafeArea(.all))
+//        let view = controller.view
+//
+//        let targetSize = controller.view.intrinsicContentSize
+//
+//        view?.bounds = CG
+//    }
+//}
+
+
+struct LikedCardCollection_Previews: PreviewProvider {
+    static var previews: some View {
+        LikedCardCollection()
+            .environmentObject(Cards())
     }
 }
