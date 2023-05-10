@@ -13,17 +13,17 @@ struct TotalThumbnailCardView: View {
     
     var body: some View {
         ZStack{
-            RoundedRectangle(cornerRadius: 20)
+            RoundedRectangle(cornerRadius: 11)
                 .fill(.white)
                 .shadow(radius: 3)
-                .frame(width: 144, height: 235)
+                .frame(width: 111, height: 181)
             Image(card.image)
                 .resizable()
-                .frame(width: 124, height: 213)
+                .frame(width: 97, height: 164)
 //            LinearGradient(
 //                gradient: Gradient(colors: [Color( colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)), Color( colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))]),
 //                startPoint: .top, endPoint: .bottom)
-//                .frame(width: 124, height: 213)
+//                .frame(width: 97, height: 164)
 //                .opacity(0.3)
 //                .blendMode(.multiply)
             DateAndDay
@@ -49,8 +49,8 @@ struct TotalThumbnailCardView: View {
                 .foregroundColor(Color("Secondary"))
                 .shadow(radius: 2)
         }
-        .padding(.bottom, 30)
-        .frame(width: 124, height: 213)
+        .padding(.bottom, 20)
+        .frame(width: 97, height: 164)
     }
     
     func remakedDate() -> String {

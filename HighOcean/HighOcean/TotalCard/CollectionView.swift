@@ -10,24 +10,24 @@ import SwiftUI
 struct CollectionView: View {
     
     @State private var selectedCard: Card?
-    @EnvironmentObject var cards: Cards
+    var cards: [Card]
     
-    let data = Array(1...1000).map { "목록 \($0)"}
+//    let data = Array(1...1000).map { "목록 \($0)"}
     let columns = [
-        GridItem(.flexible(maximum: 110)),
-        GridItem(.flexible(maximum: 110)),
-        GridItem(.flexible(maximum: 110)),
-        ]
+        GridItem(.flexible(maximum: 111)),
+        GridItem(.flexible(maximum: 111)),
+        GridItem(.flexible(maximum: 111)),
+    ]
     
     var body: some View {
     
         LazyVGrid(columns: columns, spacing: 26) {
 
-            ForEach($cards.recievedCards) { $card in
+            ForEach(cards) { card in
                 Button {
                     self.selectedCard = card
                 } label: {
-                    TotalThumbnailCardView(degree: .constant(0), card: $card)
+                    TotalThumbnailCardView(degree: .constant(0), card: .constant(card))
                 }
                 .buttonStyle(PlainButtonStyle())
             }
@@ -36,10 +36,10 @@ struct CollectionView: View {
         
     }
 }
-
-struct CollectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        CollectionView()
-            .environmentObject(Cards())
-    }
-}
+//
+//struct CollectionView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CollectionView(card: .constant(card().cards[0]))
+//            .environmentObject(Cards())
+//    }
+//}
