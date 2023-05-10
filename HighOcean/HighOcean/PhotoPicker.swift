@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ImagePicker: UIViewControllerRepresentable {
     @Binding var selectedImage: UIImage
+    @Binding var isSelected: Bool
     @Environment(\.presentationMode) private var presentationMode
     
     func makeCoordinator() -> Coordinator {
@@ -35,6 +36,7 @@ struct ImagePicker: UIViewControllerRepresentable {
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let image = info[.originalImage] as? UIImage {
                 parent.selectedImage = image
+                parent.isSelected = true
             }
             picker.dismiss(animated: true)
         }

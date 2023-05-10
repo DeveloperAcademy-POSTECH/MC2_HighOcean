@@ -9,7 +9,9 @@ import SwiftUI
 
 
 struct CreatePhotoFrontCardView: View {
-    @State private var isShowingImagePicker = false
+    @State private var position = CGSize.zero
+    @State private var isShowingImagePicker: Bool = false
+    @State private var isImagePick: Bool = false
     @State private var selectedImage: UIImage = (UIImage(named: "DefaultCover") ?? UIImage())
     
     var body: some View {
@@ -22,19 +24,24 @@ struct CreatePhotoFrontCardView: View {
                         .frame(width: 292, height: 480)
                     Image(uiImage: selectedImage)
                         .resizable()
+                        .aspectRatio(contentMode: .fill)
                         .frame(width: 254, height: 437)
-                    Image("CirclePlus")
-                        .resizable()
-                        .frame(width: 50,height: 50)
+                        .clipped()
+                    if !isImagePick {
+                        Image("CirclePlus")
+                            .resizable()
+                            .frame(width: 50,height: 50)
+                    }
                 }
                 .onTapGesture {
                     self.isShowingImagePicker = true
                 }
                 .padding(40)
-                Text("포토카드의 사진을 선택해주세요.")
+                Text(isImagePick ? "사진이 선택되었습니다.\n메세지를 쓰시려면 다음을 누르세요." : "포토카드의 사진을 선택해주세요.")
+                    .multilineTextAlignment(.center)
             }
             .sheet(isPresented: $isShowingImagePicker) {
-                ImagePicker(selectedImage: self.$selectedImage)
+                ImagePicker(selectedImage: $selectedImage, isSelected: $isImagePick)
             }
         }
     }
