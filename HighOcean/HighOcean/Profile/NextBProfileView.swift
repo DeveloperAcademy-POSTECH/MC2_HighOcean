@@ -157,27 +157,15 @@ struct NextBProfileView: View {
                         Text("퇴근시간 설정")
                             .font(.system(size: 18))
                         
-                        DatePicker("퇴근시간 설정", selection: $datepk)
-                            .datePickerStyle(WheelDatePickerStyle()).labelsHidden()
+                            DatePicker("Please enter a date", selection: $datepk,
+                                               displayedComponents: .hourAndMinute)
+                                        .datePickerStyle(WheelDatePickerStyle())
+                                        .labelsHidden()
                         
-                        
-                           
-//                        HStack(){
-//                            Picker(selection: .constant(1)/*@END_MENU_TOKEN@*/, label: /*@START_MENU_TOKEN@*/Text("Picker")) {
-//                                Text("1").tag(1)
-//                                Text("2").tag(2)
-//                            }
-//                            Spacer()
-//                            Picker(selection: .constant(1), label: Text("Picker")) {
-//                                Text("1").tag(1)
-//                                Text("2").tag(2)
-//                            }
-//                            Spacer()
-//                            Picker(selection: .constant(1)/*@END_MENU_TOKEN@*/, label: /*@START_MENU_TOKEN@*/Text("Picker")) {
-//                                Text("1").tag(1)
-//                                Text("2").tag(2)
-//                            }
-//                        }
+                        .frame(width: 350,height: 270)
+                        .background(Color.white)
+                        .cornerRadius(8)
+
                         
                     }
                     
