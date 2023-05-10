@@ -2,7 +2,13 @@ import SwiftUI
 
 struct NextBProfileView: View {
 
-    @State private var leftToggle = false
+    @State private var isSun = false
+    @State private var isMon = false
+    @State private var isTue = false
+    @State private var isWed = false
+    @State private var isThu = false
+    @State private var isFir = false
+    @State private var isSat = false
     
     var body: some View {
 
