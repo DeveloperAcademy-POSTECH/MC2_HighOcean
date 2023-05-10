@@ -49,7 +49,7 @@ struct CardBackView: View {
                 HStack{
                     Button {
                         card.isLiked.toggle()
-                        cards.dataSort()
+//                        cards.dataSort()
                     } label: {
                         Image(card.isLiked ? "IconHeartFilled" : "IconHeartEmpty")
                     }
