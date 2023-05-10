@@ -17,6 +17,8 @@
 		FF4087B32A01FC89003BED80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4087B22A01FC89003BED80 /* Assets.xcassets */; };
 		FF4DAE7A2A0A16D200B2B546 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4DAE792A0A16D200B2B546 /* HomeView.swift */; };
 		FFB969932A0A2A9800086C18 /* EmojiButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969922A0A2A9800086C18 /* EmojiButtonView.swift */; };
+		FFB969D12A0B789900086C18 /* CreatePhotoFrontCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969D02A0B789900086C18 /* CreatePhotoFrontCardView.swift */; };
+		FFB969D32A0B873A00086C18 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969D22A0B873A00086C18 /* PhotoPicker.swift */; };
 		FFDCB86F2A09F20A00477C51 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB86E2A09F20A00477C51 /* CollectionView.swift */; };
 		FFDCB8712A09F20F00477C51 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8702A09F20F00477C51 /* ActivityView.swift */; };
 		FFDCB8732A09F21600477C51 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8722A09F21600477C51 /* ContentView.swift */; };
@@ -40,6 +42,8 @@
 		FF4087B22A01FC89003BED80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF4DAE792A0A16D200B2B546 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FFB969922A0A2A9800086C18 /* EmojiButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiButtonView.swift; sourceTree = "<group>"; };
+		FFB969D02A0B789900086C18 /* CreatePhotoFrontCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePhotoFrontCardView.swift; sourceTree = "<group>"; };
+		FFB969D22A0B873A00086C18 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		FFDCB86E2A09F20A00477C51 /* CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		FFDCB8702A09F20F00477C51 /* ActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		FFDCB8722A09F21600477C51 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 			children = (
 				FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */,
 				2DB726432A04C515007D7A17 /* NewCardView.swift */,
+				FFB969D02A0B789900086C18 /* CreatePhotoFrontCardView.swift */,
+				FFB969D22A0B873A00086C18 /* PhotoPicker.swift */,
 				FFB969942A0A2B4700086C18 /* Home */,
 				FFDCB8862A09F2E300477C51 /* TotalCard */,
 				FFDCB8852A09F29E00477C51 /* Card */,
@@ -208,7 +214,9 @@
 				FFDCB86F2A09F20A00477C51 /* CollectionView.swift in Sources */,
 				FFDCB8732A09F21600477C51 /* ContentView.swift in Sources */,
 				FF4087AF2A01FC88003BED80 /* HighOceanApp.swift in Sources */,
+				FFB969D32A0B873A00086C18 /* PhotoPicker.swift in Sources */,
 				2DB726462A04C558007D7A17 /* CardBackView.swift in Sources */,
+				FFB969D12A0B789900086C18 /* CreatePhotoFrontCardView.swift in Sources */,
 				FFDCB8712A09F20F00477C51 /* ActivityView.swift in Sources */,
 				FFB969932A0A2A9800086C18 /* EmojiButtonView.swift in Sources */,
 				FF4DAE7A2A0A16D200B2B546 /* HomeView.swift in Sources */,
