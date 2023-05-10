@@ -2,15 +2,16 @@ import Foundation
 import SwiftUI
 
 class user : ObservableObject {
-    
     @Published var name = ""
     
 }
+
 //enum familyRole {
 //    case 엄마
 //    case 아빠
 //    case 아이
 //}
+
 //let familyrole: familyRole
 //var combacktime: Int
 //var connectrink: String

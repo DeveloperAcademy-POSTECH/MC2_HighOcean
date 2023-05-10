@@ -34,10 +34,6 @@ struct ProfileView: View {
                             .padding(.leading,16)
                             .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
                             .padding(EdgeInsets(top: 150, leading: 0, bottom: 0, trailing: 0))
-                        
-                        Text("\(userName.name)")
-                            
-                        
                     }
                     Spacer()
 
