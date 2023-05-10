@@ -9,9 +9,11 @@ import SwiftUI
 
 struct CollectionView: View {
     
-    var cards: [Card]
+    var cardArray: [Card]
     @State private var selectedCard: Card?
     @State private var showModal = false
+    @EnvironmentObject var cards: Cards
+
     
     
 //    let data = Array(1...1000).map { "목록 \($0)"}
@@ -26,7 +28,7 @@ struct CollectionView: View {
             ScrollView{
                 LazyVGrid(columns: columns, spacing: 26) {
 
-                    ForEach(cards) { card in
+                    ForEach(cardArray) { card in
                         Button {
                             self.selectedCard = card
                             self.showModal = true

@@ -50,9 +50,9 @@ struct cardsView : View {
         
         switch selectedOption {
         case .dis:
-            CollectionView(cards: cards.recievedCards)
+            CollectionView(cardArray: cards.recievedCards)
         case .out:
-            CollectionView(cards: cards.sentCards)
+            CollectionView(cardArray: cards.sentCards)
         }
     }
 }
