@@ -26,7 +26,7 @@ struct LikedCardCollection: View {
     var body: some View {
         ZStack {
             ScrollView {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 144))], spacing: 16) {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 144))], spacing: 18) {
                     ForEach($cards.likedCards) { $card in
                         Button {
                             self.selectedCard = card
