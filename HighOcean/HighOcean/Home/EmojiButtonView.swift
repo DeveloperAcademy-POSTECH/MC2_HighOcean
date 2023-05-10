@@ -35,8 +35,10 @@ struct EmojiButtonView: View {
                 Image("\(emojiImagename)")
                     .resizable()
                     .frame(width: 45, height: 45)
-                    .background(isSelected ? CircleView(color: Color("Primary30")) : CircleView(color: Color.clear))
+                    .background(isSelected ? CircleView(color: Color("Accent")) : CircleView(color: Color.clear))
                 Text("\(emotionText)")
+                    .foregroundColor(Color("Primary"))
+                    .bold()
             }
             
         }
