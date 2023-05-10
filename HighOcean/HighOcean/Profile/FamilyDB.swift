@@ -2,7 +2,6 @@ import Foundation
 import SwiftUI
 
 class user : ObservableObject {
-    
     @Published var name = ""
     
 }
