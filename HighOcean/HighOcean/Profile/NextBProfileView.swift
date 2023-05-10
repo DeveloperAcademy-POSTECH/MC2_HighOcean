@@ -10,6 +10,9 @@ struct NextBProfileView: View {
     @State private var isFir = false
     @State private var isSat = false
     
+    @State private var datepk = Date()
+      @State var selectedColor = ""
+    
     var body: some View {
 
         ZStack(){
@@ -39,34 +42,142 @@ struct NextBProfileView: View {
                             .font(.system(size: 18))
                         
                         HStack(){
-                            Button("일"){}
-                            Button("월"){}
-                            Button("화"){}
-                            Button("수"){}
-                            Button("목"){}
-                            Button("금"){}
-                            Button("토"){}
+                            
+                            Button(action: {
+                                self.isSun.toggle()
+                            }) {
+                                ZStack(){
+                                    Circle()
+                                        .fill(self.isSun ? Color("Secondary") : Color.clear )
+            
+                                    Text("일")
+                                        .foregroundColor(self.isSun ? Color("Accent") : Color("Primary"))
+                                        .font(.system(size: 20))
+                                        .fontWeight(.bold)
+                                }
+                            }
+                            .frame(width: 40, height: 40)
+                            
+                            Button(action: {
+                                self.isMon.toggle()
+                            }) {
+                                ZStack(){
+                                    Circle()
+                                        .fill(self.isMon ? Color("Secondary") : Color.clear )
+            
+                                    Text("월")
+                                        .foregroundColor(self.isMon ? Color("Accent") : Color("Primary"))
+                                        .font(.system(size: 20))
+                                        .fontWeight(.bold)
+                                }
+                            }
+                            .frame(width: 40, height: 40)
+                            
+                            Button(action: {
+                                self.isTue.toggle()
+                            }) {
+                                ZStack(){
+                                    Circle()
+                                        .fill(self.isTue ? Color("Secondary") : Color.clear )
+            
+                                    Text("화")
+                                        .foregroundColor(self.isTue ? Color("Accent") : Color("Primary"))
+                                        .font(.system(size: 20))
+                                        .fontWeight(.bold)
+                                }
+                            }
+                            .frame(width: 40, height: 40)
+                            
+                            Button(action: {
+                                self.isWed.toggle()
+                            }) {
+                                ZStack(){
+                                    Circle()
+                                        .fill(self.isWed ? Color("Secondary") : Color.clear )
+            
+                                    Text("수")
+                                        .foregroundColor(self.isWed ? Color("Accent") : Color("Primary"))
+                                        .font(.system(size: 20))
+                                        .fontWeight(.bold)
+                                }
+                            }
+                            .frame(width: 40, height: 40)
+                            
+                            Button(action: {
+                                self.isThu.toggle()
+                            }) {
+                                ZStack(){
+                                    Circle()
+                                        .fill(self.isThu ? Color("Secondary") : Color.clear )
+            
+                                    Text("목")
+                                        .foregroundColor(self.isThu ? Color("Accent") : Color("Primary"))
+                                        .font(.system(size: 20))
+                                        .fontWeight(.bold)
+                                }
+                            }
+                            .frame(width: 40, height: 40)
+                            
+                            Button(action: {
+                                self.isFir.toggle()
+                            }) {
+                                ZStack(){
+                                    Circle()
+                                        .fill(self.isFir ? Color("Secondary") : Color.clear )
+            
+                                    Text("금")
+                                        .foregroundColor(self.isFir ? Color("Accent") : Color("Primary"))
+                                        .font(.system(size: 20))
+                                        .fontWeight(.bold)
+                                }
+                            }
+                            .frame(width: 40, height: 40)
+                            
+                            Button(action: {
+                                self.isSat.toggle()
+                            }) {
+                                ZStack(){
+                                    Circle()
+                                        .fill(self.isSat ? Color("Secondary") : Color.clear )
+            
+                                    Text("토")
+                                        .foregroundColor(self.isSat ? Color("Accent") : Color("Primary"))
+                                        .font(.system(size: 20))
+                                        .fontWeight(.bold)
+                                }
+                            }
+                            .frame(width: 40, height: 40)
+                        
                         }
                         .frame(width: 350, height: 97.0)
+                        .cornerRadius(15)
+                        .background(Color.white)
+
                         
                         Text("퇴근시간 설정")
                             .font(.system(size: 18))
-                        HStack(){
-                            Picker(selection: .constant(1)/*@END_MENU_TOKEN@*/, label: /*@START_MENU_TOKEN@*/Text("Picker")) {
-                                Text("1").tag(1)
-                                Text("2").tag(2)
-                            }
-                            Spacer()
-                            Picker(selection: .constant(1), label: Text("Picker")) {
-                                Text("1").tag(1)
-                                Text("2").tag(2)
-                            }
-                            Spacer()
-                            Picker(selection: .constant(1)/*@END_MENU_TOKEN@*/, label: /*@START_MENU_TOKEN@*/Text("Picker")) {
-                                Text("1").tag(1)
-                                Text("2").tag(2)
-                            }
-                        }
+                        
+                        DatePicker("퇴근시간 설정", selection: $datepk)
+                            .datePickerStyle(WheelDatePickerStyle()).labelsHidden()
+                        
+                        
+                           
+//                        HStack(){
+//                            Picker(selection: .constant(1)/*@END_MENU_TOKEN@*/, label: /*@START_MENU_TOKEN@*/Text("Picker")) {
+//                                Text("1").tag(1)
+//                                Text("2").tag(2)
+//                            }
+//                            Spacer()
+//                            Picker(selection: .constant(1), label: Text("Picker")) {
+//                                Text("1").tag(1)
+//                                Text("2").tag(2)
+//                            }
+//                            Spacer()
+//                            Picker(selection: .constant(1)/*@END_MENU_TOKEN@*/, label: /*@START_MENU_TOKEN@*/Text("Picker")) {
+//                                Text("1").tag(1)
+//                                Text("2").tag(2)
+//                            }
+//                        }
                         
                     }
                     
