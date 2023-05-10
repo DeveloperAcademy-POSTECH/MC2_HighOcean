@@ -20,6 +20,7 @@ struct CollectionView: View {
     @State private var cardFormA = false
     @State private var cardFormB = false
     @State private var cardFormC = false
+    
     var body: some View {
     
         LazyVGrid(columns: columns, spacing: 26) {
