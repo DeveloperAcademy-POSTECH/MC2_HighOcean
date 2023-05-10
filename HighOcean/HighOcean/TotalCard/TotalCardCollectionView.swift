@@ -50,15 +50,9 @@ struct cardsView : View {
         
         switch selectedOption {
         case .dis:
-            ScrollView{
-                CollectionView(cards: cards.recievedCards)
-
-            }
+            CollectionView(cards: cards.recievedCards)
         case .out:
-            ScrollView{
-                CollectionView(cards: cards.sentCards)
-            }
-            
+            CollectionView(cards: cards.sentCards)
         }
     }
 }
@@ -68,5 +62,6 @@ struct cardsView : View {
 struct TotalCardCollectionView_Previews: PreviewProvider {
     static var previews: some View {
         TotalCardCollectionView()
+            .environmentObject(Cards())
     }
 }
