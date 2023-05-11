@@ -9,40 +9,68 @@ import SwiftUI
 
 
 struct HomeView: View {
-    private var cards = Cards()
+    var cards = Cards()
+    @State var user: User
+    
     @State private var selectedButtonIndex: Int?
     @State private var isNewCards: Bool = false
+    @State private var isButtonEnabled = false
+    
     var body: some View {
         ZStack {
             Color("Secondary").ignoresSafeArea()
             VStack {
                 ZStack {
-                    RoundedRectangle(cornerRadius: 20)
+                    RoundedRectangle(cornerRadius: 10)
                         .fill(Color.white)
                         .frame(width: 369, height: 182)
-                    VStack(alignment: .leading) {
-                        Text("지금 무슨 기분이야?")
-                            .bold()
-                            .foregroundColor(.black)
-                            .font(.system(size: 21))
-                        HStack {
-                            EmojiButtonView(buttonIndex: 0, emotionText: "행복해", emojiImagename: "happy", selectedButtonIndex: $selectedButtonIndex)
-                            Spacer()
-                            EmojiButtonView(buttonIndex: 1, emotionText: "신나", emojiImagename: "excited", selectedButtonIndex: $selectedButtonIndex)
-                            Spacer()
-                            EmojiButtonView(buttonIndex: 2, emotionText: "그저그래", emojiImagename: "soso", selectedButtonIndex: $selectedButtonIndex)
-                            Spacer()
-                            EmojiButtonView(buttonIndex: 3, emotionText: "화나", emojiImagename: "mad", selectedButtonIndex: $selectedButtonIndex)
-                            Spacer()
-                            EmojiButtonView(buttonIndex: 4, emotionText: "슬퍼", emojiImagename: "sad", selectedButtonIndex: $selectedButtonIndex)
+                    if user.familyRule == "아이" {
+                        VStack(alignment: .leading) {
+                            Text("지금 무슨 기분이야?")
+                                .bold()
+                                .foregroundColor(Color("Primary"))
+                                .font(.system(size: 21))
+                            HStack {
+                                EmojiButtonView(buttonIndex: 0, emotionText: "행복해", emojiImagename: "happy", selectedButtonIndex: $selectedButtonIndex)
+                                Spacer()
+                                EmojiButtonView(buttonIndex: 1, emotionText: "신나", emojiImagename: "excited", selectedButtonIndex: $selectedButtonIndex)
+                                Spacer()
+                                EmojiButtonView(buttonIndex: 2, emotionText: "그저그래", emojiImagename: "soso", selectedButtonIndex: $selectedButtonIndex)
+                                Spacer()
+                                EmojiButtonView(buttonIndex: 3, emotionText: "화나", emojiImagename: "mad", selectedButtonIndex: $selectedButtonIndex)
+                                Spacer()
+                                EmojiButtonView(buttonIndex: 4, emotionText: "슬퍼", emojiImagename: "sad", selectedButtonIndex: $selectedButtonIndex)
+                            }
+                            
                         }
-                        
+                        .padding(28)
+                    } else {
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text("평소보다")
+                                    .bold()
+                                    .foregroundColor(Color("Primary"))
+                                    .font(.system(size: 21))
+                                Spacer()
+                                Text("늦은 귀가 Mode")
+                                    .bold()
+                                    .foregroundColor(Color("Primary"))
+                                    .font(.system(size: 21))
+                            }
+                            .padding(EdgeInsets(top: 46, leading: 17, bottom: 46, trailing: 23))
+                            EmojiButtonView(buttonIndex: 0, emotionText: "정시 퇴근", emojiImagename: "happy", selectedButtonIndex: $selectedButtonIndex)
+                            Spacer()
+                            EmojiButtonView(buttonIndex: 1, emotionText: "야근각", emojiImagename: "mad", selectedButtonIndex: $selectedButtonIndex)
+                        }
+                        .padding(28)
                     }
-                    .padding(28)
+                }
+                .onChange(of: selectedButtonIndex ?? 0) { newMode in
+                    user.mode = newMode
                 }
                 
                 ZStack {
-                    RoundedRectangle(cornerRadius: 20)
+                    RoundedRectangle(cornerRadius: 10)
                         .fill(Color.white)
                         .frame(width: 369, height: 308)
                     VStack {
@@ -51,7 +79,7 @@ struct HomeView: View {
                                 .font(.system(size: 17))
                                 .bold()
                             +
-                            Text("오션")
+                            Text("\(user.name)")
                                 .font(.system(size: 17))
                                 .foregroundColor(Color("Green"))
                                 .bold()
@@ -68,16 +96,18 @@ struct HomeView: View {
                             .scaledToFit()
                         NavigationLink(destination: NewCardView()) {
                             ZStack {
-                                RoundedRectangle(cornerRadius: 20)
+                                RoundedRectangle(cornerRadius: 10)
                                     .fill(isNewCards ? Color("Accent") : Color("Disabled"))
                                     .frame(width: 349, height: 54)
                                 Text("새 카드 확인하기")
+                                    .fontWeight(.semibold)
                                     .foregroundColor(.white)
                                     .font(.system(size: 18))
                             }
                         }
+                        .disabled(!isNewCards)
                     }
-                    .padding(10)
+                    .padding(21)
                 }
                 .onAppear{
                     print(cards.recievedCards.count)
@@ -86,35 +116,37 @@ struct HomeView: View {
                     }
                 }
                 
-                HStack {
+                HStack(alignment: .center) {
                     VStack {
                         NavigationLink(destination: Likedcardcollectionview().environmentObject(cards)) {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 20)
+                            ZStack(alignment: .leading) {
+                                RoundedRectangle(cornerRadius: 10)
                                     .fill(Color.white)
                                     .frame(width: 172, height: 86)
-                                HStack {
+                                HStack(alignment: .center) {
                                     Image("Book")
                                         .resizable()
                                         .frame(width: 39, height: 39)
-                                    Spacer()
+                                        .padding(.trailing, 12)
                                     Text("저장한 카드")
+                                        .fontWeight(.semibold)
                                         .foregroundColor(.black)
                                 }
                                 .padding(19)
                             }
                         }
-                        NavigationLink(destination: TotalCardCollectionView()          .environmentObject(cards)) {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 20)
+                        NavigationLink(destination: TotalCardCollectionView().environmentObject(cards)) {
+                            ZStack(alignment: .leading) {
+                                RoundedRectangle(cornerRadius: 10)
                                     .fill(Color.white)
                                     .frame(width: 172, height: 86)
                                 HStack {
                                     Image("Box")
                                         .resizable()
-                                        .frame(width: 39, height: 39)
-                                    Spacer()
+                                        .frame(width: 40, height: 34)
+                                        .padding(.trailing, 12)
                                     Text("전체 카드")
+                                        .fontWeight(.semibold)
                                         .foregroundColor(.black)
                                 }
                                 .padding(19)
@@ -124,13 +156,13 @@ struct HomeView: View {
                     Spacer()
                     NavigationLink(destination:CreatePhotoFrontCardView()) {
                         ZStack {
-                            RoundedRectangle(cornerRadius: 20)
-                                .fill(Color("Accent"))
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(isButtonEnabled ? Color("Accent") : Color("Disabled"))
                                 .frame(width: 172, height: 185)
                             VStack{
                                 Text("카드보내기")
+                                    .fontWeight(.semibold)
                                     .foregroundColor(.white)
-                                    .bold()
                                     .font(.system(size: 18))
                                 Image("CardSend")
                                     .resizable()
@@ -139,10 +171,14 @@ struct HomeView: View {
                                     .foregroundColor(.white)
                                     .font(.system(size: 14))
                             }
-                            
                         }
                     }
+                    .onAppear {
+                        updateButtonAvailability()
+                    }
+                    .disabled(!isButtonEnabled)
                 }
+                .padding(12)
             }
             .padding(12)
             .toolbar {
@@ -152,20 +188,27 @@ struct HomeView: View {
                         .frame(width: 137, height: 29)
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: SettingsView()) {
+                    NavigationLink(destination: SettingsView(user: user)) {
                         Image(systemName: "gearshape.fill")
                             .foregroundColor(Color("Primary"))
                     }
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
+    }
+    
+    private func updateButtonAvailability() {
+        let currentTime = Date()
+        let twoHoursLater = Calendar.current.date(byAdding: .hour, value: 2, to: user.time)!
+        isButtonEnabled = user.time <= currentTime && currentTime <= twoHoursLater
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            HomeView()
+            HomeView(user: User(name: "Ocean", date: [false, true, true, true, true, true, false], time: Date(), familyRule: "부모", isAlarm: true))
         }
     }
 }
