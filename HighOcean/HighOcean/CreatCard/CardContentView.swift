@@ -47,7 +47,7 @@ struct CardContentView: View {
 struct Content_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ContentView()
+            CardContentView()
         }.accentColor(Color("Accent"))
     }
 }
