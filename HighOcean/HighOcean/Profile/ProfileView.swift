@@ -15,7 +15,6 @@ struct ProfileView: View {
     
             ZStack(){
                 Color("Secondary").ignoresSafeArea()
-                
                 VStack(alignment: .leading){
                     VStack(alignment: .leading) {
                         Text("반가워요!")
@@ -36,8 +35,6 @@ struct ProfileView: View {
                             .padding(EdgeInsets(top: 150, leading: 0, bottom: 0, trailing: 0))
                     }
                     Spacer()
-
-
                     NavigationLink(destination: NextAProfileView(userName: userName)) {
                         Text("다음")
                             .frame(width: 354.0, height:54.0)
