@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @EnvironmentObject var userName: user
-    
+    @State private var userName: String = ""
     
     var body: some View {
         NavigationView{
@@ -30,7 +29,7 @@ struct ProfileView: View {
                             .fontWeight(.bold)
                             .foregroundColor(Color("Primary"))
                         
-                        TextField("Ocean", text: $userName.name)
+                        TextField("Ocean", text: $userName)
                             .frame(width: 338.0, height:62.0)
                             .padding(.leading,16)
                             .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
@@ -39,19 +38,19 @@ struct ProfileView: View {
                     Spacer()
 
 
-                    NavigationLink(destination: NextAProfileView()){
+                    NavigationLink(destination: NextAProfileView(userName: userName)) {
                         Text("다음")
                             .frame(width: 354.0, height:54.0)
                             .font(.system(size: 18))
-                            .background(Color("Accent"))
+                            .background(userName.isEmpty ? Color("Disabled") : Color("Accent"))
                             .foregroundColor(Color.white)
                             .cornerRadius(10)
                     }
+                    .disabled(userName.isEmpty)
                 }
+                .padding(20)
             }
-                
         }
-        
     }
 }
 
@@ -59,6 +58,5 @@ struct ProfileView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
-            .environmentObject(user())
     }
 }

@@ -9,9 +9,12 @@ import SwiftUI
 
 
 struct HomeView: View {
-    private var cards = Cards()
+    var cards = Cards()
+    let user: User
+    
     @State private var selectedButtonIndex: Int?
     @State private var isNewCards: Bool = false
+    
     var body: some View {
         ZStack {
             Color("Secondary").ignoresSafeArea()
@@ -159,13 +162,14 @@ struct HomeView: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            HomeView()
+            HomeView(user: User(name: "Ocean",date: [false, true, true, true, true, true, false], time: Date(), familyRule: "부모"))
         }
     }
 }

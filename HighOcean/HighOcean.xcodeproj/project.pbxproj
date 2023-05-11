@@ -28,7 +28,7 @@
 		FFB969E92A0C6CF900086C18 /* ThumbnailCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969E72A0C6CF900086C18 /* ThumbnailCardView.swift */; };
 		FFB969EC2A0C6D9500086C18 /* TotalThumbnailCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969EB2A0C6D9500086C18 /* TotalThumbnailCardView.swift */; };
 		FFDCB8712A09F20F00477C51 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8702A09F20F00477C51 /* ActivityView.swift */; };
-		FFDCB8752A09F21C00477C51 /* FamilyDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8742A09F21C00477C51 /* FamilyDB.swift */; };
+		FFDCB8752A09F21C00477C51 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8742A09F21C00477C51 /* User.swift */; };
 		FFDCB8792A09F22C00477C51 /* NextAProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8782A09F22C00477C51 /* NextAProfileView.swift */; };
 		FFDCB87B2A09F23C00477C51 /* NextBProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB87A2A09F23C00477C51 /* NextBProfileView.swift */; };
 		FFDCB87D2A09F24300477C51 /* NextCProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB87C2A09F24300477C51 /* NextCProfileView.swift */; };
@@ -60,7 +60,7 @@
 		FFB969E72A0C6CF900086C18 /* ThumbnailCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailCardView.swift; sourceTree = "<group>"; };
 		FFB969EB2A0C6D9500086C18 /* TotalThumbnailCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalThumbnailCardView.swift; sourceTree = "<group>"; };
 		FFDCB8702A09F20F00477C51 /* ActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
-		FFDCB8742A09F21C00477C51 /* FamilyDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamilyDB.swift; sourceTree = "<group>"; };
+		FFDCB8742A09F21C00477C51 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FFDCB8782A09F22C00477C51 /* NextAProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextAProfileView.swift; sourceTree = "<group>"; };
 		FFDCB87A2A09F23C00477C51 /* NextBProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextBProfileView.swift; sourceTree = "<group>"; };
 		FFDCB87C2A09F24300477C51 /* NextCProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextCProfileView.swift; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 				FFDCB87A2A09F23C00477C51 /* NextBProfileView.swift */,
 				FFDCB87C2A09F24300477C51 /* NextCProfileView.swift */,
 				FFDCB8702A09F20F00477C51 /* ActivityView.swift */,
-				FFDCB8742A09F21C00477C51 /* FamilyDB.swift */,
+				FFDCB8742A09F21C00477C51 /* User.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -269,7 +269,7 @@
 				FFDCB8832A09F25C00477C51 /* TotalCardCollectionView.swift in Sources */,
 				FFB969EC2A0C6D9500086C18 /* TotalThumbnailCardView.swift in Sources */,
 				2DB7263E2A04B2DF007D7A17 /* CardFrontView.swift in Sources */,
-				FFDCB8752A09F21C00477C51 /* FamilyDB.swift in Sources */,
+				FFDCB8752A09F21C00477C51 /* User.swift in Sources */,
 				2DB726442A04C515007D7A17 /* NewCardView.swift in Sources */,
 				FFB969E12A0C6C9400086C18 /* CardContentView.swift in Sources */,
 				FFDCB87D2A09F24300477C51 /* NextCProfileView.swift in Sources */,

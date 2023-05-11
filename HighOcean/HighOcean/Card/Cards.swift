@@ -7,14 +7,9 @@
 
 import Foundation
 
-struct User {
-    let name:String
-}
-
-
 class Cards: ObservableObject {
     
-    let currentUser: User = User(name: "지호")
+//    let currentUser: User?
     
     @Published var uncheckedCards: [Card] = []
     @Published var sentCards: [Card] = []
@@ -35,12 +30,12 @@ class Cards: ObservableObject {
         self.uncheckedCards = cards
             .filter { !$0.isChecked }                             // 확인한 카드 필터링
             .sorted{ $0.createdDate > $1.createdDate }          // 최신순 소팅
-        self.sentCards = cards
-            .filter { $0.creator == currentUser.name }            // 보낸 카드 필터링
-            .sorted{ $0.createdDate > $1.createdDate }          // 최신순 소팅
-        self.recievedCards = cards
-            .filter { $0.creator != currentUser.name }            // 받은 카드 필터링
-            .sorted{ $0.createdDate > $1.createdDate }            // 최신순 소팅
+//        self.sentCards = cards
+//            .filter { $0.creator == currentUser.name }            // 보낸 카드 필터링
+//            .sorted{ $0.createdDate > $1.createdDate }          // 최신순 소팅
+//        self.recievedCards = cards
+//            .filter { $0.creator != currentUser.name }            // 받은 카드 필터링
+//            .sorted{ $0.createdDate > $1.createdDate }            // 최신순 소팅
         self.likedCards = cards
             .filter { $0.isLiked }                                // 좋아요한 카드 필터링
             .sorted{ $0.createdDate > $1.createdDate }            // 최신순 소팅
