@@ -5,58 +5,46 @@ struct LikedCardCollection: View {
 
     @State private var selectedCard: Card?
     @EnvironmentObject var cards: Cards
+    private var likedCards: [Card] {
+        return cards.likedCards
+    }
+    private var likedCardsPageCount: Int {
+        let likeCardsCount: Int =  likedCards.count
+        return Int(ceil(Float(likeCardsCount)/4.0))
+    }
     
     let columns = [
             GridItem(.adaptive(minimum: 140))
     ]
     
     var body: some View {
-        
-        
         ZStack{
             Color("Secondary").ignoresSafeArea()
             Image("likecardBG")
             
                         
             TabView{
-                ForEach(0..<cards.likedCards.count/4, id: \.self) { index in
+                ForEach(0..<likedCardsPageCount, id: \.self) { index in
                     let startIndex = index * 4
                     let endIndex = min(startIndex + 4, cards.likedCards.count)
                     let pageItems = cards.likedCards[startIndex..<endIndex]
-    //                LikedCardCollection().environmentObject(Cards())
-                    //그리드
                     LazyVGrid(columns: columns, spacing: 20){
-                        ForEach(0..<pageItems.count, id: \.self) { index in
+                        ForEach(pageItems, id: \.self) { card in
                             Button {
                                 self.selectedCard = pageItems[index]
                             } label: {
-                                Text("\(index)")
-                                ThumbnailCardView(degree: .constant(0), card: .constant(pageItems[index]))
+                                ThumbnailCardView(degree: .constant(0), card: .constant(card))
                             }
                             .buttonStyle(PlainButtonStyle())
                         }
                     }
                 }
-
-//                ForEach($cards.likedCards) { $card in
-//                    Button {
-//                        self.selectedCard = card
-//                    } label: {
-//                        ThumbnailCardView(degree: .constant(0), card: $card)
-//                    }
-//                    .buttonStyle(PlainButtonStyle())
-//
-//                }
-                
-                
             }
             .tabViewStyle(PageTabViewStyle())
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
             .offset(y: 16)
-            
         }
         .navigationTitle("저장한 카드")
-       
     }
 }
 
