@@ -12,14 +12,14 @@ struct CardPreView: View {
     @Binding var to : String
     @Binding var from : String
     @State private var showingAlert = false
-    
-init(context: String, image: String, createdDate: String, from: String, to: String, creator: String, isLiked: Bool, isChecked: Bool, show: Bool){   }
+    @State var newcard = Card(context: "", image: "", createdDate: "", from: "", to: "", creator: "", isLiked: false, isChecked: false, show: false)
     
     var body: some View {
         ZStack {
             Color("Secondary")
             .ignoresSafeArea()
-            Text("반가워요! \(content)")
+            CardView(card: newcard)
+
             .navigationTitle("미리보기")
             .navigationBarTitleDisplayMode(.inline)
             .toolbarRole(.editor)

@@ -58,6 +58,8 @@ struct CreatePhotoFrontCardView: View {
 
 struct CreatePhotoFrontCardView_Previews: PreviewProvider {
     static var previews: some View {
-        CreatePhotoFrontCardView()
+        NavigationView{
+            CreatePhotoFrontCardView()
+        }
     }
 }

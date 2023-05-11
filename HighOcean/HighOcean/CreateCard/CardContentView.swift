@@ -15,8 +15,9 @@ struct CardContentView: View {
     @State var from: String = ""
     var body: some View {
         VStack {
-            Text("질문이 들어갈 구역입니다. /사랑이 담긴 말을 전해주세요.")
+            Text("질문이 들어갈 구역입니다. \n사랑이 담긴 말을 전해주세요.")
                 .frame(alignment: .leading)
+            
             TextEditor(text: $content)
                 .padding()
                 .background(.white)
@@ -27,6 +28,7 @@ struct CardContentView: View {
             Spacer()
             Text("받는 사람")
                 .frame(alignment: .leading)
+            
             TextField("애칭을 불러주세요", text: $to)
                 .padding()
                 .background(Color("Secondary"))
@@ -36,6 +38,7 @@ struct CardContentView: View {
             Spacer()
             Text("보내는 사람")
                 .frame(alignment: .leading)
+            
             TextField("누구인지 밝혀주세요", text: $from)
                 .padding()
                 .background(Color("Secondary"))
@@ -64,3 +67,4 @@ struct Content_Previews: PreviewProvider {
             CardContentView()
         }    }
 }
+
