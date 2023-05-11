@@ -13,9 +13,10 @@ struct LikedCardCollection: View {
         return Int(ceil(Float(likeCardsCount)/4.0))
     }
     
-    let columns = [
-            GridItem(.adaptive(minimum: 140))
-    ]
+    let columns: [GridItem] = [
+            GridItem(.flexible(maximum: 120), spacing: 40, alignment: nil),
+            GridItem(.gitflexible(maximum: 120), spacing: 40, alignment: nil)
+        ]
     
     var body: some View {
         ZStack{
