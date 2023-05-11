@@ -3,6 +3,10 @@ import SwiftUI
 struct NextAProfileView: View {
     
     @EnvironmentObject var userName: user
+//    @EnvironmentObject var ParentsID: user
+    
+    @State private var isParents = false
+    @State private var isChild = false
     
     var body: some View {
 
@@ -11,7 +15,7 @@ struct NextAProfileView: View {
             
             VStack(alignment: .leading){
                 VStack(alignment: .leading) {
-                    Text("님은")
+                    Text("\(userName.name) 님은")
                         .font(.system(size: 28))
                         .fontWeight(.bold)
                         .foregroundColor(Color("Primary"))
@@ -27,33 +31,60 @@ struct NextAProfileView: View {
                         .foregroundColor(Color("Disabled"))
                         .padding(EdgeInsets(top: 18, leading: 0, bottom: 0, trailing: 0))
                     
-                    VStack(spacing: 24){
-                        Button("어무이") {
-                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/ // 엄마
-                        }
-                        .frame(width: 340.0, height:80.0)
-                        .background(Color.white)
+                    HStack(spacing: 24){
                         
-                        Button("아뷰지") {
-                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/// 아빠
-                        }
-                        .frame(width: 340.0, height:80.0)
-                        .background(Color.white)
                         
-                        Button("아이") {
-                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*///아이 7
+                        
+                        //부모 버튼
+                        Button(action: {
+                            self.isParents.toggle()
+                            self.isChild = false
+                        }) {
+                            ZStack(){
+                                RoundedRectangle(cornerRadius: 8).stroke(self.isParents ? Color("Accent") : Color.clear, lineWidth: 4)
+                                
+                                Image("Oval")
+                                    .offset(y: -10)
+                                    .opacity(self.isParents ? 1.0 : 0.0)
+                                
+                                Image("parentsCircle")
+                                Text("부모")
+                                    .foregroundColor(self.isParents ? Color("Accent") : Color("Primary"))
+                                    .offset(y: 70)
+                            }
                         }
-                        .frame(width: 340.0, height:80.0)
+                        .frame(width: 170.0, height:194.0)
                         .background(Color.white)
+                        .cornerRadius(8)
+
+                        //아이 버튼
+                        Button(action: {
+                            self.isChild.toggle()
+                            self.isParents = false
+                        }) {
+                            ZStack(){
+                                RoundedRectangle(cornerRadius: 8).stroke(self.isChild ? Color("Accent") : Color.clear, lineWidth: 4)
+                                
+                                Image("Oval")
+                                    .offset(y: -4)
+                                    .opacity(self.isChild ? 1.0 : 0.0)
+                                
+                                Image("childCircle")
+                                Text("아이")
+                                    .foregroundColor(self.isChild ? Color("Accent") : Color("Primary"))
+                                    .offset(y: 70)
+                            }
+                        }
+                        .frame(width: 170.0, height:194.0)
+                        .background(Color.white)
+                        .cornerRadius(8)
+                        
+                        
                     }
                     .padding(EdgeInsets(top: 66, leading: 0, bottom: 0, trailing: 0))
                     .foregroundColor(Color("Disabled"))
                     
                     Spacer()
-                    
-                    //데이터 확인용 테스트 영역 ------
-                    Text("아이 이름은 \(userName.name)")
-                    //데이터 확인용 테스트 영역 ------
                     
                     NavigationLink(destination: NextBProfileView()){
                         Text("다음")

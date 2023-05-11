@@ -23,6 +23,10 @@ struct CollectionView: View {
         GridItem(.flexible(maximum: 111)),
     ]
     
+    @State private var cardFormA = false
+    @State private var cardFormB = false
+    @State private var cardFormC = false
+    
     var body: some View {
         ZStack{
             ScrollView{
