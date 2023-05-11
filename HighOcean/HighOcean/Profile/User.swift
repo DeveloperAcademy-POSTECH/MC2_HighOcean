@@ -5,13 +5,15 @@ class User: ObservableObject, Codable {
     var date: [Bool]
     var time: Date
     var familyRule: String
-    @Published var mode: Int
+    var mode: Int
+    var isAlarm: Bool
     
-    init(name: String, date: [Bool], time: Date, familyRule: String, mode: Int = 0) {
+    init(name: String, date: [Bool], time: Date, familyRule: String, isAlarm: Bool, mode: Int = 0) {
         self.name = name
         self.date = date
         self.time = time
         self.familyRule = familyRule
+        self.isAlarm = isAlarm
         self.mode = mode
     }
     
@@ -21,6 +23,7 @@ class User: ObservableObject, Codable {
         date = try container.decode([Bool].self, forKey: .date)
         time = try container.decode(Date.self, forKey: .time)
         familyRule = try container.decode(String.self, forKey: .familyRule)
+        isAlarm = try container.decode(Bool.self, forKey: .isAlarm)
         mode = try container.decode(Int.self, forKey: .mode)
     }
     
@@ -30,11 +33,12 @@ class User: ObservableObject, Codable {
         try container.encode(date, forKey: .date)
         try container.encode(time, forKey: .time)
         try container.encode(familyRule, forKey: .familyRule)
+        try container.encode(isAlarm, forKey: .isAlarm)
         try container.encode(mode, forKey: .mode)
     }
     
     enum CodingKeys: CodingKey {
-        case name, date, time, familyRule, mode
+        case name, date, time, familyRule, isAlarm, mode
     }
     
     func formattedSeoulTime(date: Date, addTime: Int) -> String {

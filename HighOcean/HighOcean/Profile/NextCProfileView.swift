@@ -52,22 +52,31 @@ struct NextCProfileView: View {
                     
                     Spacer()
                     
-//                    NavigationLink(destination: HomeView()){
-//                        Text("시작하기")
-//                            .frame(width: 354.0, height:54.0)
-//                            .font(.system(size: 18))
-//                            .background(Color("Accent"))
-//                            .foregroundColor(Color.white)
-//                            .cornerRadius(10)
-//                        
-//                    
-//                        .sheet(isPresented: $showActivityView) {
-//                            ActivityView(activityItems: ["https://happy0115.tistory.com"])
-//                        }
-//                    }
+                    NavigationLink(destination: EmptyView()){
+                        Text("시작하기")
+                            .frame(width: 354.0, height:54.0)
+                            .font(.system(size: 18))
+                            .background(Color("Accent"))
+                            .foregroundColor(Color.white)
+                            .cornerRadius(10)
+                        
+                    
+                        .sheet(isPresented: $showActivityView) {
+                            ActivityView(activityItems: ["https://happy0115.tistory.com"])
+                        }
+                    }
                 }
             }
             
+        }
+    }
+}
+
+// 미리보기
+struct NextCProfileView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+            NextCProfileView(userName: "test", familyRule: "부모")
         }
     }
 }

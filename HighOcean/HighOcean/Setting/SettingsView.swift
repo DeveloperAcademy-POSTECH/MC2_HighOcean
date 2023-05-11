@@ -81,12 +81,14 @@ struct SettingsView: View {
             self.isFir = user.date[5]
             self.isSat = user.date[6]
             self.datepk = user.time
+            self.isAlarm = user.isAlarm
         }
         .navigationTitle("설정")
         .navigationBarItems(trailing: Button(action: {
             // 사용자 정보를 저장하고 ContentView로 돌아갑니다.
             user.date = [isSun, isMon, isTue, isWed, isThu, isFir, isSat]
             user.time = datepk
+            user.isAlarm = isAlarm
             presentationMode.wrappedValue.dismiss()
         }) {
             Text("저장")
@@ -98,7 +100,7 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            HomeView(user: User(name: "Ocean", date: [false, true, true, true, true, true, false], time: Date(), familyRule: "부모"))
+            HomeView(user: User(name: "Ocean", date: [false, true, true, true, true, true, false], time: Date(), familyRule: "부모", isAlarm: true))
         }
     }
 }

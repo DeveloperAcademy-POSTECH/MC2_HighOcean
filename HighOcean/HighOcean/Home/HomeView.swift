@@ -65,6 +65,9 @@ struct HomeView: View {
                         .padding(28)
                     }
                 }
+                .onChange(of: selectedButtonIndex ?? 0) { newMode in
+                    user.mode = newMode
+                }
                 
                 ZStack {
                     RoundedRectangle(cornerRadius: 10)
@@ -205,7 +208,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            HomeView(user: User(name: "Ocean", date: [false, true, true, true, true, true, false], time: Date(), familyRule: "부모"))
+            HomeView(user: User(name: "Ocean", date: [false, true, true, true, true, true, false], time: Date(), familyRule: "부모", isAlarm: true))
         }
     }
 }

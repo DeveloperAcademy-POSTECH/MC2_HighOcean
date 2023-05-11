@@ -4,6 +4,9 @@ struct NextBProfileView: View {
 
     let userName: String
     let familyRule: String
+    @State private var isAlarm: Bool = false
+    @State private var showAlert = false
+    @State private var navigateToHome = false
     
     @State private var isSun = false
     @State private var isMon = false
@@ -144,7 +147,9 @@ struct NextBProfileView: View {
                 .background(Color.white)
                 .cornerRadius(8)
                 Spacer()
-                NavigationLink(destination: HomeView(user: User(name: userName,date: [isSun, isMon, isTue, isWed, isThu, isFir, isSat], time: datepk,familyRule: familyRule))) {
+                Button(action: {
+                    showAlert = true
+                }) {
                     Text("시작하기")
                         .frame(width: 354.0, height:54.0)
                         .font(.system(size: 18))
@@ -152,16 +157,34 @@ struct NextBProfileView: View {
                         .foregroundColor(Color.white)
                         .cornerRadius(10)
                 }
-                .onDisappear {
-                    saveUser()
+                .alert(isPresented: $showAlert) {
+                    Alert(
+                        title: Text("알림을 보내겠습니까?"),
+                        message: Text("확인을 누르면 알림이 전송됩니다."),
+                        primaryButton: .default(Text("승인"), action: {
+                            isAlarm = true
+                            navigateToHome = true
+                        }),
+                        secondaryButton: .cancel(Text("비승인"), action: {
+                            navigateToHome = true
+                        })
+                    )
                 }
+                .background(
+                    NavigationLink(destination: HomeView(user: User(name: userName,date: [isSun, isMon, isTue, isWed, isThu, isFir, isSat], time: datepk,familyRule: familyRule, isAlarm: isAlarm)), isActive: $navigateToHome) {
+                        EmptyView()
+                    }
+                    .onDisappear {
+                        saveUser()
+                    }
+                )
             }
             .padding(20)
         }
     }
     
     private func saveUser() {
-        let user = User(name: userName,date: [isSun, isMon, isTue, isWed, isThu, isFir, isSat], time: datepk,familyRule: familyRule)
+        let user = User(name: userName,date: [isSun, isMon, isTue, isWed, isThu, isFir, isSat], time: datepk,familyRule: familyRule, isAlarm: true)
         let encodedSettings = try? JSONEncoder().encode(user)
         UserDefaults.standard.set(encodedSettings, forKey: "User")
     }
