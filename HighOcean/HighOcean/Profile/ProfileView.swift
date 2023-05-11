@@ -30,7 +30,7 @@ struct ProfileView: View {
                             .fontWeight(.bold)
                             .foregroundColor(Color("Primary"))
                         
-                        TextField("Ocean", text: $userName.name)
+                        TextField("이름", text: $userName.name)
                             .frame(width: 338.0, height:62.0)
                             .padding(.leading,16)
                             .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))

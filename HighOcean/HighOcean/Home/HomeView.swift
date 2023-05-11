@@ -88,7 +88,7 @@ struct HomeView: View {
                 
                 HStack {
                     VStack {
-                        NavigationLink(destination: Likedcardcollectionview().environmentObject(cards)) {
+                        NavigationLink(destination: LikedCardCollection().environmentObject(cards)) {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 20)
                                     .fill(Color.white)
