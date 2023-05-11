@@ -17,16 +17,16 @@ class Cards: ObservableObject {
     @Published var likedCards: [Card] = []
 
     @Published var cards: [Card] = [
-        Card(context: "보고싶어요!", image: "image", createdDate: "22-04-31", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: true, show: false),
-        Card(context: "보고싶어요2!", image: "image", createdDate: "22-04-31", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: false, show: false),
-        Card(context: "보고싶어요3!", image: "image", createdDate: "22-04-31", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: false, show: false),
-        Card(context: "보고싶어요4!", image: "image", createdDate: "22-04-31", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: true, show: false),
-        Card(context: "보고싶어요5!", image: "image", createdDate: "22-04-31", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: false, show: false),
-        Card(context: "보고싶어요6!", image: "image", createdDate: "22-04-31", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: false, show: false),
-        Card(context: "보고싶어요7!", image: "image", createdDate: "22-04-31", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: true, show: false)
+        Card(context: "보고싶어요!", image: "image", createdDate: "22-04-30", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: true, show: false),
+        Card(context: "보고싶어요2!", image: "image", createdDate: "22-04-22", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: false, show: false),
+        Card(context: "보고싶어요3!", image: "image", createdDate: "22-04-24", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: false, show: false),
+        Card(context: "보고싶어요4!", image: "image", createdDate: "22-04-25", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: true, show: false),
+        Card(context: "보고싶어요5!", image: "image", createdDate: "22-04-28", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: false, show: false),
+        Card(context: "보고싶어요6!", image: "image", createdDate: "22-04-20", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: false, show: false),
+        Card(context: "보고싶어요7!", image: "image", createdDate: "22-04-22", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: true, show: false)
     ]
-    
-    init() {
+        
+    init() {        
         self.uncheckedCards = cards
             .filter { !$0.isChecked }                             // 확인한 카드 필터링
             .sorted{ $0.createdDate > $1.createdDate }          // 최신순 소팅
@@ -39,6 +39,7 @@ class Cards: ObservableObject {
         self.likedCards = cards
             .filter { $0.isLiked }                                // 좋아요한 카드 필터링
             .sorted{ $0.createdDate > $1.createdDate }            // 최신순 소팅
+        loadData()
     }
     
     func dataSort() {
@@ -46,4 +47,30 @@ class Cards: ObservableObject {
             .filter { $0.isLiked }
             .sorted { $0.createdDate > $1.createdDate }
     }
+    
+    func loadData() {
+        guard let url = URL(string: "https://mc2highocean-default-rtdb.firebaseio.com/photoCard.json") else {
+            print("Invalid URL")
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data else {
+                print("No data in response: \(error?.localizedDescription ?? "Unknown error")")
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                let jsonData = try decoder.decode([String: Card].self, from: data)
+                self.cards = Array(jsonData.values)
+                print(jsonData)
+            } catch let error {
+                print("Error decoding JSON: \(error.localizedDescription)")
+            }
+        }.resume()
+    }
 }
+
+
+
