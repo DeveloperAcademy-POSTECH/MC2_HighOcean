@@ -26,7 +26,7 @@
 		FFB969E52A0C6CE500086C18 /* Likedcardcollectionview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969E42A0C6CE500086C18 /* Likedcardcollectionview.swift */; };
 		FFB969E82A0C6CF900086C18 /* LikedCardCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969E62A0C6CF900086C18 /* LikedCardCollection.swift */; };
 		FFB969E92A0C6CF900086C18 /* ThumbnailCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969E72A0C6CF900086C18 /* ThumbnailCardView.swift */; };
-		FFDCB86F2A09F20A00477C51 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB86E2A09F20A00477C51 /* CollectionView.swift */; };
+		FFB969EC2A0C6D9500086C18 /* TotalThumbnailCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969EB2A0C6D9500086C18 /* TotalThumbnailCardView.swift */; };
 		FFDCB8712A09F20F00477C51 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8702A09F20F00477C51 /* ActivityView.swift */; };
 		FFDCB8752A09F21C00477C51 /* FamilyDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8742A09F21C00477C51 /* FamilyDB.swift */; };
 		FFDCB8792A09F22C00477C51 /* NextAProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8782A09F22C00477C51 /* NextAProfileView.swift */; };
@@ -58,7 +58,7 @@
 		FFB969E42A0C6CE500086C18 /* Likedcardcollectionview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Likedcardcollectionview.swift; sourceTree = "<group>"; };
 		FFB969E62A0C6CF900086C18 /* LikedCardCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikedCardCollection.swift; sourceTree = "<group>"; };
 		FFB969E72A0C6CF900086C18 /* ThumbnailCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailCardView.swift; sourceTree = "<group>"; };
-		FFDCB86E2A09F20A00477C51 /* CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		FFB969EB2A0C6D9500086C18 /* TotalThumbnailCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalThumbnailCardView.swift; sourceTree = "<group>"; };
 		FFDCB8702A09F20F00477C51 /* ActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		FFDCB8742A09F21C00477C51 /* FamilyDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamilyDB.swift; sourceTree = "<group>"; };
 		FFDCB8782A09F22C00477C51 /* NextAProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextAProfileView.swift; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 			children = (
 				FFB969DD2A0C6C7C00086C18 /* CollectionView.swift */,
 				FFDCB8822A09F25C00477C51 /* TotalCardCollectionView.swift */,
-				FFDCB86E2A09F20A00477C51 /* CollectionView.swift */,
+				FFB969EB2A0C6D9500086C18 /* TotalThumbnailCardView.swift */,
 			);
 			path = TotalCard;
 			sourceTree = "<group>";
@@ -248,7 +248,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFB969D52A0BB6DE00086C18 /* SettingsView.swift in Sources */,
-				FFDCB86F2A09F20A00477C51 /* CollectionView.swift in Sources */,
 				FF4087AF2A01FC88003BED80 /* HighOceanApp.swift in Sources */,
 				FFB969E92A0C6CF900086C18 /* ThumbnailCardView.swift in Sources */,
 				FFB969D32A0B873A00086C18 /* PhotoPicker.swift in Sources */,
@@ -268,6 +267,7 @@
 				2D1953322A035B1500353602 /* CardView.swift in Sources */,
 				2DB7264A2A0890FC007D7A17 /* Cards.swift in Sources */,
 				FFDCB8832A09F25C00477C51 /* TotalCardCollectionView.swift in Sources */,
+				FFB969EC2A0C6D9500086C18 /* TotalThumbnailCardView.swift in Sources */,
 				2DB7263E2A04B2DF007D7A17 /* CardFrontView.swift in Sources */,
 				FFDCB8752A09F21C00477C51 /* FamilyDB.swift in Sources */,
 				2DB726442A04C515007D7A17 /* NewCardView.swift in Sources */,

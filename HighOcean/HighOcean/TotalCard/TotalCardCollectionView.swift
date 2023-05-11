@@ -29,14 +29,10 @@ struct TotalCardCollectionView: View {
                 }
                 .pickerStyle(.segmented)
                 .padding()
-                
                 cardsView(selectedOption: selectedPicker)
-                    .environmentObject(cards)
             }
-    
         }
         .navigationTitle("전체 카드")
-        
     }
  }
 
