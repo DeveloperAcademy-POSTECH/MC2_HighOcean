@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CardView: View {
 
-    @State var card : Card
+    @Binding var card : Card
     @State var frontDegree = 0.0
     @State var backDegree = 90.0
     @State var isFlipped = false
@@ -54,7 +54,9 @@ struct CardView: View {
 }
 
 struct CardView_Previews: PreviewProvider {
+    @StateObject static var cardDeck = Cards()
+    
     static var previews: some View {
-        NewCardView()
+        CardView(card: $cardDeck.cards.first!)
     }
 }

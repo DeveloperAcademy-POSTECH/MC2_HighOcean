@@ -29,6 +29,7 @@ struct TotalCardCollectionView: View {
                 }
                 .pickerStyle(.segmented)
                 .padding()
+                
                 cardsView(selectedOption: selectedPicker)
             }
         }
@@ -46,9 +47,9 @@ struct cardsView : View {
         
         switch selectedOption {
         case .dis:
-            CollectionView(cardArray: cards.recievedCards)
+            CollectionView(cardArray: $cards.recievedCards)
         case .out:
-            CollectionView(cardArray: cards.sentCards)
+            CollectionView(cardArray: $cards.sentCards)
         }
     }
 }

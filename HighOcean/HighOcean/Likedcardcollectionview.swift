@@ -47,7 +47,7 @@ struct likecardsView : View {
             
                 ZStack(alignment:.top){
                 Image("likecardBG")
-                    CollectionView(cardArray: [])
+//                    CollectionView(cardArray: [])
                 }
                     .rotation3DEffect(.degrees(degree), axis: (x: 0, y: 1, z:  0), anchor: .leading)
                     .animation(.easeOut(duration: 1), value: degree)
@@ -62,7 +62,7 @@ struct likecardsView : View {
 
                 ZStack(alignment:.top){
                 Image("likecardBG")
-                    CollectionView(cardArray: [])    
+//                    CollectionView(cardArray: [])    
                 }
                     .rotation3DEffect(.degrees(degree), axis: (x: 0, y: 1, z:  0), anchor: .leading)
                     .animation(.easeOut(duration: 1), value: degree)

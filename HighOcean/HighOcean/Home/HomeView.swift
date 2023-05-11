@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct HomeView: View {
-    private var cards = Cards()
+    @StateObject var cards = Cards()
     @State private var selectedButtonIndex: Int?
     @State private var isNewCards: Bool = false
     var body: some View {
@@ -66,7 +66,7 @@ struct HomeView: View {
                         Image(isNewCards ? "walwalHappy" : "walwalSad")
                             .resizable()
                             .scaledToFit()
-                        NavigationLink(destination: NewCardView()) {
+                        NavigationLink(destination: NewCardView(cardDeck: cards)) {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 20)
                                     .fill(isNewCards ? Color("Accent") : Color("Disabled"))

@@ -34,4 +34,9 @@ struct Card: Identifiable, Equatable, Codable{  // Codable -> Encode, Decode 가
     mutating func changeIschecked(){
         self.isChecked = true
     }
+    
+    mutating func changeIsLiked(){
+        self.isLiked.toggle()
+    }
+    
 }

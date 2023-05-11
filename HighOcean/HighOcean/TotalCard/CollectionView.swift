@@ -9,10 +9,9 @@ import SwiftUI
 
 struct CollectionView: View {
     
-    var cardArray: [Card]
-    @State private var selectedCard: Card?
+    @Binding var cardArray: [Card]
+    @State var selectedCardIndex = 0
     @State private var showModal = false
-    @EnvironmentObject var cards: Cards
 
     
     
@@ -32,24 +31,21 @@ struct CollectionView: View {
             ScrollView{
                 LazyVGrid(columns: columns, spacing: 26) {
 
-                    ForEach(cardArray) { card in
+                    ForEach(cardArray.indices) { index in
                         Button {
-                            self.selectedCard = card
+                            self.selectedCardIndex = index
                             self.showModal = true
                         } label: {
-                            TotalThumbnailCardView(degree: .constant(0), card: .constant(card))
+                            TotalThumbnailCardView(degree: .constant(0), card: cardArray[index])
                         }
                         .buttonStyle(PlainButtonStyle())
                     }
-                    
                 }
             }
-            .opacity(self.showModal ? 0 : 1)
-            
             
             if self.showModal {
                 ZStack{
-                    CardView(card: self.selectedCard!)
+                    CardView(card: $cardArray[selectedCardIndex])
                 
                     VStack{
                         
@@ -68,8 +64,6 @@ struct CollectionView: View {
                                 .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                                 .padding(.top, 25)
                         })
-                        
-                    
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
