@@ -49,7 +49,7 @@ struct NextCProfileView: View {
                     
                     Spacer()
                     
-                    NavigationLink(destination: Text("홈 화면")){
+                    NavigationLink(destination: HomeView()){
                         Text("시작하기")
                             .frame(width: 354.0, height:54.0)
                             .font(.system(size: 18))
