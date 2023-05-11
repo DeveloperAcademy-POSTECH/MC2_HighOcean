@@ -88,7 +88,7 @@ struct HomeView: View {
                 
                 HStack {
                     VStack {
-                        NavigationLink(destination: CollectionView()) {
+                        NavigationLink(destination: Likedcardcollectionview().environmentObject(cards)) {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 20)
                                     .fill(Color.white)
@@ -104,7 +104,7 @@ struct HomeView: View {
                                 .padding(19)
                             }
                         }
-                        NavigationLink(destination: TotalCardCollectionView()) {
+                        NavigationLink(destination: TotalCardCollectionView()          .environmentObject(cards)) {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 20)
                                     .fill(Color.white)
@@ -122,7 +122,7 @@ struct HomeView: View {
                         }
                     }
                     Spacer()
-                    NavigationLink(destination: CreatePhotoFrontCardView()) {
+                    NavigationLink(destination:CreatePhotoFrontCardView()) {
                         ZStack {
                             RoundedRectangle(cornerRadius: 20)
                                 .fill(Color("Accent"))

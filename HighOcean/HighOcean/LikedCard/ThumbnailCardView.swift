@@ -1,13 +1,13 @@
 //
-//  CardFrontView.swift
+//  ThumbnailCardView.swift
 //  HighOcean
 //
-//  Created by jisukwon on 2023/05/05.
+//  Created by 이연정 on 2023/05/10.
 //
 
 import SwiftUI
 
-struct CardFrontView: View {
+struct ThumbnailCardView: View {
     @Binding var degree : Double
     @Binding var card: Card
     
@@ -16,14 +16,14 @@ struct CardFrontView: View {
             RoundedRectangle(cornerRadius: 20)
                 .fill(.white)
                 .shadow(radius: 3)
-                .frame(width: 292, height: 480)
+                .frame(width: 144, height: 235)
             Image(card.image)
                 .resizable()
-                .frame(width: 254, height: 437)
+                .frame(width: 124, height: 213)
             LinearGradient(
                 gradient: Gradient(colors: [Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))]),
                 startPoint: .top, endPoint: .bottom)
-                .frame(width: 254, height: 437)
+                .frame(width: 124, height: 213)
                 .opacity(0.3)
                 .blendMode(.multiply)
             DateAndDay
@@ -49,8 +49,8 @@ struct CardFrontView: View {
                 .foregroundColor(Color("Secondary"))
                 .shadow(radius: 2)
         }
-        .padding(.bottom, 50)
-        .frame(width: 254, height: 437)
+        .padding(.bottom, 30)
+        .frame(width: 124, height: 213)
     }
     
     func remakedDate() -> String {
@@ -77,9 +77,10 @@ struct CardFrontView: View {
     }
 }
 
-struct CardFrontView_Previews: PreviewProvider {
+struct ThumbnailCardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardFrontView(degree: .constant(0), card: .constant(Cards().cards[0]))
+        ThumbnailCardView(degree: .constant(0), card: .constant(Cards().cards[0]))
             .environmentObject(Cards())
     }
 }
+

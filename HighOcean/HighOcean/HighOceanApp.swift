@@ -14,6 +14,8 @@ struct HighOceanApp: App {
             ProfileView()
                 .environmentObject(user())
 //            NewCardView()
+                .accentColor(Color("Accent"))
+            
         }
     }
 }

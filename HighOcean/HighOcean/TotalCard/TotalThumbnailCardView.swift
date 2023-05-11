@@ -1,31 +1,31 @@
 //
-//  CardFrontView.swift
+//  TotalThumbnailCardView.swift
 //  HighOcean
 //
-//  Created by jisukwon on 2023/05/05.
+//  Created by 이연정 on 2023/05/10.
 //
 
 import SwiftUI
 
-struct CardFrontView: View {
+struct TotalThumbnailCardView: View {
     @Binding var degree : Double
     @Binding var card: Card
     
     var body: some View {
         ZStack{
-            RoundedRectangle(cornerRadius: 20)
+            RoundedRectangle(cornerRadius: 11)
                 .fill(.white)
                 .shadow(radius: 3)
-                .frame(width: 292, height: 480)
+                .frame(width: 111, height: 181)
             Image(card.image)
                 .resizable()
-                .frame(width: 254, height: 437)
-            LinearGradient(
-                gradient: Gradient(colors: [Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))]),
-                startPoint: .top, endPoint: .bottom)
-                .frame(width: 254, height: 437)
-                .opacity(0.3)
-                .blendMode(.multiply)
+                .frame(width: 97, height: 164)
+//            LinearGradient(
+//                gradient: Gradient(colors: [Color( colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)), Color( colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))]),
+//                startPoint: .top, endPoint: .bottom)
+//                .frame(width: 97, height: 164)
+//                .opacity(0.3)
+//                .blendMode(.multiply)
             DateAndDay
         }
         .rotation3DEffect(Angle(degrees: degree), axis: (x: 0, y: 1, z: 0))
@@ -49,8 +49,8 @@ struct CardFrontView: View {
                 .foregroundColor(Color("Secondary"))
                 .shadow(radius: 2)
         }
-        .padding(.bottom, 50)
-        .frame(width: 254, height: 437)
+        .padding(.bottom, 20)
+        .frame(width: 97, height: 164)
     }
     
     func remakedDate() -> String {
@@ -77,9 +77,11 @@ struct CardFrontView: View {
     }
 }
 
-struct CardFrontView_Previews: PreviewProvider {
+struct TotalThumbnailCardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardFrontView(degree: .constant(0), card: .constant(Cards().cards[0]))
+        TotalThumbnailCardView(degree: .constant(0), card: .constant(Cards().cards[0]))
             .environmentObject(Cards())
     }
 }
+
+

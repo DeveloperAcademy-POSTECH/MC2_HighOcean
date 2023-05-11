@@ -10,6 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     @EnvironmentObject var userName: user
     
+    
     var body: some View {
         NavigationView{
     

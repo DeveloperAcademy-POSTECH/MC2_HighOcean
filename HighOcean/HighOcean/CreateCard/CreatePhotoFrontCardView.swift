@@ -43,6 +43,8 @@ struct CreatePhotoFrontCardView: View {
             .sheet(isPresented: $isShowingImagePicker) {
                 ImagePicker(selectedImage: $selectedImage, isSelected: $isImagePick)
             }
+            .navigationTitle("사진 선택")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink(destination: CardContentView()) {

@@ -11,7 +11,7 @@ import SwiftUI
 
 struct CardBackView: View {
     
-    @Binding var degree : Double
+    @Binding var degree: Double
     @Binding var card: Card
     @EnvironmentObject var cards: Cards
     
@@ -49,9 +49,9 @@ struct CardBackView: View {
                 HStack{
                     Button {
                         card.isLiked.toggle()
-                        cards.dataSort()
+//                        cards.dataSort()
                     } label: {
-                        Text(card.isLiked ? "IconHeartFilled" : "IconHeartEmpty")
+                        Image(card.isLiked ? "IconHeartFilled" : "IconHeartEmpty")
                     }
                 }
                 Spacer()
@@ -75,6 +75,7 @@ struct CardBackView: View {
 
 struct CardBackView_Previews: PreviewProvider {
     static var previews: some View {
-        NewCardView()
+        CardBackView(degree: .constant(0), card: .constant(Cards().cards[0]))
+            .environmentObject(Cards())
     }
 }

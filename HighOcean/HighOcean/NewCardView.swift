@@ -18,8 +18,8 @@ struct Home : View {
     @State var count : CGFloat = 0
     @State var screen = UIScreen.main.bounds.width - 90
     @State var op : CGFloat = 0
-    @State var cards = Cards().uncheckedCards
-    
+    @State var cards = Cards().cards
+    @ObservedObject var card = Cards()
     
     var number : Int = 0
     
@@ -79,9 +79,6 @@ struct Home : View {
                         Text("/\(cards.count)")
                             .kerning(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
                     }
-                    
-
-                    
                 }
                 .padding(.top, 30)
                 .navigationBarTitleDisplayMode(.inline)
@@ -89,10 +86,12 @@ struct Home : View {
                 .animation(.spring(), value: self.x)
                 .onAppear {
                     self.op = ((self.screen + 15) * CGFloat(self.cards.count / 2)) - (self.cards.count % 2 == 0 ? ((self.screen + 15) / 2) : 0)
-                    self.cards[0].show = true
+                    //self.cards[0].show = true
             }
             }
 
+        }.onAppear(){
+            card.loadData()
         }
     }
     
