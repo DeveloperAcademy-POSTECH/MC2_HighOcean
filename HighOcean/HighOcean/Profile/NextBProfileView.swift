@@ -36,101 +36,14 @@ struct NextBProfileView: View {
                 
                 Text("요일")
                     .font(.system(size: 18))
-                HStack(){
-                    Button(action: {
-                        self.isSun.toggle()
-                    }) {
-                        ZStack(){
-                            Circle()
-                                .fill(self.isSun ? Color("Secondary") : Color.clear )
-    
-                            Text("일")
-                                .foregroundColor(self.isSun ? Color("Accent") : Color("Primary"))
-                                .font(.system(size: 20))
-                                .fontWeight(.bold)
-                        }
-                    }
-                    .frame(width: 40, height: 40)
-                    Button(action: {
-                        self.isMon.toggle()
-                    }) {
-                        ZStack(){
-                            Circle()
-                                .fill(self.isMon ? Color("Secondary") : Color.clear )
-    
-                            Text("월")
-                                .foregroundColor(self.isMon ? Color("Accent") : Color("Primary"))
-                                .font(.system(size: 20))
-                                .fontWeight(.bold)
-                        }
-                    }
-                    .frame(width: 40, height: 40)
-                    Button(action: {
-                        self.isTue.toggle()
-                    }) {
-                        ZStack(){
-                            Circle()
-                                .fill(self.isTue ? Color("Secondary") : Color.clear )
-                            Text("화")
-                                .foregroundColor(self.isTue ? Color("Accent") : Color("Primary"))
-                                .font(.system(size: 20))
-                                .fontWeight(.bold)
-                        }
-                    }
-                    .frame(width: 40, height: 40)
-                    Button(action: {
-                        self.isWed.toggle()
-                    }) {
-                        ZStack(){
-                            Circle()
-                                .fill(self.isWed ? Color("Secondary") : Color.clear )
-                            Text("수")
-                                .foregroundColor(self.isWed ? Color("Accent") : Color("Primary"))
-                                .font(.system(size: 20))
-                                .fontWeight(.bold)
-                        }
-                    }
-                    .frame(width: 40, height: 40)
-                    Button(action: {
-                        self.isThu.toggle()
-                    }) {
-                        ZStack(){
-                            Circle()
-                                .fill(self.isThu ? Color("Secondary") : Color.clear )
-                            Text("목")
-                                .foregroundColor(self.isThu ? Color("Accent") : Color("Primary"))
-                                .font(.system(size: 20))
-                                .fontWeight(.bold)
-                        }
-                    }
-                    .frame(width: 40, height: 40)
-                    Button(action: {
-                        self.isFir.toggle()
-                    }) {
-                        ZStack(){
-                            Circle()
-                                .fill(self.isFir ? Color("Secondary") : Color.clear )
-                            Text("금")
-                                .foregroundColor(self.isFir ? Color("Accent") : Color("Primary"))
-                                .font(.system(size: 20))
-                                .fontWeight(.bold)
-                        }
-                    }
-                    .frame(width: 40, height: 40)
-                    Button(action: {
-                        self.isSat.toggle()
-                    }) {
-                        ZStack(){
-                            Circle()
-                                .fill(self.isSat ? Color("Secondary") : Color.clear )
-                            Text("토")
-                                .foregroundColor(self.isSat ? Color("Accent") : Color("Primary"))
-                                .font(.system(size: 20))
-                                .fontWeight(.bold)
-                        }
-                    }
-                    .frame(width: 40, height: 40)
-                
+                HStack {
+                    WeekButtonView(week: $isSun, weekName: "일")
+                    WeekButtonView(week: $isMon, weekName: "월")
+                    WeekButtonView(week: $isTue, weekName: "화")
+                    WeekButtonView(week: $isWed, weekName: "수")
+                    WeekButtonView(week: $isThu, weekName: "목")
+                    WeekButtonView(week: $isFir, weekName: "금")
+                    WeekButtonView(week: $isSat, weekName: "토")
                 }
                 .frame(width: 350, height: 97.0)
                 .cornerRadius(15)
