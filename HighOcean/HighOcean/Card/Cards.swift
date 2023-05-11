@@ -33,12 +33,13 @@ class Cards: ObservableObject {
     
     @Published var cards: [Card] = [
         Card(context: "보고싶어요!", image: "image", createdDate: "22-04-30", from: "지호가", to: "엄마", creator:"지호", isLiked: true, isChecked: true, show: false),
-        Card(context: "보고싶어요2!", image: "image", createdDate: "22-04-22", from: "엄마", to: "지호가", creator:"엄마", isLiked: true, isChecked: false, show: false),
-        Card(context: "보고싶어요3!", image: "image", createdDate: "22-04-24", from: "지호가", to: "엄마", creator:"지호", isLiked: true, isChecked: false, show: false),
+        Card(context: "보고싶어요2!", image: "image", createdDate: "22-04-22", from: "엄마", to: "지호가", creator:"엄마", isLiked: true, isChecked: true, show: false),
+        Card(context: "보고싶어요3!", image: "image", createdDate: "22-04-24", from: "지호가", to: "엄마", creator:"지호", isLiked: true, isChecked: true, show: false),
         Card(context: "보고싶어요4!", image: "image", createdDate: "22-04-25", from: "지호가", to: "엄마", creator:"지호", isLiked: true, isChecked: true, show: false),
-        Card(context: "보고싶어요5!", image: "image", createdDate: "22-04-28", from: "지호가", to: "엄마", creator:"지호", isLiked: true, isChecked: false, show: false),
-        Card(context: "보고싶어요6!", image: "image", createdDate: "22-04-20", from: "지호가", to: "엄마", creator:"지호", isLiked: true, isChecked: false, show: false),
-        Card(context: "보고싶어요7!", image: "image", createdDate: "22-04-22", from: "엄마", to: "지호가", creator:"엄마", isLiked: false, isChecked: true, show: false)
+        Card(context: "보고싶어요5!", image: "image", createdDate: "22-04-28", from: "지호가", to: "엄마", creator:"지호", isLiked: true, isChecked: true, show: false),
+        Card(context: "보고싶어요6!", image: "image", createdDate: "22-04-20", from: "지호가", to: "엄마", creator:"지호", isLiked: true, isChecked: true, show: false),
+        Card(context: "보고싶어요6!", image: "image", createdDate: "22-04-20", from: "지호가", to: "엄마", creator:"지호", isLiked: true, isChecked: true, show: false),
+        Card(context: "보고싶어요6!", image: "image", createdDate: "22-04-20", from: "지호가", to: "엄마", creator:"지호", isLiked: true, isChecked: true, show: false)
     ]
     
         
@@ -80,7 +81,6 @@ class Cards: ObservableObject {
                 let decoder = JSONDecoder()
                 let jsonData = try decoder.decode([String: Card].self, from: data)
                 self.cards = Array(jsonData.values)
-                print(jsonData)
             } catch let error {
                 print("Error decoding JSON: \(error.localizedDescription)")
             }

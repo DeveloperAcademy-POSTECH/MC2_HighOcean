@@ -2,10 +2,13 @@ import SwiftUI
 
 
 struct LikedCardCollection: View {
-    
-//  @Binding var card: Card
+
     @State private var selectedCard: Card?
     @EnvironmentObject var cards: Cards
+    
+    let columns = [
+            GridItem(.adaptive(minimum: 140))
+    ]
     
     var body: some View {
         
@@ -16,16 +19,34 @@ struct LikedCardCollection: View {
             
                         
             TabView{
-                    
-                ForEach($cards.likedCards) { $card in
-                    Button {
-                        self.selectedCard = card
-                    } label: {
-                        ThumbnailCardView(degree: .constant(0), card: $card)
+                ForEach(0..<cards.likedCards.count/4, id: \.self) { index in
+                    let startIndex = index * 4
+                    let endIndex = min(startIndex + 4, cards.likedCards.count)
+                    let pageItems = cards.likedCards[startIndex..<endIndex]
+    //                LikedCardCollection().environmentObject(Cards())
+                    //그리드
+                    LazyVGrid(columns: columns, spacing: 20){
+                        ForEach(0..<pageItems.count, id: \.self) { index in
+                            Button {
+                                self.selectedCard = pageItems[index]
+                            } label: {
+                                Text("\(index)")
+                                ThumbnailCardView(degree: .constant(0), card: .constant(pageItems[index]))
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                        }
                     }
-                    .buttonStyle(PlainButtonStyle())
-                    
                 }
+
+//                ForEach($cards.likedCards) { $card in
+//                    Button {
+//                        self.selectedCard = card
+//                    } label: {
+//                        ThumbnailCardView(degree: .constant(0), card: $card)
+//                    }
+//                    .buttonStyle(PlainButtonStyle())
+//
+//                }
                 
                 
             }
@@ -38,8 +59,6 @@ struct LikedCardCollection: View {
        
     }
 }
-
-//LikedCardCollection().environmentObject(Cards())
 
 struct LikedCardCollection_Previews: PreviewProvider {
     static var previews: some View {

@@ -3,8 +3,8 @@ import SwiftUI
 
 struct Test: View {
 
-    let items = Array(1...13) // 페이지에 표시할 항목의 배열
-    
+    let items = Array(1...17) // 페이지에 표시할 항목의 배열
+    // 짤리는 번호를 어찌 나오게 할지
     let columns = [
             GridItem(.adaptive(minimum: 140))
     ]
@@ -23,6 +23,7 @@ struct Test: View {
                         Text("\(item)")
                     }
                 }
+                
             }
         }
         .tabViewStyle(PageTabViewStyle())

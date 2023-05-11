@@ -80,7 +80,6 @@ struct HomeView: View {
                     .padding(10)
                 }
                 .onAppear{
-                    print(cards.recievedCards.count)
                     if cards.recievedCards.count != 0 {
                         isNewCards = true
                     }
