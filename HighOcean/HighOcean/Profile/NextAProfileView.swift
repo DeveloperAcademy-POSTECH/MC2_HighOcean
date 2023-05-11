@@ -43,18 +43,18 @@ struct NextAProfileView: View {
                             ZStack(){
                                 RoundedRectangle(cornerRadius: 8).stroke(self.isParents ? Color("Accent") : Color.clear, lineWidth: 4)
                                 
-                                Image(systemName: "checkmark.circle.fill")
-                                    .offset(x: 60, y: -80)
-                                    .foregroundColor(self.isParents ? Color("Accent") : Color.clear)
+                                Image("Oval")
+                                    .offset(y: -10)
+                                    .opacity(self.isParents ? 1.0 : 0.0)
                                 
-                                Image("ProfileChild")
+                                Image("parentsCircle")
                                 Text("부모")
                                     .foregroundColor(self.isParents ? Color("Accent") : Color("Primary"))
                                     .offset(y: 70)
                             }
                         }
                         .frame(width: 170.0, height:194.0)
-                        .background(self.isParents ? Color("Secondary") : Color.white)
+                        .background(Color.white)
                         .cornerRadius(8)
 
                         //아이 버튼
@@ -65,18 +65,18 @@ struct NextAProfileView: View {
                             ZStack(){
                                 RoundedRectangle(cornerRadius: 8).stroke(self.isChild ? Color("Accent") : Color.clear, lineWidth: 4)
                                 
-                                Image(systemName: "checkmark.circle.fill")
-                                    .offset(x: 60, y: -80)
-                                    .foregroundColor(self.isChild ? Color("Accent") : Color.clear)
+                                Image("Oval")
+                                    .offset(y: -4)
+                                    .opacity(self.isChild ? 1.0 : 0.0)
                                 
-                                Image("ProfileChild")
+                                Image("childCircle")
                                 Text("아이")
                                     .foregroundColor(self.isChild ? Color("Accent") : Color("Primary"))
                                     .offset(y: 70)
                             }
                         }
                         .frame(width: 170.0, height:194.0)
-                        .background(self.isChild ? Color("Secondary") : Color.white)
+                        .background(Color.white)
                         .cornerRadius(8)
                         
                         
