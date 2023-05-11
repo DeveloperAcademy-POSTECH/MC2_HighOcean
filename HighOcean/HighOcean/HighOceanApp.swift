@@ -16,8 +16,11 @@ struct HighOceanApp: App {
                 NavigationView {
                     HomeView(user: savedUser)
                 }
+                .accentColor(Color("Accent"))
             } else {
-                ProfileView()
+                NavigationView {
+                    ProfileView()
+                }
             }
         }
     }
