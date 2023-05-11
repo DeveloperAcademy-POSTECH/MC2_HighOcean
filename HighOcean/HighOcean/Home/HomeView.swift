@@ -14,6 +14,7 @@ struct HomeView: View {
     
     @State private var selectedButtonIndex: Int?
     @State private var isNewCards: Bool = false
+    @State private var isButtonEnabled = false
     
     var body: some View {
         ZStack {
@@ -101,6 +102,7 @@ struct HomeView: View {
                                     .font(.system(size: 18))
                             }
                         }
+                        .disabled(!isNewCards)
                     }
                     .padding(21)
                 }
@@ -152,7 +154,7 @@ struct HomeView: View {
                     NavigationLink(destination:CreatePhotoFrontCardView()) {
                         ZStack {
                             RoundedRectangle(cornerRadius: 10)
-                                .fill(Color("Accent"))
+                                .fill(isButtonEnabled ? Color("Accent") : Color("Disabled"))
                                 .frame(width: 172, height: 185)
                             VStack{
                                 Text("카드보내기")
@@ -168,6 +170,10 @@ struct HomeView: View {
                             }
                         }
                     }
+                    .onAppear {
+                        updateButtonAvailability()
+                    }
+                    .disabled(!isButtonEnabled)
                 }
                 .padding(12)
             }
@@ -179,7 +185,7 @@ struct HomeView: View {
                         .frame(width: 137, height: 29)
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: SettingsView()) {
+                    NavigationLink(destination: SettingsView(user: user)) {
                         Image(systemName: "gearshape.fill")
                             .foregroundColor(Color("Primary"))
                     }
@@ -188,12 +194,18 @@ struct HomeView: View {
         }
         .navigationBarBackButtonHidden(true)
     }
+    
+    private func updateButtonAvailability() {
+        let currentTime = Date()
+        let twoHoursLater = Calendar.current.date(byAdding: .hour, value: 2, to: user.time)!
+        isButtonEnabled = user.time <= currentTime && currentTime <= twoHoursLater
+    }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            HomeView(user: User(name: "Ocean",date: [false, true, true, true, true, true, false], time: Date(), familyRule: "부모"))
+            HomeView(user: User(name: "Ocean", date: [false, true, true, true, true, true, false], time: Date(), familyRule: "부모"))
         }
     }
 }

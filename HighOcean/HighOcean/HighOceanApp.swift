@@ -11,7 +11,14 @@ import SwiftUI
 struct HighOceanApp: App {
     var body: some Scene {
         WindowGroup {
-            ProfileView()
+            if let savedSettingsData = UserDefaults.standard.data(forKey: "User"),
+               let savedUser = try? JSONDecoder().decode(User.self, from: savedSettingsData) {
+                NavigationView {
+                    HomeView(user: savedUser)
+                }
+            } else {
+                ProfileView()
+            }
         }
     }
 }
