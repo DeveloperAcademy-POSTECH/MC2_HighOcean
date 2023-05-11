@@ -15,7 +15,7 @@ struct LikedCardCollection: View {
     
     let columns: [GridItem] = [
             GridItem(.flexible(maximum: 120), spacing: 40, alignment: nil),
-            GridItem(.gitflexible(maximum: 120), spacing: 40, alignment: nil)
+            GridItem(.flexible(maximum: 120), spacing: 40, alignment: nil)
         ]
     
     var body: some View {
