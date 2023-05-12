@@ -43,20 +43,11 @@ struct CardView: View {
             CardBackView(degree: $backDegree, card: $card)
                 .onAppear(){
                     card.changeIschecked()
-                    print(card)
                 }
         }
         .frame(width: UIScreen.main.bounds.width - 90, height: card.show ? 500 : 300)
         .onTapGesture {
             flipCard()
         }
-    }
-}
-
-struct CardView_Previews: PreviewProvider {
-    @StateObject static var cardDeck = Cards()
-    
-    static var previews: some View {
-        CardView(card: $cardDeck.cards.first!)
     }
 }

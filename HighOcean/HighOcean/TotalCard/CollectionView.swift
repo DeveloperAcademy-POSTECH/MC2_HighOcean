@@ -36,12 +36,13 @@ struct CollectionView: View {
                             self.selectedCardIndex = index
                             self.showModal = true
                         } label: {
-                            TotalThumbnailCardView(degree: .constant(0), card: cardArray[index])
+                            TotalThumbnailCardView(degree: .constant(0), card: cardArray[min(index, cardArray.count-1)])
                         }
                         .buttonStyle(PlainButtonStyle())
                     }
                 }
             }
+            .opacity(showModal ? 0 : 1)
             
             if self.showModal {
                 ZStack{
@@ -50,7 +51,7 @@ struct CollectionView: View {
                     VStack{
                         
                         Spacer()
-                    
+
                         Button(action: {
                             withAnimation{
                                 self.showModal.toggle()

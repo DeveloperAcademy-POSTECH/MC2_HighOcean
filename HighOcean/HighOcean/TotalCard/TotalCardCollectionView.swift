@@ -53,12 +53,3 @@ struct cardsView : View {
         }
     }
 }
-
-
-//미리보기
-struct TotalCardCollectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        TotalCardCollectionView()
-            .environmentObject(Cards())
-    }
-}

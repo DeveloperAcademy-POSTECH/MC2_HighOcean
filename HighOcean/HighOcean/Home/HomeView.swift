@@ -9,7 +9,6 @@ import SwiftUI
 
 
 struct HomeView: View {
-    @StateObject var cards = Cards()
     @State var user: User
     
     @State private var selectedButtonIndex: Int?
@@ -17,6 +16,8 @@ struct HomeView: View {
     @State private var isButtonEnabled = false
     
     var body: some View {
+        var cards = Cards(currentUser: user)
+        
         ZStack {
             Color("Secondary").ignoresSafeArea()
             VStack {
@@ -110,7 +111,6 @@ struct HomeView: View {
                     .padding(21)
                 }
                 .onAppear{
-                    print(cards.recievedCards.count)
                     if cards.recievedCards.count != 0 {
                         isNewCards = true
                     }
@@ -118,7 +118,7 @@ struct HomeView: View {
                 
                 HStack(alignment: .center) {
                     VStack {
-                        NavigationLink(destination: Likedcardcollectionview().environmentObject(cards)) {
+                        NavigationLink(destination: LikedCardCollection().environmentObject(cards)) {
                             ZStack(alignment: .leading) {
                                 RoundedRectangle(cornerRadius: 10)
                                     .fill(Color.white)

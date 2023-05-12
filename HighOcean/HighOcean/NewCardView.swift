@@ -6,11 +6,6 @@
 //
 import SwiftUI
 
-//struct NewCardView: View {
-//    var body: some View {
-//        Home()
-//    }
-//}
 
 struct NewCardView : View {
     
@@ -92,19 +87,10 @@ struct NewCardView : View {
         }
     }
     
-    
     func updateHeight(value : Int){
         for i in 0..<cardDeck.cards.count{
             cardDeck.cards[i].show = false
         }
         cardDeck.cards[value].show = true
-    }
-}
-
-struct NewCardView_Previews: PreviewProvider {
-    @StateObject static var cardDeck = Cards()
-    
-    static var previews: some View {
-        NewCardView(cardDeck: cardDeck)
     }
 }
