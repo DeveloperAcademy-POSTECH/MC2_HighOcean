@@ -5,15 +5,18 @@
 //  Created by Shin seungah on 2023/05/10.
 //
 
-import Foundation
 import SwiftUI
+import Firebase
+import FirebaseDatabase
 
 struct CardContentView: View {
+//    let ref = database.reference()
     let corverImage: UIImage
     
     @State var content: String = ""
     @State var to: String = ""
     @State var from: String = ""
+    @State private var mode: [String: Int] = [:]
     @Binding var firstNaviLinkActive: Bool
     
     let user: User
@@ -35,6 +38,13 @@ struct CardContentView: View {
                 .background(Color("Secondary"))
                 .textFieldStyle(.roundedBorder)
             Spacer()
+        }
+        .onAppear {
+//            ref.queryOrdered(byChild: "mode").queryEqual(toValue: 1).observe(.value) { (snapshot) in
+//                if let value = snapshot.value as? [String: Any] {
+//                    self.data = value
+//                }
+//            }
         }
         .padding(20)
         .navigationTitle("카드 쓰기")

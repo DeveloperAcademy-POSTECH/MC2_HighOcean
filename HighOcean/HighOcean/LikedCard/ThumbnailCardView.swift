@@ -6,18 +6,21 @@
 //
 
 import SwiftUI
+import FirebaseStorage
 
 struct ThumbnailCardView: View {
     @Binding var degree : Double
     @Binding var card: Card
-    
+    @State private var downloadedImage: UIImage = UIImage(named: "DefaultCover")!
+    private let storage = Storage.storage()
+
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 20)
                 .fill(.white)
                 .shadow(radius: 3)
                 .frame(width: 144, height: 235)
-            Image(card.image)
+            Image(uiImage: downloadedImage)
                 .resizable()
                 .frame(width: 124, height: 213)
             LinearGradient(
@@ -27,6 +30,10 @@ struct ThumbnailCardView: View {
                 .opacity(0.3)
                 .blendMode(.multiply)
             DateAndDay
+        }
+        
+        .onAppear {
+            downloadImage(imageName: card.image)
         }
         .rotation3DEffect(Angle(degrees: degree), axis: (x: 0, y: 1, z: 0))
     }
@@ -74,5 +81,18 @@ struct ThumbnailCardView: View {
         formatter.locale = Locale(identifier: "ko")
         formatter.dateFormat = "E요일"
         return formatter.string(from: date)
+    }
+    
+    func downloadImage(imageName: String) {
+        storage.reference(forURL: "gs://mc2highocean.appspot.com/\(imageName)").downloadURL { (url, error) in
+            print("gs://mc2highocean.appspot.com/\(imageName)")
+            
+            if let url = url {
+                let data = NSData(contentsOf: url)
+                downloadedImage = UIImage(data: data! as Data)!
+            } else {
+                downloadedImage = UIImage(named: "DefaultCover")!
+            }
+        }
     }
 }
