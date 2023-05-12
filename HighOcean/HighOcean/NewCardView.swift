@@ -24,7 +24,7 @@ struct NewCardView : View {
                 Color("Secondary").ignoresSafeArea()
                 VStack(spacing: 140){
                     HStack(spacing: 18){
-                        ForEach(0..<cardDeck.uncheckedCards.count) { index in
+                        ForEach(cardDeck.uncheckedCards.indices, id: \.self) { index in
                             CardView(card: $cardDeck.uncheckedCards[index])
                                 .offset(x: self.x)
                                 .highPriorityGesture(DragGesture()
