@@ -84,8 +84,6 @@ struct TotalThumbnailCardView: View {
     
     func downloadImage(imageName: String) {
         storage.reference(forURL: "gs://mc2highocean.appspot.com/\(imageName)").downloadURL { (url, error) in
-            print("gs://mc2highocean.appspot.com/\(imageName)")
-            
             if let url = url {
                 let data = NSData(contentsOf: url)
                 downloadedImage = UIImage(data: data! as Data)!

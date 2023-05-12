@@ -33,7 +33,6 @@ struct CardFrontView: View {
             DateAndDay
         }
         .onAppear {
-            print(card.image)
             downloadImage(imageName: card.image)
         }
         .rotation3DEffect(Angle(degrees: degree), axis: (x: 0, y: 1, z: 0))
@@ -86,8 +85,6 @@ struct CardFrontView: View {
     
     func downloadImage(imageName: String) {
         storage.reference(forURL: "gs://mc2highocean.appspot.com/\(imageName)").downloadURL { (url, error) in
-            print("gs://mc2highocean.appspot.com/\(imageName)")
-            
             if let url = url {
                 let data = NSData(contentsOf: url)
                 downloadedImage = UIImage(data: data! as Data)!

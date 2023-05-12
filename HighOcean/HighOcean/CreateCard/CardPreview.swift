@@ -74,7 +74,6 @@ struct CardPreView: View {
         storage.reference().child(filePath).putData(data, metadata: metaData) { (metaData, error) in
             uploadimage = true
             if let error = error {
-                print(error.localizedDescription)
                 return
             }
         } 
