@@ -21,10 +21,8 @@ struct NewCardView : View {
     @ObservedObject var cardDeck: Cards
     
     var number : Int = 0
-    
     var body : some View {
         NavigationView{
-            
             let number = Int(self.count)
             
             ZStack {
