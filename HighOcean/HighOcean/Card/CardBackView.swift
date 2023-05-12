@@ -25,7 +25,7 @@ struct CardBackView: View {
         }
         .rotation3DEffect(Angle(degrees: degree), axis: (x: 0, y: 1, z: 0))
     }
-
+    
     var CardContent: some View {
         VStack{
             HStack{
@@ -43,19 +43,19 @@ struct CardBackView: View {
                 .foregroundColor(Color("Primary"))
                 .multilineTextAlignment(.leading)
                 .lineSpacing(5)
-
+            
             Spacer()
             HStack{
                 HStack{
-//                    if !cards.sentCards.contains(card) {
-                        Button {
-                            card.changeIsLiked()
-                        } label: {
-                            if !cards.sentCards.contains(card) {
-                                Image(card.isLiked ? "IconHeartFilled" : "IconHeartEmpty")
-                            }
-                        }
-//                    }
+                    //                    if !cards.sentCards.contains(card) {
+                    Button {
+                        cards.editLikedCard(card: card, isLiked: card.isLiked)
+                    } label: {
+                        //                            if !cards.sentCards.contains(card) {
+                        Image(card.isLiked ? "IconHeartFilled" : "IconHeartEmpty")
+                        //                            }
+                    }
+                    //                    }
                 }
                 Spacer()
                 VStack(alignment: .leading, spacing: 4){
@@ -73,5 +73,8 @@ struct CardBackView: View {
             }
         }
         .frame(width: 254, height: 437)
+        .onAppear(){
+            cards.editCheckedCard(card: card, isChecked: card.isChecked)
+        }
     }
 }
