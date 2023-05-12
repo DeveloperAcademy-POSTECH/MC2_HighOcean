@@ -83,7 +83,7 @@ struct HomeView: View {
                             .fill(Color.white)
                             .frame(width: 369, height: 308)
                         VStack {
-                            if cards.isNewCards {
+                            if cards.uncheckedCards.count != 0 {
                                 Text("왈왈! ")
                                     .font(.system(size: 17))
                                     .bold()
@@ -100,13 +100,13 @@ struct HomeView: View {
                                 Text("왈! 새로운 카드는 없다멍..")
                                     .bold()
                             }
-                            Image(cards.isNewCards ? "walwalHappy" : "walwalSad")
+                            Image(cards.uncheckedCards.count != 0 ? "walwalHappy" : "walwalSad")
                                 .resizable()
                                 .scaledToFit()
-                            NavigationLink(destination: NewCardView(cardDeck: cards)) {
+                            NavigationLink(destination: NewCardView().environmentObject(cards)) {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 10)
-                                        .fill(cards.isNewCards ? Color("Accent") : Color("Disabled"))
+                                        .fill(cards.uncheckedCards.count != 0 ? Color("Accent") : Color("Disabled"))
                                         .frame(width: 349, height: 54)
                                     Text("새 카드 확인하기")
                                         .fontWeight(.semibold)
@@ -114,7 +114,7 @@ struct HomeView: View {
                                         .font(.system(size: 18))
                                 }
                             }
-                            .disabled(!cards.isNewCards)
+                            .disabled(!(cards.uncheckedCards.count != 0))
                         }
                         .padding(21)
                     }
@@ -179,6 +179,7 @@ struct HomeView: View {
                             }
                         }
                         .onAppear {
+                            cards.loadData()
                             updateButtonAvailability()
                             subtractTime(from: user.time)
                         }

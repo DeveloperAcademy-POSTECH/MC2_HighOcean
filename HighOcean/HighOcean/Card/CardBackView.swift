@@ -49,6 +49,7 @@ struct CardBackView: View {
                 HStack{
                     //                    if !cards.sentCards.contains(card) {
                     Button {
+                        card.isLiked.toggle()
                         cards.editLikedCard(card: card, isLiked: card.isLiked)
                     } label: {
                         //                            if !cards.sentCards.contains(card) {
@@ -73,8 +74,6 @@ struct CardBackView: View {
             }
         }
         .frame(width: 254, height: 437)
-        .onAppear(){
-            cards.editCheckedCard(card: card, isChecked: card.isChecked)
-        }
+
     }
 }

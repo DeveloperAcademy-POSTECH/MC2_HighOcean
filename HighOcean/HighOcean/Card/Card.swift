@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import FirebaseDatabase
+import FirebaseDatabaseSwift
 
 struct Card: Identifiable, Equatable, Codable, Hashable{  // Codable -> Encode, Decode 가능
-    let id = UUID().uuidString
+    let id: String
     let context: String
     let image: String
     let createdDate: String
@@ -19,7 +21,8 @@ struct Card: Identifiable, Equatable, Codable, Hashable{  // Codable -> Encode, 
     var isChecked: Bool
     var show: Bool
     
-    init(context: String, image: String, createdDate: String, from: String, to: String, creator: String, isLiked: Bool, isChecked: Bool, show: Bool){
+    init(context: String, image: String, createdDate: String, from: String, to: String, creator: String, isLiked: Bool, isChecked: Bool, show: Bool, id: String = UUID().uuidString){
+        self.id = id
         self.context = context
         self.image = image
         self.createdDate = createdDate
@@ -45,5 +48,10 @@ struct Card: Identifiable, Equatable, Codable, Hashable{  // Codable -> Encode, 
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
+    }
+    
+    func editCheckedCard() {
+        let ref: DatabaseReference = Database.database().reference()
+        ref.child("photoCard/\(self.id)/isChecked").setValue(true)
     }
 }

@@ -84,10 +84,11 @@ class Cards: ObservableObject {
     }
     
     func editLikedCard(card: Card, isLiked: Bool) {
+        print(card.id)
         if isLiked {
-            ref.child("photoCard/\(card.id)/isLiked").setValue(false)
-        } else {
             ref.child("photoCard/\(card.id)/isLiked").setValue(true)
+        } else {
+            ref.child("photoCard/\(card.id)/isLiked").setValue(false)
         }
     }
     
