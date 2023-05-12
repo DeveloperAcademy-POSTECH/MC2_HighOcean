@@ -13,6 +13,7 @@
 		2DB726442A04C515007D7A17 /* NewCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB726432A04C515007D7A17 /* NewCardView.swift */; };
 		2DB726462A04C558007D7A17 /* CardBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB726452A04C558007D7A17 /* CardBackView.swift */; };
 		2DB7264A2A0890FC007D7A17 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB726492A0890FC007D7A17 /* Cards.swift */; };
+		E525A7222A0E87B2000F215B /* QuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E525A7212A0E87B2000F215B /* QuestionData.swift */; };
 		FF1373532A0D263000C00AB2 /* WeekButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1373522A0D263000C00AB2 /* WeekButtonView.swift */; };
 		FF1373582A0DB3FF00C00AB2 /* UNNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1373572A0DB3FF00C00AB2 /* UNNotificationCenter.swift */; };
 		FF4087AF2A01FC88003BED80 /* HighOceanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */; };
@@ -50,6 +51,7 @@
 		2DB726452A04C558007D7A17 /* CardBackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBackView.swift; sourceTree = "<group>"; };
 		2DB726492A0890FC007D7A17 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 		99B5C7CA2A0B2E7200AB5D0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E525A7212A0E87B2000F215B /* QuestionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionData.swift; sourceTree = "<group>"; };
 		FF1373522A0D263000C00AB2 /* WeekButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekButtonView.swift; sourceTree = "<group>"; };
 		FF1373572A0DB3FF00C00AB2 /* UNNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNNotificationCenter.swift; sourceTree = "<group>"; };
 		FF4087AB2A01FC88003BED80 /* HighOcean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HighOcean.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +145,7 @@
 				FF594ABE2A0DC12600730BDB /* PhotoPicker.swift */,
 				FF594AC72A0DD6E700730BDB /* CardContentView.swift */,
 				FF594ABC2A0DC12600730BDB /* CardPreview.swift */,
+				E525A7212A0E87B2000F215B /* QuestionData.swift */,
 			);
 			path = CreateCard;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			files = (
 				FF4087AF2A01FC88003BED80 /* HighOceanApp.swift in Sources */,
 				FFB969E92A0C6CF900086C18 /* ThumbnailCardView.swift in Sources */,
+				E525A7222A0E87B2000F215B /* QuestionData.swift in Sources */,
 				2DB726462A04C558007D7A17 /* CardBackView.swift in Sources */,
 				FFDCB8712A09F20F00477C51 /* ActivityView.swift in Sources */,
 				FFB969932A0A2A9800086C18 /* EmojiButtonView.swift in Sources */,
