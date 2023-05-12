@@ -203,13 +203,35 @@ struct HomeView: View {
                 }
             }
         }
+        .accentColor(Color("Accent"))
         .navigationBarBackButtonHidden(true)
     }
     
     private func updateButtonAvailability() {
-        let currentTime = Date()
-        let twoHoursLater = Calendar.current.date(byAdding: .hour, value: 2, to: user.time)!
-        isSendCardButtonEnabled = user.time <= currentTime && currentTime <= twoHoursLater
+        let calendar = Calendar.current
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(identifier: "Asia/Seoul")
+        dateFormatter.dateFormat = "HH:mm:ss"
+
+        let currentDate = Date()
+        let currentTimeString = dateFormatter.string(from: currentDate)
+        let currentTimeDate = dateFormatter.date(from: currentTimeString)!
+        
+        let userTimeString = dateFormatter.string(from: user.time)
+        let userTimeDate = dateFormatter.date(from: userTimeString)!
+        
+        let hour = calendar.component(.hour, from: currentTimeDate)
+        
+        if hour < 22 {
+            let twoHoursLater = Calendar.current.date(byAdding: .hour, value: 2, to: userTimeDate)!
+            isSendCardButtonEnabled = userTimeDate <= currentTimeDate && currentTimeDate <= twoHoursLater
+        } else {
+            let twoHoursBefore = Calendar.current.date(byAdding: .hour, value: -2, to: userTimeDate)!
+
+            isSendCardButtonEnabled = twoHoursBefore <= currentTimeDate && currentTimeDate <= userTimeDate
+        }
+        
     }
     
     private func subtractTime(from firstTime: Date) {
