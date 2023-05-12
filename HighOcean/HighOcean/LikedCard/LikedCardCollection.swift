@@ -4,7 +4,9 @@ import SwiftUI
 struct LikedCardCollection: View {
 
     @State private var selectedCard: Card?
+    @State private var showModal = false
     @EnvironmentObject var cards: Cards
+    
     private var likedCards: [Card] {
         return cards.likedCards
     }
@@ -33,6 +35,7 @@ struct LikedCardCollection: View {
                         ForEach(pageItems, id: \.self) { card in
                             Button {
                                 self.selectedCard = pageItems[index]
+                                self.showModal = true
                             } label: {
                                 ThumbnailCardView(degree: .constant(0), card: .constant(card))
                             }
@@ -44,58 +47,37 @@ struct LikedCardCollection: View {
             .tabViewStyle(PageTabViewStyle())
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
             .offset(y: 16)
+            
+            
+            if self.showModal {
+                ZStack{
+                    if let selectedCardIndex = likedCards.firstIndex(of: selectedCard!) {
+                        CardView(card: $cards.likedCards[selectedCardIndex])
+                    }
+                    
+                    VStack{
+                        Spacer()
+
+                        Button(action: {
+                            withAnimation{
+                                self.showModal.toggle()
+                            }
+                        }, label: {
+                            Image(systemName: "xmark").resizable()
+                                .frame(width: 15, height: 15)
+                                .foregroundColor(.black)
+                                .padding(20)
+                                .background(Color.white)
+                                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                .padding(.bottom, 80)
+                        })
+                    }
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                .background(Color.black.opacity(0.5))
+                .edgesIgnoringSafeArea(.all)
+            }
         }
         .navigationTitle("저장한 카드")
     }
 }
-
-//self.showModal = true
-
-//            ModalView(show: self.selectedCardBinding) {
-//                CardView(card: $selectedCardBinding)
-//            }
-//            .opacity(self.showModal ? 1 : 0)
-//            .animation(.easeInOut)
-//    @State private var showModal = false
-    
-//    var selectedCardBinding: Binding<Bool> {
-//        Binding<Bool>(
-//            get: { self.selectedCard != nil },
-//            set: { if !$0 { self.selectedCard = nil } }
-//        )
-//    }
-    
-//    var body: some View {
-//        ZStack {
-//                LazyVGrid(columns: [GridItem(.adaptive(minimum: 144))], spacing: 18) {
-//                    ForEach($cards.likedCards) { $card in
-//                        Button {
-//                            self.selectedCard = card
-////                            self.showModal = true
-//                        } label: {
-//                            ThumbnailCardView(degree: .constant(0), card: $card)
-//                        }
-//                        .buttonStyle(PlainButtonStyle())
-//                    }
-//                }
-//                .padding(.horizontal)
-////            ModalView(show: self.selectedCardBinding) {
-////                CardView(card: $selectedCardBinding)
-////            }
-////            .opacity(self.showModal ? 1 : 0)
-////            .animation(.easeInOut)
-//        }
-//    }
-//}
-
-
-//extension View {
-//    func snapshot() -> UIImage {
-//        let controller = UIHostingController(rootView: self.edgesIgnoringSafeArea(.all))
-//        let view = controller.view
-//
-//        let targetSize = controller.view.intrinsicContentSize
-//
-//        view?.bounds = CG
-//    }
-//}
