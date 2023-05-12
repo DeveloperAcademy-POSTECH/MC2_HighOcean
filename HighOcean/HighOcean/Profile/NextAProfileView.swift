@@ -2,12 +2,10 @@ import SwiftUI
 
 struct NextAProfileView: View {
     
-    @EnvironmentObject var userName: user
-//    @EnvironmentObject var ParentsID: user
-    
-    @State private var isParents = false
-    @State private var isChild = false
-    
+    let userName: String
+    @State private var isParents: Bool = false
+    @State private var isChild: Bool = false
+    @State private var familyRule:String = ""
     var body: some View {
 
         ZStack(){
@@ -15,7 +13,7 @@ struct NextAProfileView: View {
             
             VStack(alignment: .leading){
                 VStack(alignment: .leading) {
-                    Text("\(userName.name) 님은")
+                    Text("\(userName) 님은")
                         .font(.system(size: 28))
                         .fontWeight(.bold)
                         .foregroundColor(Color("Primary"))
@@ -32,13 +30,15 @@ struct NextAProfileView: View {
                         .padding(EdgeInsets(top: 18, leading: 0, bottom: 0, trailing: 0))
                     
                     HStack(spacing: 24){
-                        
-                        
-                        
                         //부모 버튼
                         Button(action: {
                             self.isParents.toggle()
                             self.isChild = false
+                            if self.isParents && !self.isChild {
+                                self.familyRule = "부모"
+                            } else {
+                                self.familyRule = ""
+                            }
                         }) {
                             ZStack(){
                                 RoundedRectangle(cornerRadius: 8).stroke(self.isParents ? Color("Accent") : Color.clear, lineWidth: 4)
@@ -61,6 +61,11 @@ struct NextAProfileView: View {
                         Button(action: {
                             self.isChild.toggle()
                             self.isParents = false
+                            if self.isChild && !self.isParents {
+                                self.familyRule = "아이"
+                            } else {
+                                self.familyRule = ""
+                            }
                         }) {
                             ZStack(){
                                 RoundedRectangle(cornerRadius: 8).stroke(self.isChild ? Color("Accent") : Color.clear, lineWidth: 4)
@@ -86,25 +91,18 @@ struct NextAProfileView: View {
                     
                     Spacer()
                     
-                    NavigationLink(destination: NextBProfileView()){
+                    NavigationLink(destination: NextBProfileView(userName: userName, familyRule: familyRule)) {
                         Text("다음")
                             .frame(width: 354.0, height:54.0)
                             .font(.system(size: 18))
-                            .background(Color("Accent"))
+                            .background(familyRule.isEmpty ? Color("Disabled") : Color("Accent"))
                             .foregroundColor(Color.white)
                             .cornerRadius(10)
                     }
+                    .disabled(familyRule.isEmpty)
                 }
+                .padding(20)
             }
-            
-        }
-    }
-
-    // 미리보기
-    struct ContentView_NextAPreviews: PreviewProvider {
-        static var previews: some View {
-            NextAProfileView()
-                .environmentObject(user()) //테스트용 추후 삭제
         }
     }
 }
