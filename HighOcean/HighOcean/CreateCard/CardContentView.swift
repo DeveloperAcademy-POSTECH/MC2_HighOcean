@@ -44,7 +44,12 @@ struct CardContentView: View {
             if user.familyRule == "부모" {
                 questionText = NoCheckedEmotion.randomElement() ?? ""
             } else {
-                questionText = PositiveEmotion.randomElement()?[0] ?? ""
+                if user.mode < 3 {
+                    questionText = PositiveEmotion.randomElement()?[0] ?? ""
+                } else {
+                    questionText = NegativeEmotion.randomElement()?[0] ?? ""
+                }
+                
             }
         }
         .padding(20)
