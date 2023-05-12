@@ -34,7 +34,7 @@ struct LikedCardCollection: View {
                     LazyVGrid(columns: columns, spacing: 20){
                         ForEach(pageItems, id: \.self) { card in
                             Button {
-                                self.selectedCard = pageItems[index]
+                                self.selectedCard = cards.likedCards[index]
                                 self.showModal = true
                             } label: {
                                 ThumbnailCardView(degree: .constant(0), card: .constant(card))

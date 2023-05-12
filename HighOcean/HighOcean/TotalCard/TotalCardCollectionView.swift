@@ -24,25 +24,27 @@ struct TotalCardCollectionView: View {
         ZStack(alignment:.top){
             Color("Secondary").ignoresSafeArea()
             
+            //  픽커 있을 때 (발신 포함)
             VStack{
-                Picker("Pick", selection: $selectedPicker){
-                    ForEach(tapInfo.allCases, id: \.self) {
-                        Text($0.rawValue)
-                    }
-                }
-                .pickerStyle(.segmented)
-                .padding()
-                    
-                CollectionView(cardArray: selectedPicker == .dis ? $cards.recievedCards : $cards.sentCards, showModal: $showModal, selectedCardIndex: $selectedCardIndex)
+                //                Picker("Pick", selection: $selectedPicker){
+                //                    ForEach(tapInfo.allCases, id: \.self) {
+                //                        Text($0.rawValue)
+                //                    }
+                //                }
+                //                .pickerStyle(.segmented)
+                //                .padding()
+                //                CollectionView(cardArray: selectedPicker == .dis ? $cards.recievedCards : $cards.sentCards, showModal: $showModal, selectedCardIndex: $selectedCardIndex)
+                
+                CollectionView(cardArray:  $cards.recievedCards , showModal: $showModal, selectedCardIndex: $selectedCardIndex)
             }
             
             if self.showModal {
                 ZStack{
                     CardView(card: $cards.recievedCards[selectedCardIndex])
-                
+                    
                     VStack{
                         Spacer()
-
+                        
                         Button(action: {
                             withAnimation{
                                 self.showModal.toggle()
