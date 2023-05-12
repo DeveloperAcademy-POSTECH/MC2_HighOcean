@@ -11,7 +11,9 @@ struct CardPreView: View {
     @Binding var content : String
     @Binding var to : String
     @Binding var from : String
+
     @State private var showingAlert = false
+    
     @State var newcard = Card(context: "", image: "", createdDate: "", from: "", to: "", creator: "", isLiked: false, isChecked: false, show: false)
     
     var body: some View {
