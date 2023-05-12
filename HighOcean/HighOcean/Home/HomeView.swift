@@ -83,7 +83,7 @@ struct HomeView: View {
                             .fill(Color.white)
                             .frame(width: 369, height: 308)
                         VStack {
-                            if cards.uncheckedCards.count != 0 {
+                            if (cards.uncheckedCards.count != 0) && isSendCardButtonEnabled {
                                 Text("왈왈! ")
                                     .font(.system(size: 17))
                                     .bold()
@@ -100,13 +100,13 @@ struct HomeView: View {
                                 Text("왈! 새로운 카드는 없다멍..")
                                     .bold()
                             }
-                            Image(cards.uncheckedCards.count != 0 ? "walwalHappy" : "walwalSad")
+                            Image((cards.uncheckedCards.count != 0) && isSendCardButtonEnabled ? "walwalHappy" : "walwalSad")
                                 .resizable()
                                 .scaledToFit()
                             NavigationLink(destination: NewCardView().environmentObject(cards)) {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 10)
-                                        .fill(cards.uncheckedCards.count != 0 ? Color("Accent") : Color("Disabled"))
+                                        .fill((cards.uncheckedCards.count != 0) && isSendCardButtonEnabled ? Color("Accent") : Color("Disabled"))
                                         .frame(width: 349, height: 54)
                                     Text("새 카드 확인하기")
                                         .fontWeight(.semibold)

@@ -39,7 +39,6 @@ struct CardPreView: View {
             let createDate = formatter.string(from: Date())
             uploadImageToStorage(coverImage)
             newCard = Card(context: content, image: imageURL, createdDate: createDate, from: sendUser, to: reciveUser, creator: user.name, isLiked: false, isChecked: false, show: false)
-            uploadimage = true
         }
         .navigationTitle("미리보기")
         .navigationBarTitleDisplayMode(.inline)
@@ -73,11 +72,11 @@ struct CardPreView: View {
         let metaData = StorageMetadata()
         metaData.contentType = "image/png"
         storage.reference().child(filePath).putData(data, metadata: metaData) { (metaData, error) in
+            uploadimage = true
             if let error = error {
                 print(error.localizedDescription)
                 return
             }
-        }
-        
+        } 
     }
 }
