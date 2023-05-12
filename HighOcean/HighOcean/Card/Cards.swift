@@ -24,7 +24,7 @@ class Cards: ObservableObject {
     @Published var sentCards: [Card] = []
     @Published var recievedCards: [Card] = []
     @Published var likedCards: [Card] = []
-    
+ 
     
     init() {
         self.uncheckedCards = cards
@@ -76,7 +76,6 @@ class Cards: ObservableObject {
                 self.dataSort()
                 
                 print("DEBUG: " + "\(self.cards)")
-                
             } catch let error {
                 print("Error decoding JSON: \(error.localizedDescription)")
             }

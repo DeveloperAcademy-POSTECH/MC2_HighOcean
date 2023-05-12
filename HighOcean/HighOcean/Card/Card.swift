@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Card: Identifiable, Equatable, Codable{  // Codable -> Encode, Decode 가능
+struct Card: Identifiable, Equatable, Codable, Hashable{  // Codable -> Encode, Decode 가능
     let id = UUID()
     let context: String
     let image: String
@@ -33,5 +33,13 @@ struct Card: Identifiable, Equatable, Codable{  // Codable -> Encode, Decode 가
     
     mutating func changeIschecked(){
         self.isChecked = true
+    }
+    
+    static func == (lhs: Card, rhs: Card) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }

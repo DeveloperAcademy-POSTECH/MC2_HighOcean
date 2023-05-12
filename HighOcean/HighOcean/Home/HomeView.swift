@@ -110,7 +110,6 @@ struct HomeView: View {
                     .padding(21)
                 }
                 .onAppear{
-                    print(cards.recievedCards.count)
                     if cards.recievedCards.count != 0 {
                         isNewCards = true
                     }
@@ -118,7 +117,7 @@ struct HomeView: View {
                 
                 HStack(alignment: .center) {
                     VStack {
-                        NavigationLink(destination: Likedcardcollectionview().environmentObject(cards)) {
+                        NavigationLink(destination: LikedCardCollection().environmentObject(cards)) {
                             ZStack(alignment: .leading) {
                                 RoundedRectangle(cornerRadius: 10)
                                     .fill(Color.white)
