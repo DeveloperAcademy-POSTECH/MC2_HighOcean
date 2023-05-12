@@ -17,6 +17,8 @@
 		E525A7132A0C7A41000F215B /* CardPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E525A70F2A0C7A41000F215B /* CardPreview.swift */; };
 		E525A7142A0C7A41000F215B /* CreatePhotoFrontCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E525A7102A0C7A41000F215B /* CreatePhotoFrontCardView.swift */; };
 		E525A7152A0C7A41000F215B /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E525A7112A0C7A41000F215B /* PhotoPicker.swift */; };
+		FF1373532A0D263000C00AB2 /* WeekButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1373522A0D263000C00AB2 /* WeekButtonView.swift */; };
+		FF13735A2A0DBA7300C00AB2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1373592A0DBA7300C00AB2 /* SettingsView.swift */; };
 		FF4087AF2A01FC88003BED80 /* HighOceanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */; };
 		FF4087B32A01FC89003BED80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4087B22A01FC89003BED80 /* Assets.xcassets */; };
 		FF4DAE7A2A0A16D200B2B546 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4DAE792A0A16D200B2B546 /* HomeView.swift */; };
@@ -24,11 +26,16 @@
 		FFB969D52A0BB6DE00086C18 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969D42A0BB6DE00086C18 /* SettingsView.swift */; };
 		FFB969DE2A0C6C7C00086C18 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969DD2A0C6C7C00086C18 /* CollectionView.swift */; };
 		FFB969E52A0C6CE500086C18 /* Likedcardcollectionview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969E42A0C6CE500086C18 /* Likedcardcollectionview.swift */; };
+		FFB969D12A0B789900086C18 /* CreatePhotoFrontCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969D02A0B789900086C18 /* CreatePhotoFrontCardView.swift */; };
+		FFB969D32A0B873A00086C18 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969D22A0B873A00086C18 /* PhotoPicker.swift */; };
+		FFB969E12A0C6C9400086C18 /* CardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969DF2A0C6C9400086C18 /* CardContentView.swift */; };
+		FFB969E22A0C6C9400086C18 /* CardPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969E02A0C6C9400086C18 /* CardPreview.swift */; };
+		FFB969E52A0C6CE500086C18 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969E42A0C6CE500086C18 /* Test.swift */; };
 		FFB969E82A0C6CF900086C18 /* LikedCardCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969E62A0C6CF900086C18 /* LikedCardCollection.swift */; };
 		FFB969E92A0C6CF900086C18 /* ThumbnailCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969E72A0C6CF900086C18 /* ThumbnailCardView.swift */; };
 		FFB969EC2A0C6D9500086C18 /* TotalThumbnailCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969EB2A0C6D9500086C18 /* TotalThumbnailCardView.swift */; };
 		FFDCB8712A09F20F00477C51 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8702A09F20F00477C51 /* ActivityView.swift */; };
-		FFDCB8752A09F21C00477C51 /* FamilyDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8742A09F21C00477C51 /* FamilyDB.swift */; };
+		FFDCB8752A09F21C00477C51 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8742A09F21C00477C51 /* User.swift */; };
 		FFDCB8792A09F22C00477C51 /* NextAProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8782A09F22C00477C51 /* NextAProfileView.swift */; };
 		FFDCB87B2A09F23C00477C51 /* NextBProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB87A2A09F23C00477C51 /* NextBProfileView.swift */; };
 		FFDCB87D2A09F24300477C51 /* NextCProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB87C2A09F24300477C51 /* NextCProfileView.swift */; };
@@ -47,6 +54,9 @@
 		E525A70F2A0C7A41000F215B /* CardPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPreview.swift; sourceTree = "<group>"; };
 		E525A7102A0C7A41000F215B /* CreatePhotoFrontCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePhotoFrontCardView.swift; sourceTree = "<group>"; };
 		E525A7112A0C7A41000F215B /* PhotoPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		99B5C7CA2A0B2E7200AB5D0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FF1373522A0D263000C00AB2 /* WeekButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekButtonView.swift; sourceTree = "<group>"; };
+		FF1373592A0DBA7300C00AB2 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FF4087AB2A01FC88003BED80 /* HighOcean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HighOcean.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighOceanApp.swift; sourceTree = "<group>"; };
 		FF4087B22A01FC89003BED80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,11 +65,16 @@
 		FFB969D42A0BB6DE00086C18 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FFB969DD2A0C6C7C00086C18 /* CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		FFB969E42A0C6CE500086C18 /* Likedcardcollectionview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Likedcardcollectionview.swift; sourceTree = "<group>"; };
+		FFB969D02A0B789900086C18 /* CreatePhotoFrontCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePhotoFrontCardView.swift; sourceTree = "<group>"; };
+		FFB969D22A0B873A00086C18 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		FFB969DF2A0C6C9400086C18 /* CardContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardContentView.swift; sourceTree = "<group>"; };
+		FFB969E02A0C6C9400086C18 /* CardPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPreview.swift; sourceTree = "<group>"; };
+		FFB969E42A0C6CE500086C18 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		FFB969E62A0C6CF900086C18 /* LikedCardCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikedCardCollection.swift; sourceTree = "<group>"; };
 		FFB969E72A0C6CF900086C18 /* ThumbnailCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailCardView.swift; sourceTree = "<group>"; };
 		FFB969EB2A0C6D9500086C18 /* TotalThumbnailCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalThumbnailCardView.swift; sourceTree = "<group>"; };
 		FFDCB8702A09F20F00477C51 /* ActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
-		FFDCB8742A09F21C00477C51 /* FamilyDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamilyDB.swift; sourceTree = "<group>"; };
+		FFDCB8742A09F21C00477C51 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FFDCB8782A09F22C00477C51 /* NextAProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextAProfileView.swift; sourceTree = "<group>"; };
 		FFDCB87A2A09F23C00477C51 /* NextBProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextBProfileView.swift; sourceTree = "<group>"; };
 		FFDCB87C2A09F24300477C51 /* NextCProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextCProfileView.swift; sourceTree = "<group>"; };
@@ -87,6 +102,13 @@
 				E525A7112A0C7A41000F215B /* PhotoPicker.swift */,
 			);
 			path = CreateCard;
+		FF1373562A0D2E2B00C00AB2 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				FF1373522A0D263000C00AB2 /* WeekButtonView.swift */,
+				FF1373592A0DBA7300C00AB2 /* SettingsView.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		FF4087A22A01FC88003BED80 = {
@@ -113,6 +135,10 @@
 				FFB969D42A0BB6DE00086C18 /* SettingsView.swift */,
 				FFB969E42A0C6CE500086C18 /* Likedcardcollectionview.swift */,
 				E525A7162A0C7A48000F215B /* CreateCard */,
+				FFB969D02A0B789900086C18 /* CreatePhotoFrontCardView.swift */,
+				FFB969D22A0B873A00086C18 /* PhotoPicker.swift */,
+				FFB969E42A0C6CE500086C18 /* Test.swift */,
+				FF1373562A0D2E2B00C00AB2 /* Setting */,
 				FFB969EA2A0C6D0200086C18 /* LikedCard */,
 				FFB969942A0A2B4700086C18 /* Home */,
 				FFDCB8862A09F2E300477C51 /* TotalCard */,
@@ -149,7 +175,7 @@
 				FFDCB87A2A09F23C00477C51 /* NextBProfileView.swift */,
 				FFDCB87C2A09F24300477C51 /* NextCProfileView.swift */,
 				FFDCB8702A09F20F00477C51 /* ActivityView.swift */,
-				FFDCB8742A09F21C00477C51 /* FamilyDB.swift */,
+				FFDCB8742A09F21C00477C51 /* User.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -245,7 +271,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFB969D52A0BB6DE00086C18 /* SettingsView.swift in Sources */,
 				FF4087AF2A01FC88003BED80 /* HighOceanApp.swift in Sources */,
 				E525A7142A0C7A41000F215B /* CreatePhotoFrontCardView.swift in Sources */,
 				FFB969E92A0C6CF900086C18 /* ThumbnailCardView.swift in Sources */,
@@ -268,7 +293,9 @@
 				FFDCB8832A09F25C00477C51 /* TotalCardCollectionView.swift in Sources */,
 				FFB969EC2A0C6D9500086C18 /* TotalThumbnailCardView.swift in Sources */,
 				2DB7263E2A04B2DF007D7A17 /* CardFrontView.swift in Sources */,
-				FFDCB8752A09F21C00477C51 /* FamilyDB.swift in Sources */,
+				FF13735A2A0DBA7300C00AB2 /* SettingsView.swift in Sources */,
+				FFDCB8752A09F21C00477C51 /* User.swift in Sources */,
+				FF1373532A0D263000C00AB2 /* WeekButtonView.swift in Sources */,
 				2DB726442A04C515007D7A17 /* NewCardView.swift in Sources */,
 				FFDCB87D2A09F24300477C51 /* NextCProfileView.swift in Sources */,
 			);

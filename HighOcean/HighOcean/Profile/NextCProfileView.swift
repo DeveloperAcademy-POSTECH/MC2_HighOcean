@@ -2,6 +2,9 @@ import SwiftUI
 
 struct NextCProfileView: View {
 
+    let userName: String
+    let familyRule: String
+    
     @State private var leftToggle = false
     @State private var showActivityView = false //공유 링크 토글 버튼
     
@@ -49,7 +52,7 @@ struct NextCProfileView: View {
                     
                     Spacer()
                     
-                    NavigationLink(destination: HomeView()){
+                    NavigationLink(destination: EmptyView()){
                         Text("시작하기")
                             .frame(width: 354.0, height:54.0)
                             .font(.system(size: 18))
@@ -67,11 +70,13 @@ struct NextCProfileView: View {
             
         }
     }
-    
-    // 미리보기
-    struct ContentView_NextCPreviews: PreviewProvider {
-        static var previews: some View {
-            NextCProfileView()
+}
+
+// 미리보기
+struct NextCProfileView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+            NextCProfileView(userName: "test", familyRule: "부모")
         }
     }
 }
