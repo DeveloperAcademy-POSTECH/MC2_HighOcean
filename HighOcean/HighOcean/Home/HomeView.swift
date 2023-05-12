@@ -168,7 +168,7 @@ struct HomeView: View {
                                     .resizable()
                                     .frame(width: 92, height: 39)
                                 if !isSendCardButtonEnabled {
-                                    Text("\(sendStartTime)")
+                                    Text("\(sendStartTime)\n뒤에 보낼수 있어요")
                                         .foregroundColor(.white)
                                         .font(.system(size: 14))
                                 }
