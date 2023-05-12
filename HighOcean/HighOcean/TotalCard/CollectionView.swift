@@ -25,7 +25,7 @@ struct CollectionView: View {
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 26) {
                         ForEach(cardArray.indices) { index in
-                            TotalThumbnailCardView(degree: .constant(0), card: cardArray[min(index, cardArray.count-1)])
+                            TotalThumbnailCardView(degree: .constant(0), card: $cardArray[min(index, cardArray.count-1)])
                                 .onTapGesture {
                                     selectedCardIndex = index
                                     showModal = true
