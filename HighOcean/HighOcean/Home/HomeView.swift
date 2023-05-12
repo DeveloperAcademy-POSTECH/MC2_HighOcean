@@ -9,7 +9,6 @@ import SwiftUI
 
 
 struct HomeView: View {
-    var cards = Cards()
     @State var user: User
     
     @State private var selectedButtonIndex: Int?
@@ -17,6 +16,8 @@ struct HomeView: View {
     @State private var isButtonEnabled = false
     
     var body: some View {
+        var cards = Cards(currentUser: user)
+        
         ZStack {
             Color("Secondary").ignoresSafeArea()
             VStack {
@@ -94,7 +95,7 @@ struct HomeView: View {
                         Image(isNewCards ? "walwalHappy" : "walwalSad")
                             .resizable()
                             .scaledToFit()
-                        NavigationLink(destination: NewCardView()) {
+                        NavigationLink(destination: NewCardView(card: cards)) {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 10)
                                     .fill(isNewCards ? Color("Accent") : Color("Disabled"))

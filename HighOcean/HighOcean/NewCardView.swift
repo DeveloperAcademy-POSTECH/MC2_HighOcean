@@ -6,20 +6,15 @@
 //
 import SwiftUI
 
-struct NewCardView: View {
-    var body: some View {
-        Home()
-    }
-}
 
-struct Home : View {
+struct NewCardView : View {
     
     @State var x : CGFloat = 0
     @State var count : CGFloat = 0
     @State var screen = UIScreen.main.bounds.width - 90
     @State var op : CGFloat = 0
 //    @State var cards = Cards().cards
-    @ObservedObject var card = Cards()
+    @ObservedObject var card: Cards
     
     var number : Int = 0
     
@@ -104,12 +99,12 @@ struct Home : View {
 //        cards[value].show = true
 //    }
 }
-
-struct NewCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewCardView()
-    }
-}
+//
+//struct NewCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NewCardView()
+//    }
+//}
 
 
 

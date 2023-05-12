@@ -49,13 +49,6 @@ struct LikedCardCollection: View {
     }
 }
 
-struct LikedCardCollection_Previews: PreviewProvider {
-    static var previews: some View {
-        LikedCardCollection()
-            .environmentObject(Cards())
-    }
-}
-
 //self.showModal = true
 
 //            ModalView(show: self.selectedCardBinding) {
