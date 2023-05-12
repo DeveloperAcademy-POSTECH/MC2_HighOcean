@@ -5,11 +5,14 @@
 //  Created by jeongyun on 2023/05/04.
 //
 
-import Foundation
+import SwiftUI
+import FirebaseDatabase
+import FirebaseDatabaseSwift
 
 class Cards: ObservableObject {
+    let ref: DatabaseReference = Database.database().reference()
+    
     let currentUser: User
-
     
     @Published var cards: [Card] = []
     @Published var uncheckedCards: [Card] = []
@@ -63,6 +66,55 @@ class Cards: ObservableObject {
                 print("Error decoding JSON: \(error.localizedDescription)")
             }
         }.resume()
+    }
+    
+    func addNewCard(card: Card) {
+        self.ref.child("photoCard").child("\(card.id)").setValue([
+            "id": card.id,
+            "context": card.context,
+            "image": card.image,
+            "createdDate": card.createdDate,
+            "from": card.from,
+            "to": card.to,
+            "creator": card.creator,
+            "isLiked": card.isLiked,
+            "isChecked": card.isChecked,
+            "show": card.show
+        ])
+    }
+    
+    func editLikedCard(card: Card, isLiked: Bool) {
+        print(card.id)
+        if isLiked {
+            ref.child("photoCard/\(card.id)/isLiked").setValue(true)
+        } else {
+            ref.child("photoCard/\(card.id)/isLiked").setValue(false)
+        }
+    }
+    
+    func editCheckedCard(card: Card, isChecked: Bool) {
+        ref.child("photoCard/\(card.id)/isChecked").setValue(isChecked)
+    }
+    
+    func editCard(card: Card) {
+        let updates: [String : Any] = [
+            "id": card.id,
+            "context": card.context,
+            "image": card.image,
+            "createdDate": card.createdDate,
+            "from": card.from,
+            "to": card.to,
+            "creator": card.creator,
+            "isLiked": card.isLiked,
+            "isChecked": card.isChecked,
+            "show": card.show
+        ]
+        
+        let childUpdates = ["photo/\(card.id)": updates]
+        for (index, cardItem) in cards.enumerated() where cardItem.id == card.id {
+            cards[index] = card
+        }
+        self.ref.updateChildValues(childUpdates)
     }
 }
 
