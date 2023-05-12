@@ -47,15 +47,12 @@ struct CardBackView: View {
             Spacer()
             HStack{
                 HStack{
-//                    if !cards.sentCards.contains(card) {
-                        Button {
-                            card.changeIsLiked()
-                        } label: {
-                            if !cards.sentCards.contains(card) {
-                                Image(card.isLiked ? "IconHeartFilled" : "IconHeartEmpty")
-                            }
-                        }
-//                    }
+                    Button {
+                        card.changeIsLiked()
+                    } label: {
+                        Image(card.isLiked ? "IconHeartFilled" : "IconHeartEmpty")
+                    }
+                    .opacity(cards.sentCards.contains(card) ? 0 : 1)
                 }
                 Spacer()
                 VStack(alignment: .leading, spacing: 4){

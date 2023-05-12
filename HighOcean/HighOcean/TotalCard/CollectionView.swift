@@ -28,21 +28,22 @@ struct CollectionView: View {
     
     var body: some View {
         ZStack{
-            ScrollView{
-                LazyVGrid(columns: columns, spacing: 26) {
-
-                    ForEach(cardArray.indices) { index in
-                        Button {
-                            self.selectedCardIndex = index
-                            self.showModal = true
-                        } label: {
-                            TotalThumbnailCardView(degree: .constant(0), card: cardArray[min(index, cardArray.count-1)])
+            if !cardArray.isEmpty {
+                ScrollView {
+                    LazyVGrid(columns: columns, spacing: 26) {
+                        ForEach(cardArray.indices) { index in
+                            Button {
+                                selectedCardIndex = index
+                                showModal = true
+                            } label: {
+                                TotalThumbnailCardView(degree: .constant(0), card: cardArray[min(index, cardArray.count-1)])
+                            }
+                            .buttonStyle(PlainButtonStyle())
                         }
-                        .buttonStyle(PlainButtonStyle())
                     }
                 }
+                .opacity(showModal ? 0 : 1)
             }
-            .opacity(showModal ? 0 : 1)
             
             if self.showModal {
                 ZStack{
