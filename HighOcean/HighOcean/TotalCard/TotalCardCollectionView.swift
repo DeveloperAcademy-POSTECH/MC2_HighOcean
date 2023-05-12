@@ -19,6 +19,7 @@ struct TotalCardCollectionView: View {
     
     @State private var showModal = false
     @State private var selectedCardIndex = 0
+    let isHeartButton: Bool
     
     var body: some View {
         ZStack(alignment:.top){
@@ -40,7 +41,7 @@ struct TotalCardCollectionView: View {
             
             if self.showModal {
                 ZStack{
-                    CardView(card: $cards.recievedCards[selectedCardIndex])
+                    CardView(card: $cards.recievedCards[selectedCardIndex], isHeartButton: isHeartButton)
                     
                     VStack{
                         Spacer()

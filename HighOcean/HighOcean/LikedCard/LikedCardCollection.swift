@@ -56,7 +56,7 @@ struct LikedCardCollection: View {
                if self.showModal {
                    ZStack{
                        if let selectedCard = selectedCard.wrappedValue {
-                           CardView(card: self.$cards.likedCards[self.cards.likedCards.firstIndex(of: selectedCard)!])
+                           CardView(card: self.$cards.likedCards[self.cards.likedCards.firstIndex(of: selectedCard)!], isHeartButton: true)
                        }
                        
                        VStack{

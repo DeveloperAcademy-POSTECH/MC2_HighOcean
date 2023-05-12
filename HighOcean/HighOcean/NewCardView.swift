@@ -25,7 +25,7 @@ struct NewCardView : View {
                 VStack(spacing: 140){
                     HStack(spacing: 18){
                         ForEach(cardDeck.uncheckedCards.indices, id: \.self) { index in
-                            CardView(card: $cardDeck.uncheckedCards[index])
+                            CardView(card: $cardDeck.uncheckedCards[index], isHeartButton: true)
                                 .offset(x: self.x)
                                 .highPriorityGesture(DragGesture()
                                     .onChanged({ (value) in

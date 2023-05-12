@@ -10,11 +10,10 @@ import SwiftUI
 
 
 struct CardBackView: View {
-    
     @Binding var degree: Double
     @Binding var card: Card
     @EnvironmentObject var cards: Cards
-    
+    var isHeartButton: Bool
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 20)
@@ -51,9 +50,12 @@ struct CardBackView: View {
                         card.isLiked.toggle()
                         cards.editLikedCard(card: card, isLiked: card.isLiked)
                     } label: {
-                        //                            if !cards.sentCards.contains(card) {
-                        Image(card.isLiked ? "IconHeartFilled" : "IconHeartEmpty")
-                        //                            }
+                        if isHeartButton {
+                            Image(card.isLiked ? "IconHeartFilled" : "IconHeartEmpty")
+                        } else {
+                            Text("")
+                        }
+                        
                     }
                 }
                 Spacer()

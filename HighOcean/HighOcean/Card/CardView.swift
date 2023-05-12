@@ -15,6 +15,8 @@ struct CardView: View {
     @State var backDegree = 90.0
     @State var isFlipped = false
     
+    var isHeartButton: Bool
+    
     let durationAndDelay : CGFloat = 0.3
     
     func flipCard(){
@@ -40,7 +42,7 @@ struct CardView: View {
         
         ZStack{
             CardFrontView(degree: $frontDegree, card: $card)
-            CardBackView(degree: $backDegree, card: $card)
+            CardBackView(degree: $backDegree, card: $card, isHeartButton: isHeartButton)
                 .onAppear(){
                     card.changeIschecked()
                 }

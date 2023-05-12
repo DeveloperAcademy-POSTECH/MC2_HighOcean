@@ -149,7 +149,7 @@ struct HomeView: View {
                                     .padding(19)
                                 }
                             }
-                            NavigationLink(destination: TotalCardCollectionView().environmentObject(cards)) {
+                            NavigationLink(destination: TotalCardCollectionView(isHeartButton: true).environmentObject(cards)) {
                                 ZStack(alignment: .leading) {
                                     RoundedRectangle(cornerRadius: 10)
                                         .fill(Color.white)
