@@ -17,6 +17,9 @@ struct TotalCardCollectionView: View {
     @State private var selectedPicker: tapInfo = .dis
     @EnvironmentObject var cards: Cards
     
+    @State private var showModal = false
+    @State private var selectedCardIndex = 0
+    
     var body: some View {
         ZStack(alignment:.top){
             Color("Secondary").ignoresSafeArea()
@@ -29,27 +32,37 @@ struct TotalCardCollectionView: View {
                 }
                 .pickerStyle(.segmented)
                 .padding()
+                    
+                CollectionView(cardArray: selectedPicker == .dis ? $cards.recievedCards : $cards.sentCards, showModal: $showModal, selectedCardIndex: $selectedCardIndex)
+            }
+            
+            if self.showModal {
+                ZStack{
+                    CardView(card: $cards.recievedCards[selectedCardIndex])
                 
-                cardsView(selectedOption: selectedPicker)
+                    VStack{
+                        Spacer()
+
+                        Button(action: {
+                            withAnimation{
+                                self.showModal.toggle()
+                            }
+                        }, label: {
+                            Image(systemName: "xmark").resizable()
+                                .frame(width: 15, height: 15)
+                                .foregroundColor(.black)
+                                .padding(20)
+                                .background(Color.white)
+                                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                .padding(.bottom, 80)
+                        })
+                    }
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                .background(Color.black.opacity(0.5))
+                .edgesIgnoringSafeArea(.all)
             }
         }
         .navigationTitle("전체 카드")
-    }
- }
-
-// 카드 내용 변경
-struct cardsView : View {
-    
-    var selectedOption : tapInfo
-    @EnvironmentObject var cards: Cards
-    
-    var body: some View{
-        
-        switch selectedOption {
-        case .dis:
-            CollectionView(cardArray: $cards.recievedCards)
-        case .out:
-            CollectionView(cardArray: $cards.sentCards)
-        }
     }
 }
