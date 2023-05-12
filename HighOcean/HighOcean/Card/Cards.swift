@@ -29,10 +29,10 @@ class Cards: ObservableObject {
     
     func dataSort() {
         likedCards = cards
-            .filter { $0.isLiked }
+            .filter { $0.isLiked && ($0.creator != currentUser.name)}
             .sorted { $0.createdDate > $1.createdDate }
         uncheckedCards = cards
-            .filter { !$0.isChecked }                             // 확인한 카드 필터링
+            .filter { !$0.isChecked && ($0.creator != currentUser.name)}                             // 확인한 카드 필터링
             .sorted{ $0.createdDate > $1.createdDate }          // 최신순 소팅
         sentCards = cards
             .filter { $0.creator == currentUser.name }            // 보낸 카드 필터링
