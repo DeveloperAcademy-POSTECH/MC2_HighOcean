@@ -83,7 +83,7 @@ struct HomeView: View {
                             .fill(Color.white)
                             .frame(width: 369, height: 308)
                         VStack {
-                            if cards.uncheckedCards.count != 0 {
+                            if (cards.uncheckedCards.count != 0) && isSendCardButtonEnabled {
                                 Text("왈왈! ")
                                     .font(.system(size: 17))
                                     .bold()
@@ -100,13 +100,13 @@ struct HomeView: View {
                                 Text("왈! 새로운 카드는 없다멍..")
                                     .bold()
                             }
-                            Image(cards.uncheckedCards.count != 0 ? "walwalHappy" : "walwalSad")
+                            Image((cards.uncheckedCards.count != 0) && isSendCardButtonEnabled ? "walwalHappy" : "walwalSad")
                                 .resizable()
                                 .scaledToFit()
                             NavigationLink(destination: NewCardView().environmentObject(cards)) {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 10)
-                                        .fill(cards.uncheckedCards.count != 0 ? Color("Accent") : Color("Disabled"))
+                                        .fill((cards.uncheckedCards.count != 0) && isSendCardButtonEnabled ? Color("Accent") : Color("Disabled"))
                                         .frame(width: 349, height: 54)
                                     Text("새 카드 확인하기")
                                         .fontWeight(.semibold)
@@ -203,13 +203,35 @@ struct HomeView: View {
                 }
             }
         }
+        .accentColor(Color("Accent"))
         .navigationBarBackButtonHidden(true)
     }
     
     private func updateButtonAvailability() {
-        let currentTime = Date()
-        let twoHoursLater = Calendar.current.date(byAdding: .hour, value: 2, to: user.time)!
-        isSendCardButtonEnabled = user.time <= currentTime && currentTime <= twoHoursLater
+        let calendar = Calendar.current
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(identifier: "Asia/Seoul")
+        dateFormatter.dateFormat = "HH:mm:ss"
+
+        let currentDate = Date()
+        let currentTimeString = dateFormatter.string(from: currentDate)
+        let currentTimeDate = dateFormatter.date(from: currentTimeString)!
+        
+        let userTimeString = dateFormatter.string(from: user.time)
+        let userTimeDate = dateFormatter.date(from: userTimeString)!
+        
+        let hour = calendar.component(.hour, from: currentTimeDate)
+        
+        if hour < 22 {
+            let twoHoursLater = Calendar.current.date(byAdding: .hour, value: 2, to: userTimeDate)!
+            isSendCardButtonEnabled = userTimeDate <= currentTimeDate && currentTimeDate <= twoHoursLater
+        } else {
+            let twoHoursBefore = Calendar.current.date(byAdding: .hour, value: -2, to: userTimeDate)!
+
+            isSendCardButtonEnabled = twoHoursBefore <= currentTimeDate && currentTimeDate <= userTimeDate
+        }
+        
     }
     
     private func subtractTime(from firstTime: Date) {

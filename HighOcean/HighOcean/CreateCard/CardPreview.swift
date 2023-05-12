@@ -16,10 +16,11 @@ struct CardPreView: View {
     let reciveUser : String
     let sendUser : String
     let coverImage: UIImage
-    var newCard: Card?
     
     @State private var showingAlert = false
-    @State private var imageURL:String = ""
+    @State private var imageURL: String = ""
+    @State private var newCard: Card = Card(context: "", image: "", createdDate: "", from: "", to: "", creator: "", isLiked: false, isChecked: false, show: false)
+    @State private var uploadimage: Bool = false
     @Binding var firstNaviLinkActive: Bool
     
     let user: User
@@ -28,7 +29,16 @@ struct CardPreView: View {
         ZStack {
             Color("Secondary")
                 .ignoresSafeArea()
-            //            CardView(card: newCard)
+            if uploadimage {
+                CardView(card: $newCard)
+            }
+        }
+        .onAppear {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yy-MM-dd"
+            let createDate = formatter.string(from: Date())
+            uploadImageToStorage(coverImage)
+            newCard = Card(context: content, image: imageURL, createdDate: createDate, from: sendUser, to: reciveUser, creator: user.name, isLiked: false, isChecked: false, show: false)
         }
         .navigationTitle("미리보기")
         .navigationBarTitleDisplayMode(.inline)
@@ -44,11 +54,6 @@ struct CardPreView: View {
                             title: Text("진짜 보내용?"),
                             message: Text("왈왈이가 물어다 드릴게요!"),
                             primaryButton: .default(Text("전송"), action: {
-                                let formatter = DateFormatter()
-                                formatter.dateFormat = "yy-MM-dd"
-                                let createDate = formatter.string(from: Date())
-                                uploadImageToStorage(coverImage)
-                                let newCard = Card(context: content, image: imageURL, createdDate: createDate, from: sendUser, to: reciveUser, creator: user.name, isLiked: false, isChecked: false, show: false)
                                 Cards(currentUser: user).addNewCard(card: newCard)
                                 firstNaviLinkActive = false
                             }),
@@ -67,11 +72,11 @@ struct CardPreView: View {
         let metaData = StorageMetadata()
         metaData.contentType = "image/png"
         storage.reference().child(filePath).putData(data, metadata: metaData) { (metaData, error) in
+            uploadimage = true
             if let error = error {
                 print(error.localizedDescription)
                 return
             }
-        }
-        
+        } 
     }
 }
