@@ -8,7 +8,7 @@
 import Foundation
 
 struct Card: Identifiable, Equatable, Codable, Hashable{  // Codable -> Encode, Decode 가능
-    let id = UUID()
+    let id = UUID().uuidString
     let context: String
     let image: String
     let createdDate: String

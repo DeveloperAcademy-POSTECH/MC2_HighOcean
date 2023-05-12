@@ -13,6 +13,8 @@ struct CreatePhotoFrontCardView: View {
     @State private var isShowingImagePicker: Bool = false
     @State private var isImagePick: Bool = false
     @State private var selectedImage: UIImage = (UIImage(named: "DefaultCover") ?? UIImage())
+    @Binding var firstNaviLinkActive: Bool
+    let user: User
     
     var body: some View {
         ZStack {
@@ -43,23 +45,25 @@ struct CreatePhotoFrontCardView: View {
             .sheet(isPresented: $isShowingImagePicker) {
                 ImagePicker(selectedImage: $selectedImage, isSelected: $isImagePick)
             }
+            .accentColor(Color("Accent"))
             .navigationTitle("사진 선택")
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: CardContentView()) {
+                    NavigationLink(destination: CardContentView(corverImage: selectedImage, firstNaviLinkActive: $firstNaviLinkActive, user: user)) {
                         Text("다음")
-                        }
                     }
+                }
             }
         }
     }
 }
-
-struct CreatePhotoFrontCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView{
-            CreatePhotoFrontCardView()
-        }
-    }
-}
+//
+//struct CreatePhotoFrontCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationView {
+//            CreatePhotoFrontCardView()
+//        }
+//    }
+//}

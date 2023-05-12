@@ -9,10 +9,14 @@ import Foundation
 import SwiftUI
 
 struct CardContentView: View {
+    let corverImage: UIImage
     
     @State var content: String = ""
     @State var to: String = ""
     @State var from: String = ""
+    @Binding var firstNaviLinkActive: Bool
+    
+    let user: User
     var body: some View {
         VStack {
             Text("질문이 들어갈 구역입니다. \n사랑이 담긴 말을 전해주세요.")
@@ -33,7 +37,7 @@ struct CardContentView: View {
                 .padding()
                 .background(Color("Secondary"))
             
-            .textFieldStyle(.roundedBorder)
+                .textFieldStyle(.roundedBorder)
             
             Spacer()
             Text("보내는 사람")
@@ -48,23 +52,15 @@ struct CardContentView: View {
         }
         .navigationTitle("카드 쓰기")
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
         .toolbarRole(.editor)
-        
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                NavigationLink(destination: CardPreView(content: $content, to: $to, from: $from)) {
+                NavigationLink(destination: CardPreView(content: content, reciveUser: to, sendUser: from, coverImage: corverImage, firstNaviLinkActive: $firstNaviLinkActive, user: user)) {
                     Text("다음")
                 }
             }
         }
         .background(Color("Secondary"))
     }
-    }
-
-struct Content_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            CardContentView()
-        }    }
 }
-
