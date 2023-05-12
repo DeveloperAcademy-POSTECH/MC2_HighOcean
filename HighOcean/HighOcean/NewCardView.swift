@@ -13,7 +13,7 @@ struct NewCardView : View {
     @State var count : CGFloat = 0
     @State var screen = UIScreen.main.bounds.width - 90
     @State var op : CGFloat = 0
-    @ObservedObject var cardDeck: Cards
+    @EnvironmentObject var cardDeck: Cards
     
     var number : Int = 0
     var body : some View {
@@ -24,8 +24,8 @@ struct NewCardView : View {
                 Color("Secondary").ignoresSafeArea()
                 VStack(spacing: 140){
                     HStack(spacing: 18){
-                        ForEach(cardDeck.cards.indices) { index in
-                            CardView(card: $cardDeck.cards[index])
+                        ForEach(0..<cardDeck.uncheckedCards.count) { index in
+                            CardView(card: $cardDeck.uncheckedCards[index])
                                 .offset(x: self.x)
                                 .highPriorityGesture(DragGesture()
                                     .onChanged({ (value) in
@@ -48,7 +48,7 @@ struct NewCardView : View {
                                                 }
                                             }
                                             else{
-                                                if -value.translation.width > ((self.screen - 80) / 2) && Int(self.count) !=  (cardDeck.cards.count - 1){
+                                                if -value.translation.width > ((self.screen - 80) / 2) && Int(self.count) !=  (cardDeck.uncheckedCards.count - 1){
 
                                                     self.count += 1
                                                     self.updateHeight(value: Int(self.count))
@@ -68,7 +68,7 @@ struct NewCardView : View {
                         Text("\(number + 1)")
                             .foregroundColor(Color("Accent"))
                             .offset(x: 5)
-                        Text("/\(cardDeck.cards.count)")
+                        Text("/\(cardDeck.uncheckedCards.count)")
                             .kerning(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
                     }
                 }
@@ -77,7 +77,7 @@ struct NewCardView : View {
                 .navigationBarTitle("새 포토카드 보기")
                 .animation(.spring(), value: self.x)
                 .onAppear {
-                    self.op = ((self.screen + 15) * CGFloat(cardDeck.cards.count / 2)) - (cardDeck.cards.count % 2 == 0 ? ((self.screen + 15) / 2) : 0)
+                    self.op = ((self.screen + 15) * CGFloat(cardDeck.uncheckedCards.count / 2)) - (cardDeck.uncheckedCards.count % 2 == 0 ? ((self.screen + 15) / 2) : 0)
                     //self.cards[0].show = true
                 }
             }
@@ -88,9 +88,9 @@ struct NewCardView : View {
     }
     
     func updateHeight(value : Int){
-        for i in 0..<cardDeck.cards.count{
-            cardDeck.cards[i].show = false
+        for i in 0..<cardDeck.uncheckedCards.count{
+            cardDeck.uncheckedCards[i].show = false
         }
-        cardDeck.cards[value].show = true
+        cardDeck.uncheckedCards[value].show = true
     }
 }

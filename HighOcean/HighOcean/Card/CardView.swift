@@ -48,6 +48,8 @@ struct CardView: View {
         .frame(width: UIScreen.main.bounds.width - 90, height: card.show ? 500 : 300)
         .onTapGesture {
             flipCard()
+            card.editCheckedCard()
+            
         }
     }
 }
