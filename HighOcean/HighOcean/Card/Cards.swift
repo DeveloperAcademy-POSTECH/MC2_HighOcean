@@ -49,12 +49,12 @@ class Cards: ObservableObject {
         uncheckedCards = cards
             .filter { !$0.isChecked }                             // 확인한 카드 필터링
             .sorted{ $0.createdDate > $1.createdDate }          // 최신순 소팅
-        sentCards = cards
-            .filter { $0.creator == currentUser.name }            // 보낸 카드 필터링
-            .sorted{ $0.createdDate > $1.createdDate }          // 최신순 소팅
-        recievedCards = cards
-            .filter { $0.creator != currentUser.name }            // 받은 카드 필터링
-            .sorted{ $0.createdDate > $1.createdDate }            // 최신순 소팅
+//        sentCards = cards
+//            .filter { $0.creator == currentUser.name }            // 보낸 카드 필터링
+//            .sorted{ $0.createdDate > $1.createdDate }          // 최신순 소팅
+//        recievedCards = cards
+//            .filter { $0.creator != currentUser.name }            // 받은 카드 필터링
+//            .sorted{ $0.createdDate > $1.createdDate }            // 최신순 소팅
     }
     
     func loadData() {
