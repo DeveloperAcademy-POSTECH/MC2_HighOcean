@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct HighOceanApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     var body: some Scene {
         WindowGroup {
             if let savedSettingsData = UserDefaults.standard.data(forKey: "User"),

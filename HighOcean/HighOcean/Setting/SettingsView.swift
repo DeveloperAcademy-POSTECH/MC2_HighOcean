@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct SettingsView: View {
     @Environment(\.presentationMode) private var presentationMode
     let user: User
+    let userNotifivationCenter = UNUserNotificationCenter.current()
     
     @State private var isSun = false
     @State private var isMon = false
@@ -89,10 +91,25 @@ struct SettingsView: View {
             user.date = [isSun, isMon, isTue, isWed, isThu, isFir, isSat]
             user.time = datepk
             user.isAlarm = isAlarm
+            let encodedSettings = try? JSONEncoder().encode(user)
+            UserDefaults.standard.set(encodedSettings, forKey: "User")
+            saveAlarm()
             presentationMode.wrappedValue.dismiss()
         }) {
             Text("저장")
         })
+    }
+    
+    private func saveAlarm() {
+        self.userNotifivationCenter.removeAllPendingNotificationRequests()
+    
+        let alertWeeks = [isSun, isMon, isTue, isWed, isThu, isFir, isSat].enumerated().compactMap { index, value in
+            return value ? index+1 : nil
+        }
+        
+        for week in alertWeeks {
+            self.userNotifivationCenter.addNotificationRequest(by: week, time: datepk, isAlarm: isAlarm)
+        }
     }
 }
 

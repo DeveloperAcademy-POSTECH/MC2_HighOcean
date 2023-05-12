@@ -1,9 +1,12 @@
 import SwiftUI
+import UserNotifications
 
 struct NextBProfileView: View {
 
     let userName: String
     let familyRule: String
+    let userNotifivationCenter = UNUserNotificationCenter.current()
+    
     @State private var isAlarm: Bool = false
     @State private var showAlert = false
     @State private var navigateToHome = false
@@ -36,101 +39,14 @@ struct NextBProfileView: View {
                 
                 Text("요일")
                     .font(.system(size: 18))
-                HStack(){
-                    Button(action: {
-                        self.isSun.toggle()
-                    }) {
-                        ZStack(){
-                            Circle()
-                                .fill(self.isSun ? Color("Secondary") : Color.clear )
-    
-                            Text("일")
-                                .foregroundColor(self.isSun ? Color("Accent") : Color("Primary"))
-                                .font(.system(size: 20))
-                                .fontWeight(.bold)
-                        }
-                    }
-                    .frame(width: 40, height: 40)
-                    Button(action: {
-                        self.isMon.toggle()
-                    }) {
-                        ZStack(){
-                            Circle()
-                                .fill(self.isMon ? Color("Secondary") : Color.clear )
-    
-                            Text("월")
-                                .foregroundColor(self.isMon ? Color("Accent") : Color("Primary"))
-                                .font(.system(size: 20))
-                                .fontWeight(.bold)
-                        }
-                    }
-                    .frame(width: 40, height: 40)
-                    Button(action: {
-                        self.isTue.toggle()
-                    }) {
-                        ZStack(){
-                            Circle()
-                                .fill(self.isTue ? Color("Secondary") : Color.clear )
-                            Text("화")
-                                .foregroundColor(self.isTue ? Color("Accent") : Color("Primary"))
-                                .font(.system(size: 20))
-                                .fontWeight(.bold)
-                        }
-                    }
-                    .frame(width: 40, height: 40)
-                    Button(action: {
-                        self.isWed.toggle()
-                    }) {
-                        ZStack(){
-                            Circle()
-                                .fill(self.isWed ? Color("Secondary") : Color.clear )
-                            Text("수")
-                                .foregroundColor(self.isWed ? Color("Accent") : Color("Primary"))
-                                .font(.system(size: 20))
-                                .fontWeight(.bold)
-                        }
-                    }
-                    .frame(width: 40, height: 40)
-                    Button(action: {
-                        self.isThu.toggle()
-                    }) {
-                        ZStack(){
-                            Circle()
-                                .fill(self.isThu ? Color("Secondary") : Color.clear )
-                            Text("목")
-                                .foregroundColor(self.isThu ? Color("Accent") : Color("Primary"))
-                                .font(.system(size: 20))
-                                .fontWeight(.bold)
-                        }
-                    }
-                    .frame(width: 40, height: 40)
-                    Button(action: {
-                        self.isFir.toggle()
-                    }) {
-                        ZStack(){
-                            Circle()
-                                .fill(self.isFir ? Color("Secondary") : Color.clear )
-                            Text("금")
-                                .foregroundColor(self.isFir ? Color("Accent") : Color("Primary"))
-                                .font(.system(size: 20))
-                                .fontWeight(.bold)
-                        }
-                    }
-                    .frame(width: 40, height: 40)
-                    Button(action: {
-                        self.isSat.toggle()
-                    }) {
-                        ZStack(){
-                            Circle()
-                                .fill(self.isSat ? Color("Secondary") : Color.clear )
-                            Text("토")
-                                .foregroundColor(self.isSat ? Color("Accent") : Color("Primary"))
-                                .font(.system(size: 20))
-                                .fontWeight(.bold)
-                        }
-                    }
-                    .frame(width: 40, height: 40)
-                
+                HStack {
+                    WeekButtonView(week: $isSun, weekName: "일")
+                    WeekButtonView(week: $isMon, weekName: "월")
+                    WeekButtonView(week: $isTue, weekName: "화")
+                    WeekButtonView(week: $isWed, weekName: "수")
+                    WeekButtonView(week: $isThu, weekName: "목")
+                    WeekButtonView(week: $isFir, weekName: "금")
+                    WeekButtonView(week: $isSat, weekName: "토")
                 }
                 .frame(width: 350, height: 97.0)
                 .cornerRadius(15)
@@ -162,6 +78,9 @@ struct NextBProfileView: View {
                         title: Text("알림을 보내겠습니까?"),
                         message: Text("확인을 누르면 알림이 전송됩니다."),
                         primaryButton: .default(Text("승인"), action: {
+                            
+                            
+                            
                             isAlarm = true
                             navigateToHome = true
                         }),
@@ -176,6 +95,7 @@ struct NextBProfileView: View {
                     }
                     .onDisappear {
                         saveUser()
+                        saveAlarm()
                     }
                 )
             }
@@ -184,8 +104,17 @@ struct NextBProfileView: View {
     }
     
     private func saveUser() {
-        let user = User(name: userName,date: [isSun, isMon, isTue, isWed, isThu, isFir, isSat], time: datepk,familyRule: familyRule, isAlarm: true)
+        let user = User(name: userName, date: [isSun, isMon, isTue, isWed, isThu, isFir, isSat], time: datepk,familyRule: familyRule, isAlarm: true)
         let encodedSettings = try? JSONEncoder().encode(user)
         UserDefaults.standard.set(encodedSettings, forKey: "User")
+    }
+    
+    private func saveAlarm() {
+        let alertWeeks = [isSun, isMon, isTue, isWed, isThu, isFir, isSat].enumerated().compactMap { index, value in
+            return value ? index+1 : nil
+        }
+        for week in alertWeeks {
+            self.userNotifivationCenter.addNotificationRequest(by: week, time: datepk, isAlarm: isAlarm)
+        }
     }
 }
