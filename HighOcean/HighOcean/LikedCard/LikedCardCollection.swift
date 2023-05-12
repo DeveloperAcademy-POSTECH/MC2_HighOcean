@@ -78,7 +78,7 @@ struct LikedCardCollection: View {
                        }
                    }
                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                   .background(Color.black.opacity(0.5))
+                   .background(Color.black.opacity(0.2))
                     .edgesIgnoringSafeArea(.all)
             }
         }
