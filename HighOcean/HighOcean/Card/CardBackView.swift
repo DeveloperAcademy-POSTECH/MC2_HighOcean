@@ -47,12 +47,15 @@ struct CardBackView: View {
             Spacer()
             HStack{
                 HStack{
-                    Button {
-                        card.isLiked.toggle()
-//                        cards.dataSort()
-                    } label: {
-                        Image(card.isLiked ? "IconHeartFilled" : "IconHeartEmpty")
-                    }
+//                    if !cards.sentCards.contains(card) {
+                        Button {
+                            card.changeIsLiked()
+                        } label: {
+                            if !cards.sentCards.contains(card) {
+                                Image(card.isLiked ? "IconHeartFilled" : "IconHeartEmpty")
+                            }
+                        }
+//                    }
                 }
                 Spacer()
                 VStack(alignment: .leading, spacing: 4){
@@ -68,7 +71,7 @@ struct CardBackView: View {
                         .lineLimit(nil)
                 }
             }
-            }
+        }
         .frame(width: 254, height: 437)
     }
 }

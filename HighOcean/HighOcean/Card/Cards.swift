@@ -8,8 +8,8 @@
 import Foundation
 
 class Cards: ObservableObject {
-    
     let currentUser: User
+
     
     @Published var cards: [Card] = [
 //                Card(context: "보고싶어요!", image: "image", createdDate: "22-04-30", from: "지호가", to: "엄마", creator:"지호", isLiked: false, isChecked: true, show: false),

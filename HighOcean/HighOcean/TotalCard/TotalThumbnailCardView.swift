@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TotalThumbnailCardView: View {
     @Binding var degree : Double
-    @Binding var card: Card
+    let card: Card
     
     var body: some View {
         ZStack{
@@ -20,12 +20,12 @@ struct TotalThumbnailCardView: View {
             Image(card.image)
                 .resizable()
                 .frame(width: 97, height: 164)
-//            LinearGradient(
-//                gradient: Gradient(colors: [Color( colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)), Color( colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))]),
-//                startPoint: .top, endPoint: .bottom)
-//                .frame(width: 97, height: 164)
-//                .opacity(0.3)
-//                .blendMode(.multiply)
+            LinearGradient(
+                gradient: Gradient(colors: [Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))]),
+                startPoint: .top, endPoint: .bottom)
+                .frame(width: 97, height: 164)
+                .opacity(0.3)
+                .blendMode(.multiply)
             DateAndDay
         }
         .rotation3DEffect(Angle(degrees: degree), axis: (x: 0, y: 1, z: 0))

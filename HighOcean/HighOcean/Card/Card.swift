@@ -35,6 +35,10 @@ struct Card: Identifiable, Equatable, Codable, Hashable{  // Codable -> Encode, 
         self.isChecked = true
     }
     
+    mutating func changeIsLiked(){
+        self.isLiked.toggle()
+    }
+    
     static func == (lhs: Card, rhs: Card) -> Bool {
         return lhs.id == rhs.id
     }

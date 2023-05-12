@@ -20,7 +20,7 @@ struct CardPreView: View {
         ZStack {
             Color("Secondary")
             .ignoresSafeArea()
-            CardView(card: newcard)
+            CardView(card: $newcard)
 
             .navigationTitle("미리보기")
             .navigationBarTitleDisplayMode(.inline)

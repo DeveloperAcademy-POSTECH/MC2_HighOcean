@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CardView: View {
 
-    @State var card : Card
+    @Binding var card : Card
     @State var frontDegree = 0.0
     @State var backDegree = 90.0
     @State var isFlipped = false

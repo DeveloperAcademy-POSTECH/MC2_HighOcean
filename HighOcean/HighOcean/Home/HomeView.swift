@@ -95,7 +95,7 @@ struct HomeView: View {
                         Image(isNewCards ? "walwalHappy" : "walwalSad")
                             .resizable()
                             .scaledToFit()
-                        NavigationLink(destination: NewCardView(card: cards)) {
+                        NavigationLink(destination: NewCardView(cardDeck: cards)) {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 10)
                                     .fill(isNewCards ? Color("Accent") : Color("Disabled"))
