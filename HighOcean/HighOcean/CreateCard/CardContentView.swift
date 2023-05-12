@@ -12,7 +12,7 @@ import FirebaseDatabase
 struct CardContentView: View {
 //    let ref = database.reference()
     let corverImage: UIImage
-    
+    @State private var questionText: String = ""
     @State var content: String = ""
     @State var to: String = ""
     @State var from: String = ""
@@ -22,7 +22,8 @@ struct CardContentView: View {
     let user: User
     var body: some View {
         VStack(alignment: .leading) {
-            Text("질문이 들어갈 구역입니다. \n사랑이 담긴 말을 전해주세요.")
+            Text(questionText)
+            
             TextEditor(text: $content)
                 .background(.white)
                 .cornerRadius(20)
@@ -40,11 +41,11 @@ struct CardContentView: View {
             Spacer()
         }
         .onAppear {
-//            ref.queryOrdered(byChild: "mode").queryEqual(toValue: 1).observe(.value) { (snapshot) in
-//                if let value = snapshot.value as? [String: Any] {
-//                    self.data = value
-//                }
-//            }
+            if user.familyRule == "부모" {
+                questionText = NoCheckedEmotion.randomElement() ?? ""
+            } else {
+                questionText = PositiveEmotion.randomElement()?[0] ?? ""
+            }
         }
         .padding(20)
         .navigationTitle("카드 쓰기")

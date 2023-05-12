@@ -108,7 +108,7 @@ struct SettingsView: View {
         }
         
         for week in alertWeeks {
-            self.userNotifivationCenter.addNotificationRequest(by: week, time: datepk, isAlarm: isAlarm)
+            self.userNotifivationCenter.addNotificationRequest(by: week, time: datepk, isAlarm: isAlarm, userRole: user.familyRule)
         }
     }
 }

@@ -125,7 +125,7 @@ struct HomeView: View {
                                         .font(.system(size: 18))
                                 }
                             }
-                            .disabled(!(cards.uncheckedCards.count != 0))
+                            .disabled(!((cards.uncheckedCards.count != 0) && isSendCardButtonEnabled))
                         }
                         .padding(21)
                     }
