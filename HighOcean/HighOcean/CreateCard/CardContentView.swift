@@ -5,21 +5,25 @@
 //  Created by Shin seungah on 2023/05/10.
 //
 
-import Foundation
 import SwiftUI
+import Firebase
+import FirebaseDatabase
 
 struct CardContentView: View {
+//    let ref = database.reference()
     let corverImage: UIImage
-    
+    @State private var questionText: String = ""
     @State var content: String = ""
     @State var to: String = ""
     @State var from: String = ""
+    @State private var mode: [String: Int] = [:]
     @Binding var firstNaviLinkActive: Bool
     
     let user: User
     var body: some View {
         VStack(alignment: .leading) {
-            Text("질문이 들어갈 구역입니다. \n사랑이 담긴 말을 전해주세요.")
+            Text(questionText)
+            
             TextEditor(text: $content)
                 .background(.white)
                 .cornerRadius(20)
@@ -35,6 +39,13 @@ struct CardContentView: View {
                 .background(Color("Secondary"))
                 .textFieldStyle(.roundedBorder)
             Spacer()
+        }
+        .onAppear {
+            if user.familyRule == "부모" {
+                questionText = NoCheckedEmotion.randomElement() ?? ""
+            } else {
+                questionText = PositiveEmotion.randomElement()?[0] ?? ""
+            }
         }
         .padding(20)
         .navigationTitle("카드 쓰기")

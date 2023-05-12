@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import FirebaseDatabase
+import FirebaseDatabaseSwift
 
 
 struct HomeView: View {
+    let ref: DatabaseReference = Database.database().reference()
     
     @State private var selectedButtonIndex: Int?
     @State private var isSendCardButtonEnabled: Bool = false
@@ -74,8 +77,16 @@ struct HomeView: View {
                             .padding(28)
                         }
                     }
-                    .onChange(of: selectedButtonIndex ?? 0) { newMode in
-                        user.mode = newMode
+                    .onChange(of: selectedButtonIndex) { newMode in
+                        if let uewMode = newMode {
+                            user.mode = uewMode
+                            if user.familyRule == "아이" {
+                                ref.child("mode/child").setValue(selectedButtonIndex)
+                            } else {
+                                ref.child("mode/parent").setValue(selectedButtonIndex)
+                            }
+                            
+                        }
                     }
                     
                     ZStack {
@@ -114,7 +125,7 @@ struct HomeView: View {
                                         .font(.system(size: 18))
                                 }
                             }
-                            .disabled(!(cards.uncheckedCards.count != 0))
+                            .disabled(!((cards.uncheckedCards.count != 0) && isSendCardButtonEnabled))
                         }
                         .padding(21)
                     }

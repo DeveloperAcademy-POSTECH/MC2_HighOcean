@@ -114,7 +114,7 @@ struct NextBProfileView: View {
             return value ? index+1 : nil
         }
         for week in alertWeeks {
-            self.userNotifivationCenter.addNotificationRequest(by: week, time: datepk, isAlarm: isAlarm)
+            self.userNotifivationCenter.addNotificationRequest(by: week, time: datepk, isAlarm: isAlarm, userRole: familyRule)
         }
     }
 }
