@@ -72,10 +72,3 @@ struct CardBackView: View {
         .frame(width: 254, height: 437)
     }
 }
-
-struct CardBackView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardBackView(degree: .constant(0), card: .constant(Cards().cards[0]))
-            .environmentObject(Cards())
-    }
-}

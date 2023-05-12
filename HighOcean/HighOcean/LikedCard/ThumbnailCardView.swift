@@ -76,11 +76,3 @@ struct ThumbnailCardView: View {
         return formatter.string(from: date)
     }
 }
-
-struct ThumbnailCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        ThumbnailCardView(degree: .constant(0), card: .constant(Cards().cards[0]))
-            .environmentObject(Cards())
-    }
-}
-

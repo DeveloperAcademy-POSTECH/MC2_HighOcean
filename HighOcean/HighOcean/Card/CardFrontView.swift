@@ -76,10 +76,3 @@ struct CardFrontView: View {
         return formatter.string(from: date)
     }
 }
-
-struct CardFrontView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardFrontView(degree: .constant(0), card: .constant(Cards().cards[0]))
-            .environmentObject(Cards())
-    }
-}

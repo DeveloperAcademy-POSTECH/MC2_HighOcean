@@ -1,9 +1,12 @@
 import SwiftUI
+import UserNotifications
 
 struct NextBProfileView: View {
 
     let userName: String
     let familyRule: String
+    let userNotifivationCenter = UNUserNotificationCenter.current()
+    
     @State private var isAlarm: Bool = false
     @State private var showAlert = false
     @State private var navigateToHome = false
@@ -92,6 +95,7 @@ struct NextBProfileView: View {
                     }
                     .onDisappear {
                         saveUser()
+                        saveAlarm()
                     }
                 )
             }
@@ -100,8 +104,17 @@ struct NextBProfileView: View {
     }
     
     private func saveUser() {
-        let user = User(name: userName,date: [isSun, isMon, isTue, isWed, isThu, isFir, isSat], time: datepk,familyRule: familyRule, isAlarm: true)
+        let user = User(name: userName, date: [isSun, isMon, isTue, isWed, isThu, isFir, isSat], time: datepk,familyRule: familyRule, isAlarm: true)
         let encodedSettings = try? JSONEncoder().encode(user)
         UserDefaults.standard.set(encodedSettings, forKey: "User")
+    }
+    
+    private func saveAlarm() {
+        let alertWeeks = [isSun, isMon, isTue, isWed, isThu, isFir, isSat].enumerated().compactMap { index, value in
+            return value ? index+1 : nil
+        }
+        for week in alertWeeks {
+            self.userNotifivationCenter.addNotificationRequest(by: week, time: datepk, isAlarm: isAlarm)
+        }
     }
 }

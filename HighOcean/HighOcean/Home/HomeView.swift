@@ -7,16 +7,22 @@
 
 import SwiftUI
 
-
 struct HomeView: View {
-    var cards = Cards()
-    @State var user: User
-    
     @State private var selectedButtonIndex: Int?
-    @State private var isNewCards: Bool = false
-    @State private var isButtonEnabled = false
+    @State private var isSendCardButtonEnabled: Bool = false
+    @State private var isOnApperView: Bool = false
+    @State private var sendStartTime: String = ""
+    
+    @State private var user: User
+    @StateObject private var cards: Cards
+    
+    init(user: User) {
+        self._user = State(initialValue: user)
+        self._cards = StateObject(wrappedValue: Cards(currentUser: user))
+    }
     
     var body: some View {
+
         ZStack {
             Color("Secondary").ignoresSafeArea()
             VStack {
@@ -74,7 +80,7 @@ struct HomeView: View {
                         .fill(Color.white)
                         .frame(width: 369, height: 308)
                     VStack {
-                        if isNewCards {
+                        if cards.isNewCards {
                             Text("왈왈! ")
                                 .font(.system(size: 17))
                                 .bold()
@@ -91,13 +97,13 @@ struct HomeView: View {
                             Text("왈! 새로운 카드는 없다멍..")
                                 .bold()
                         }
-                        Image(isNewCards ? "walwalHappy" : "walwalSad")
+                        Image(cards.isNewCards ? "walwalHappy" : "walwalSad")
                             .resizable()
                             .scaledToFit()
-                        NavigationLink(destination: NewCardView()) {
+                        NavigationLink(destination: NewCardView(card: cards)) {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 10)
-                                    .fill(isNewCards ? Color("Accent") : Color("Disabled"))
+                                    .fill(cards.isNewCards ? Color("Accent") : Color("Disabled"))
                                     .frame(width: 349, height: 54)
                                 Text("새 카드 확인하기")
                                     .fontWeight(.semibold)
@@ -105,20 +111,14 @@ struct HomeView: View {
                                     .font(.system(size: 18))
                             }
                         }
-                        .disabled(!isNewCards)
+                        .disabled(!cards.isNewCards)
                     }
                     .padding(21)
-                }
-                .onAppear{
-                    print(cards.recievedCards.count)
-                    if cards.recievedCards.count != 0 {
-                        isNewCards = true
-                    }
                 }
                 
                 HStack(alignment: .center) {
                     VStack {
-                        NavigationLink(destination: Likedcardcollectionview().environmentObject(cards)) {
+                        NavigationLink(destination: LikedCardCollection().environmentObject(cards)) {
                             ZStack(alignment: .leading) {
                                 RoundedRectangle(cornerRadius: 10)
                                     .fill(Color.white)
@@ -157,7 +157,7 @@ struct HomeView: View {
                     NavigationLink(destination:CreatePhotoFrontCardView()) {
                         ZStack {
                             RoundedRectangle(cornerRadius: 10)
-                                .fill(isButtonEnabled ? Color("Accent") : Color("Disabled"))
+                                .fill(isSendCardButtonEnabled ? Color("Accent") : Color("Disabled"))
                                 .frame(width: 172, height: 185)
                             VStack{
                                 Text("카드보내기")
@@ -167,16 +167,19 @@ struct HomeView: View {
                                 Image("CardSend")
                                     .resizable()
                                     .frame(width: 92, height: 39)
-                                Text("1시간 14분")
-                                    .foregroundColor(.white)
-                                    .font(.system(size: 14))
+                                if !isSendCardButtonEnabled {
+                                    Text("\(sendStartTime)")
+                                        .foregroundColor(.white)
+                                        .font(.system(size: 14))
+                                }
                             }
                         }
                     }
                     .onAppear {
                         updateButtonAvailability()
+                        subtractTime(from: user.time)
                     }
-                    .disabled(!isButtonEnabled)
+                    .disabled(!isSendCardButtonEnabled)
                 }
                 .padding(12)
             }
@@ -201,7 +204,28 @@ struct HomeView: View {
     private func updateButtonAvailability() {
         let currentTime = Date()
         let twoHoursLater = Calendar.current.date(byAdding: .hour, value: 2, to: user.time)!
-        isButtonEnabled = user.time <= currentTime && currentTime <= twoHoursLater
+        isSendCardButtonEnabled = user.time <= currentTime && currentTime <= twoHoursLater
+    }
+    
+    private func subtractTime(from firstTime: Date) {
+        let secondTime = Date()
+        let calendar = Calendar.current
+                        let components = calendar.dateComponents([.hour, .minute], from: secondTime, to: firstTime)
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "HH:mm"
+                        
+        if let hour = components.hour, let minute = components.minute{
+            if hour < 0 && minute < 0{
+                let modifiedComponents = DateComponents(hour: hour + 24, minute: minute)
+                let modifiedDifference = calendar.date(byAdding: modifiedComponents, to: secondTime)
+                let modifiedDifferenceComponents = calendar.dateComponents([.hour, .minute], from: modifiedDifference!, to: secondTime)
+                let date = calendar.date(from: modifiedComponents)!
+                sendStartTime = dateFormatter.string(from: date)
+            } else {
+                let date = calendar.date(from: components)!
+                sendStartTime = dateFormatter.string(from: date)
+            }
+        }
     }
 }
 

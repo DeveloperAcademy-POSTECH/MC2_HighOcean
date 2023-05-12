@@ -7,6 +7,7 @@
 
 import Foundation
 import UserNotifications
+import UIKit
 
 var notifivationBodies = [
     "띵동띵동",
@@ -15,24 +16,42 @@ var notifivationBodies = [
 ]
 
 extension UNUserNotificationCenter {
-    func scheduleNotification(by user: User) {
+    func addNotificationRequest(by week: Int, time: Date, isAlarm: Bool) -> String{
         let content = UNMutableNotificationContent()
-        //    var dateComponents = DateComponents()
-        //    dateComponents.weekday = selectedDays
-        //    dateComponents.hour = 9
-        //    dateComponents.minute = 0
         content.title = ""
         if let randomBody = notifivationBodies.randomElement() {
             content.body = randomBody
         }
         content.sound = UNNotificationSound.default
+
+        var component = Calendar.current.dateComponents([.hour, .minute], from: time)
+        component.weekday = week
         
-        let component = Calendar.current.dateComponents([.hour, .minute], from: user.time)
-        let trigger = UNCalendarNotificationTrigger(dateMatching: component, repeats: user.isAlarm)
-        
-        
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: component, repeats: isAlarm)
+        let id = UUID().uuidString
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
         
         self.add(request, withCompletionHandler: nil)
+        return id
+    }
+}
+
+class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+
+        UNUserNotificationCenter.current().delegate = self
+
+        let options: UNAuthorizationOptions = [.badge, .sound, .alert]
+        UNUserNotificationCenter.current().requestAuthorization(options: options) { granted, error in
+            if granted {
+                print("User Notification 권한이 부여되었습니다.")
+            } else {
+                print("User Notification 권한이 거부되었습니다.")
+            }
+        }
+
+        application.registerForRemoteNotifications()
+
+        return true
     }
 }
