@@ -1,500 +1,500 @@
 // !$*UTF8*$!
 {
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 56;
-	objects = {
+    archiveVersion = 1;
+    classes = {
+    };
+    objectVersion = 56;
+    objects = {
 
 /* Begin PBXBuildFile section */
-		0A4791732A08A85B007E1B2F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4791722A08A85B007E1B2F /* Card.swift */; };
-		2D1953322A035B1500353602 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1953312A035B1500353602 /* CardView.swift */; };
-		2DB7263E2A04B2DF007D7A17 /* CardFrontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB7263D2A04B2DF007D7A17 /* CardFrontView.swift */; };
-		2DB726442A04C515007D7A17 /* NewCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB726432A04C515007D7A17 /* NewCardView.swift */; };
-		2DB726462A04C558007D7A17 /* CardBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB726452A04C558007D7A17 /* CardBackView.swift */; };
-		2DB7264A2A0890FC007D7A17 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB726492A0890FC007D7A17 /* Cards.swift */; };
-		FF1373532A0D263000C00AB2 /* WeekButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1373522A0D263000C00AB2 /* WeekButtonView.swift */; };
-		FF1373582A0DB3FF00C00AB2 /* UNNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1373572A0DB3FF00C00AB2 /* UNNotificationCenter.swift */; };
-		FF4087AF2A01FC88003BED80 /* HighOceanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */; };
-		FF4087B32A01FC89003BED80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4087B22A01FC89003BED80 /* Assets.xcassets */; };
-		FF4DAE7A2A0A16D200B2B546 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4DAE792A0A16D200B2B546 /* HomeView.swift */; };
-		FF594AC02A0DC12600730BDB /* CardPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF594ABC2A0DC12600730BDB /* CardPreview.swift */; };
-		FF594AC12A0DC12600730BDB /* CreatePhotoFrontCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF594ABD2A0DC12600730BDB /* CreatePhotoFrontCardView.swift */; };
-		FF594AC22A0DC12600730BDB /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF594ABE2A0DC12600730BDB /* PhotoPicker.swift */; };
-		FF594AC62A0DC15100730BDB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF594AC52A0DC15100730BDB /* SettingsView.swift */; };
-		FF594AC82A0DD6E700730BDB /* CardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF594AC72A0DD6E700730BDB /* CardContentView.swift */; };
-		FFB969932A0A2A9800086C18 /* EmojiButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969922A0A2A9800086C18 /* EmojiButtonView.swift */; };
-		FFB969DE2A0C6C7C00086C18 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969DD2A0C6C7C00086C18 /* CollectionView.swift */; };
-		FFB969E52A0C6CE500086C18 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969E42A0C6CE500086C18 /* Test.swift */; };
-		FFB969E82A0C6CF900086C18 /* LikedCardCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969E62A0C6CF900086C18 /* LikedCardCollection.swift */; };
-		FFB969E92A0C6CF900086C18 /* ThumbnailCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969E72A0C6CF900086C18 /* ThumbnailCardView.swift */; };
-		FFB969EC2A0C6D9500086C18 /* TotalThumbnailCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969EB2A0C6D9500086C18 /* TotalThumbnailCardView.swift */; };
-		FFDCB8712A09F20F00477C51 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8702A09F20F00477C51 /* ActivityView.swift */; };
-		FFDCB8752A09F21C00477C51 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8742A09F21C00477C51 /* User.swift */; };
-		FFDCB8792A09F22C00477C51 /* NextAProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8782A09F22C00477C51 /* NextAProfileView.swift */; };
-		FFDCB87B2A09F23C00477C51 /* NextBProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB87A2A09F23C00477C51 /* NextBProfileView.swift */; };
-		FFDCB87D2A09F24300477C51 /* NextCProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB87C2A09F24300477C51 /* NextCProfileView.swift */; };
-		FFDCB8812A09F25700477C51 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8802A09F25700477C51 /* ProfileView.swift */; };
-		FFDCB8832A09F25C00477C51 /* TotalCardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8822A09F25C00477C51 /* TotalCardCollectionView.swift */; };
+        0A4791732A08A85B007E1B2F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4791722A08A85B007E1B2F /* Card.swift */; };
+        2D1953322A035B1500353602 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1953312A035B1500353602 /* CardView.swift */; };
+        2DB7263E2A04B2DF007D7A17 /* CardFrontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB7263D2A04B2DF007D7A17 /* CardFrontView.swift */; };
+        2DB726442A04C515007D7A17 /* NewCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB726432A04C515007D7A17 /* NewCardView.swift */; };
+        2DB726462A04C558007D7A17 /* CardBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB726452A04C558007D7A17 /* CardBackView.swift */; };
+        2DB7264A2A0890FC007D7A17 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB726492A0890FC007D7A17 /* Cards.swift */; };
+        FF1373532A0D263000C00AB2 /* WeekButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1373522A0D263000C00AB2 /* WeekButtonView.swift */; };
+        FF1373582A0DB3FF00C00AB2 /* UNNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1373572A0DB3FF00C00AB2 /* UNNotificationCenter.swift */; };
+        FF4087AF2A01FC88003BED80 /* HighOceanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */; };
+        FF4087B32A01FC89003BED80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4087B22A01FC89003BED80 /* Assets.xcassets */; };
+        FF4DAE7A2A0A16D200B2B546 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4DAE792A0A16D200B2B546 /* HomeView.swift */; };
+        FF594AC02A0DC12600730BDB /* CardPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF594ABC2A0DC12600730BDB /* CardPreview.swift */; };
+        FF594AC12A0DC12600730BDB /* CreatePhotoFrontCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF594ABD2A0DC12600730BDB /* CreatePhotoFrontCardView.swift */; };
+        FF594AC22A0DC12600730BDB /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF594ABE2A0DC12600730BDB /* PhotoPicker.swift */; };
+        FF594AC62A0DC15100730BDB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF594AC52A0DC15100730BDB /* SettingsView.swift */; };
+        FF594AC82A0DD6E700730BDB /* CardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF594AC72A0DD6E700730BDB /* CardContentView.swift */; };
+        FFB969932A0A2A9800086C18 /* EmojiButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969922A0A2A9800086C18 /* EmojiButtonView.swift */; };
+        FFB969DE2A0C6C7C00086C18 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969DD2A0C6C7C00086C18 /* CollectionView.swift */; };
+        FFB969E52A0C6CE500086C18 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969E42A0C6CE500086C18 /* Test.swift */; };
+        FFB969E82A0C6CF900086C18 /* LikedCardCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969E62A0C6CF900086C18 /* LikedCardCollection.swift */; };
+        FFB969E92A0C6CF900086C18 /* ThumbnailCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969E72A0C6CF900086C18 /* ThumbnailCardView.swift */; };
+        FFB969EC2A0C6D9500086C18 /* TotalThumbnailCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969EB2A0C6D9500086C18 /* TotalThumbnailCardView.swift */; };
+        FFDCB8712A09F20F00477C51 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8702A09F20F00477C51 /* ActivityView.swift */; };
+        FFDCB8752A09F21C00477C51 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8742A09F21C00477C51 /* User.swift */; };
+        FFDCB8792A09F22C00477C51 /* NextAProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8782A09F22C00477C51 /* NextAProfileView.swift */; };
+        FFDCB87B2A09F23C00477C51 /* NextBProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB87A2A09F23C00477C51 /* NextBProfileView.swift */; };
+        FFDCB87D2A09F24300477C51 /* NextCProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB87C2A09F24300477C51 /* NextCProfileView.swift */; };
+        FFDCB8812A09F25700477C51 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8802A09F25700477C51 /* ProfileView.swift */; };
+        FFDCB8832A09F25C00477C51 /* TotalCardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCB8822A09F25C00477C51 /* TotalCardCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0A4791722A08A85B007E1B2F /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		2D1953312A035B1500353602 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		2DB7263D2A04B2DF007D7A17 /* CardFrontView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFrontView.swift; sourceTree = "<group>"; };
-		2DB726432A04C515007D7A17 /* NewCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardView.swift; sourceTree = "<group>"; };
-		2DB726452A04C558007D7A17 /* CardBackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBackView.swift; sourceTree = "<group>"; };
-		2DB726492A0890FC007D7A17 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
-		99B5C7CA2A0B2E7200AB5D0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		FF1373522A0D263000C00AB2 /* WeekButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekButtonView.swift; sourceTree = "<group>"; };
-		FF1373572A0DB3FF00C00AB2 /* UNNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNNotificationCenter.swift; sourceTree = "<group>"; };
-		FF4087AB2A01FC88003BED80 /* HighOcean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HighOcean.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighOceanApp.swift; sourceTree = "<group>"; };
-		FF4087B22A01FC89003BED80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FF4DAE792A0A16D200B2B546 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		FF594ABC2A0DC12600730BDB /* CardPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPreview.swift; sourceTree = "<group>"; };
-		FF594ABD2A0DC12600730BDB /* CreatePhotoFrontCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePhotoFrontCardView.swift; sourceTree = "<group>"; };
-		FF594ABE2A0DC12600730BDB /* PhotoPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
-		FF594AC52A0DC15100730BDB /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		FF594AC72A0DD6E700730BDB /* CardContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardContentView.swift; sourceTree = "<group>"; };
-		FFB969922A0A2A9800086C18 /* EmojiButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiButtonView.swift; sourceTree = "<group>"; };
-		FFB969DD2A0C6C7C00086C18 /* CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
-		FFB969E42A0C6CE500086C18 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
-		FFB969E62A0C6CF900086C18 /* LikedCardCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikedCardCollection.swift; sourceTree = "<group>"; };
-		FFB969E72A0C6CF900086C18 /* ThumbnailCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailCardView.swift; sourceTree = "<group>"; };
-		FFB969EB2A0C6D9500086C18 /* TotalThumbnailCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalThumbnailCardView.swift; sourceTree = "<group>"; };
-		FFDCB8702A09F20F00477C51 /* ActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
-		FFDCB8742A09F21C00477C51 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		FFDCB8782A09F22C00477C51 /* NextAProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextAProfileView.swift; sourceTree = "<group>"; };
-		FFDCB87A2A09F23C00477C51 /* NextBProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextBProfileView.swift; sourceTree = "<group>"; };
-		FFDCB87C2A09F24300477C51 /* NextCProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextCProfileView.swift; sourceTree = "<group>"; };
-		FFDCB8802A09F25700477C51 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		FFDCB8822A09F25C00477C51 /* TotalCardCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalCardCollectionView.swift; sourceTree = "<group>"; };
+        0A4791722A08A85B007E1B2F /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+        2D1953312A035B1500353602 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+        2DB7263D2A04B2DF007D7A17 /* CardFrontView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFrontView.swift; sourceTree = "<group>"; };
+        2DB726432A04C515007D7A17 /* NewCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardView.swift; sourceTree = "<group>"; };
+        2DB726452A04C558007D7A17 /* CardBackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBackView.swift; sourceTree = "<group>"; };
+        2DB726492A0890FC007D7A17 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+        99B5C7CA2A0B2E7200AB5D0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+        FF1373522A0D263000C00AB2 /* WeekButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekButtonView.swift; sourceTree = "<group>"; };
+        FF1373572A0DB3FF00C00AB2 /* UNNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNNotificationCenter.swift; sourceTree = "<group>"; };
+        FF4087AB2A01FC88003BED80 /* HighOcean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HighOcean.app; sourceTree = BUILT_PRODUCTS_DIR; };
+        FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighOceanApp.swift; sourceTree = "<group>"; };
+        FF4087B22A01FC89003BED80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+        FF4DAE792A0A16D200B2B546 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+        FF594ABC2A0DC12600730BDB /* CardPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPreview.swift; sourceTree = "<group>"; };
+        FF594ABD2A0DC12600730BDB /* CreatePhotoFrontCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePhotoFrontCardView.swift; sourceTree = "<group>"; };
+        FF594ABE2A0DC12600730BDB /* PhotoPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+        FF594AC52A0DC15100730BDB /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+        FF594AC72A0DD6E700730BDB /* CardContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardContentView.swift; sourceTree = "<group>"; };
+        FFB969922A0A2A9800086C18 /* EmojiButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiButtonView.swift; sourceTree = "<group>"; };
+        FFB969DD2A0C6C7C00086C18 /* CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+        FFB969E42A0C6CE500086C18 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+        FFB969E62A0C6CF900086C18 /* LikedCardCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikedCardCollection.swift; sourceTree = "<group>"; };
+        FFB969E72A0C6CF900086C18 /* ThumbnailCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailCardView.swift; sourceTree = "<group>"; };
+        FFB969EB2A0C6D9500086C18 /* TotalThumbnailCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalThumbnailCardView.swift; sourceTree = "<group>"; };
+        FFDCB8702A09F20F00477C51 /* ActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+        FFDCB8742A09F21C00477C51 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+        FFDCB8782A09F22C00477C51 /* NextAProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextAProfileView.swift; sourceTree = "<group>"; };
+        FFDCB87A2A09F23C00477C51 /* NextBProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextBProfileView.swift; sourceTree = "<group>"; };
+        FFDCB87C2A09F24300477C51 /* NextCProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextCProfileView.swift; sourceTree = "<group>"; };
+        FFDCB8802A09F25700477C51 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+        FFDCB8822A09F25C00477C51 /* TotalCardCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalCardCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FF4087A82A01FC88003BED80 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+        FF4087A82A01FC88003BED80 /* Frameworks */ = {
+            isa = PBXFrameworksBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FF1373562A0D2E2B00C00AB2 /* Setting */ = {
-			isa = PBXGroup;
-			children = (
-				FF594AC52A0DC15100730BDB /* SettingsView.swift */,
-				FF1373522A0D263000C00AB2 /* WeekButtonView.swift */,
-			);
-			path = Setting;
-			sourceTree = "<group>";
-		};
-		FF4087A22A01FC88003BED80 = {
-			isa = PBXGroup;
-			children = (
-				FF4087AD2A01FC88003BED80 /* HighOcean */,
-				FF4087AC2A01FC88003BED80 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		FF4087AC2A01FC88003BED80 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FF4087AB2A01FC88003BED80 /* HighOcean.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		FF4087AD2A01FC88003BED80 /* HighOcean */ = {
-			isa = PBXGroup;
-			children = (
-				99B5C7CA2A0B2E7200AB5D0C /* Info.plist */,
-				FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */,
-				2DB726432A04C515007D7A17 /* NewCardView.swift */,
-				FFB969E42A0C6CE500086C18 /* Test.swift */,
-				FF4087B22A01FC89003BED80 /* Assets.xcassets */,
-				FF1373562A0D2E2B00C00AB2 /* Setting */,
-				FFB969EA2A0C6D0200086C18 /* LikedCard */,
-				FFB969942A0A2B4700086C18 /* Home */,
-				FFDCB8862A09F2E300477C51 /* TotalCard */,
-				FFDCB8852A09F29E00477C51 /* Card */,
-				FFDCB8842A09F28200477C51 /* Profile */,
-				FF594AC42A0DC13300730BDB /* CreateCard */,
-			);
-			path = HighOcean;
-			sourceTree = "<group>";
-		};
-		FF594AC42A0DC13300730BDB /* CreateCard */ = {
-			isa = PBXGroup;
-			children = (
-				FF594ABC2A0DC12600730BDB /* CardPreview.swift */,
-				FF594ABD2A0DC12600730BDB /* CreatePhotoFrontCardView.swift */,
-				FF594ABE2A0DC12600730BDB /* PhotoPicker.swift */,
-				FF594AC72A0DD6E700730BDB /* CardContentView.swift */,
-			);
-			path = CreateCard;
-			sourceTree = "<group>";
-		};
-		FF594AC92A0DD71E00730BDB /* LinkUserView */ = {
-			isa = PBXGroup;
-			children = (
-				FFDCB87C2A09F24300477C51 /* NextCProfileView.swift */,
-				FFDCB8702A09F20F00477C51 /* ActivityView.swift */,
-			);
-			path = LinkUserView;
-			sourceTree = "<group>";
-		};
-		FFB969942A0A2B4700086C18 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				FF4DAE792A0A16D200B2B546 /* HomeView.swift */,
-				FFB969922A0A2A9800086C18 /* EmojiButtonView.swift */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		FFB969EA2A0C6D0200086C18 /* LikedCard */ = {
-			isa = PBXGroup;
-			children = (
-				FFB969E62A0C6CF900086C18 /* LikedCardCollection.swift */,
-				FFB969E72A0C6CF900086C18 /* ThumbnailCardView.swift */,
-			);
-			path = LikedCard;
-			sourceTree = "<group>";
-		};
-		FFDCB8842A09F28200477C51 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				FFDCB8802A09F25700477C51 /* ProfileView.swift */,
-				FFDCB8782A09F22C00477C51 /* NextAProfileView.swift */,
-				FFDCB87A2A09F23C00477C51 /* NextBProfileView.swift */,
-				FF1373572A0DB3FF00C00AB2 /* UNNotificationCenter.swift */,
-				FFDCB8742A09F21C00477C51 /* User.swift */,
-				FF594AC92A0DD71E00730BDB /* LinkUserView */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
-		FFDCB8852A09F29E00477C51 /* Card */ = {
-			isa = PBXGroup;
-			children = (
-				2DB726492A0890FC007D7A17 /* Cards.swift */,
-				0A4791722A08A85B007E1B2F /* Card.swift */,
-				2D1953312A035B1500353602 /* CardView.swift */,
-				2DB726452A04C558007D7A17 /* CardBackView.swift */,
-				2DB7263D2A04B2DF007D7A17 /* CardFrontView.swift */,
-			);
-			path = Card;
-			sourceTree = "<group>";
-		};
-		FFDCB8862A09F2E300477C51 /* TotalCard */ = {
-			isa = PBXGroup;
-			children = (
-				FFB969DD2A0C6C7C00086C18 /* CollectionView.swift */,
-				FFDCB8822A09F25C00477C51 /* TotalCardCollectionView.swift */,
-				FFB969EB2A0C6D9500086C18 /* TotalThumbnailCardView.swift */,
-			);
-			path = TotalCard;
-			sourceTree = "<group>";
-		};
+        FF1373562A0D2E2B00C00AB2 /* Setting */ = {
+            isa = PBXGroup;
+            children = (
+                FF594AC52A0DC15100730BDB /* SettingsView.swift */,
+                FF1373522A0D263000C00AB2 /* WeekButtonView.swift */,
+            );
+            path = Setting;
+            sourceTree = "<group>";
+        };
+        FF4087A22A01FC88003BED80 = {
+            isa = PBXGroup;
+            children = (
+                FF4087AD2A01FC88003BED80 /* HighOcean */,
+                FF4087AC2A01FC88003BED80 /* Products */,
+            );
+            sourceTree = "<group>";
+        };
+        FF4087AC2A01FC88003BED80 /* Products */ = {
+            isa = PBXGroup;
+            children = (
+                FF4087AB2A01FC88003BED80 /* HighOcean.app */,
+            );
+            name = Products;
+            sourceTree = "<group>";
+        };
+        FF4087AD2A01FC88003BED80 /* HighOcean */ = {
+            isa = PBXGroup;
+            children = (
+                99B5C7CA2A0B2E7200AB5D0C /* Info.plist */,
+                FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */,
+                2DB726432A04C515007D7A17 /* NewCardView.swift */,
+                FFB969E42A0C6CE500086C18 /* Test.swift */,
+                FF4087B22A01FC89003BED80 /* Assets.xcassets */,
+                FF1373562A0D2E2B00C00AB2 /* Setting */,
+                FFB969EA2A0C6D0200086C18 /* LikedCard */,
+                FFB969942A0A2B4700086C18 /* Home */,
+                FFDCB8862A09F2E300477C51 /* TotalCard */,
+                FFDCB8852A09F29E00477C51 /* Card */,
+                FFDCB8842A09F28200477C51 /* Profile */,
+                FF594AC42A0DC13300730BDB /* CreateCard */,
+            );
+            path = HighOcean;
+            sourceTree = "<group>";
+        };
+        FF594AC42A0DC13300730BDB /* CreateCard */ = {
+            isa = PBXGroup;
+            children = (
+                FF594ABC2A0DC12600730BDB /* CardPreview.swift */,
+                FF594ABD2A0DC12600730BDB /* CreatePhotoFrontCardView.swift */,
+                FF594ABE2A0DC12600730BDB /* PhotoPicker.swift */,
+                FF594AC72A0DD6E700730BDB /* CardContentView.swift */,
+            );
+            path = CreateCard;
+            sourceTree = "<group>";
+        };
+        FF594AC92A0DD71E00730BDB /* LinkUserView */ = {
+            isa = PBXGroup;
+            children = (
+                FFDCB87C2A09F24300477C51 /* NextCProfileView.swift */,
+                FFDCB8702A09F20F00477C51 /* ActivityView.swift */,
+            );
+            path = LinkUserView;
+            sourceTree = "<group>";
+        };
+        FFB969942A0A2B4700086C18 /* Home */ = {
+            isa = PBXGroup;
+            children = (
+                FF4DAE792A0A16D200B2B546 /* HomeView.swift */,
+                FFB969922A0A2A9800086C18 /* EmojiButtonView.swift */,
+            );
+            path = Home;
+            sourceTree = "<group>";
+        };
+        FFB969EA2A0C6D0200086C18 /* LikedCard */ = {
+            isa = PBXGroup;
+            children = (
+                FFB969E62A0C6CF900086C18 /* LikedCardCollection.swift */,
+                FFB969E72A0C6CF900086C18 /* ThumbnailCardView.swift */,
+            );
+            path = LikedCard;
+            sourceTree = "<group>";
+        };
+        FFDCB8842A09F28200477C51 /* Profile */ = {
+            isa = PBXGroup;
+            children = (
+                FFDCB8802A09F25700477C51 /* ProfileView.swift */,
+                FFDCB8782A09F22C00477C51 /* NextAProfileView.swift */,
+                FFDCB87A2A09F23C00477C51 /* NextBProfileView.swift */,
+                FF1373572A0DB3FF00C00AB2 /* UNNotificationCenter.swift */,
+                FFDCB8742A09F21C00477C51 /* User.swift */,
+                FF594AC92A0DD71E00730BDB /* LinkUserView */,
+            );
+            path = Profile;
+            sourceTree = "<group>";
+        };
+        FFDCB8852A09F29E00477C51 /* Card */ = {
+            isa = PBXGroup;
+            children = (
+                2DB726492A0890FC007D7A17 /* Cards.swift */,
+                0A4791722A08A85B007E1B2F /* Card.swift */,
+                2D1953312A035B1500353602 /* CardView.swift */,
+                2DB726452A04C558007D7A17 /* CardBackView.swift */,
+                2DB7263D2A04B2DF007D7A17 /* CardFrontView.swift */,
+            );
+            path = Card;
+            sourceTree = "<group>";
+        };
+        FFDCB8862A09F2E300477C51 /* TotalCard */ = {
+            isa = PBXGroup;
+            children = (
+                FFB969DD2A0C6C7C00086C18 /* CollectionView.swift */,
+                FFDCB8822A09F25C00477C51 /* TotalCardCollectionView.swift */,
+                FFB969EB2A0C6D9500086C18 /* TotalThumbnailCardView.swift */,
+            );
+            path = TotalCard;
+            sourceTree = "<group>";
+        };
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FF4087AA2A01FC88003BED80 /* HighOcean */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FF4087B92A01FC89003BED80 /* Build configuration list for PBXNativeTarget "HighOcean" */;
-			buildPhases = (
-				FF4087A72A01FC88003BED80 /* Sources */,
-				FF4087A82A01FC88003BED80 /* Frameworks */,
-				FF4087A92A01FC88003BED80 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = HighOcean;
-			productName = HighOcean;
-			productReference = FF4087AB2A01FC88003BED80 /* HighOcean.app */;
-			productType = "com.apple.product-type.application";
-		};
+        FF4087AA2A01FC88003BED80 /* HighOcean */ = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = FF4087B92A01FC89003BED80 /* Build configuration list for PBXNativeTarget "HighOcean" */;
+            buildPhases = (
+                FF4087A72A01FC88003BED80 /* Sources */,
+                FF4087A82A01FC88003BED80 /* Frameworks */,
+                FF4087A92A01FC88003BED80 /* Resources */,
+            );
+            buildRules = (
+            );
+            dependencies = (
+            );
+            name = HighOcean;
+            productName = HighOcean;
+            productReference = FF4087AB2A01FC88003BED80 /* HighOcean.app */;
+            productType = "com.apple.product-type.application";
+        };
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		FF4087A32A01FC88003BED80 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
-				TargetAttributes = {
-					FF4087AA2A01FC88003BED80 = {
-						CreatedOnToolsVersion = 14.3;
-					};
-				};
-			};
-			buildConfigurationList = FF4087A62A01FC88003BED80 /* Build configuration list for PBXProject "HighOcean" */;
-			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = FF4087A22A01FC88003BED80;
-			productRefGroup = FF4087AC2A01FC88003BED80 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				FF4087AA2A01FC88003BED80 /* HighOcean */,
-			);
-		};
+        FF4087A32A01FC88003BED80 /* Project object */ = {
+            isa = PBXProject;
+            attributes = {
+                BuildIndependentTargetsInParallel = 1;
+                LastSwiftUpdateCheck = 1430;
+                LastUpgradeCheck = 1430;
+                TargetAttributes = {
+                    FF4087AA2A01FC88003BED80 = {
+                        CreatedOnToolsVersion = 14.3;
+                    };
+                };
+            };
+            buildConfigurationList = FF4087A62A01FC88003BED80 /* Build configuration list for PBXProject "HighOcean" */;
+            compatibilityVersion = "Xcode 14.0";
+            developmentRegion = en;
+            hasScannedForEncodings = 0;
+            knownRegions = (
+                en,
+                Base,
+            );
+            mainGroup = FF4087A22A01FC88003BED80;
+            productRefGroup = FF4087AC2A01FC88003BED80 /* Products */;
+            projectDirPath = "";
+            projectRoot = "";
+            targets = (
+                FF4087AA2A01FC88003BED80 /* HighOcean */,
+            );
+        };
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		FF4087A92A01FC88003BED80 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FF4087B32A01FC89003BED80 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+        FF4087A92A01FC88003BED80 /* Resources */ = {
+            isa = PBXResourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                FF4087B32A01FC89003BED80 /* Assets.xcassets in Resources */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		FF4087A72A01FC88003BED80 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FF4087AF2A01FC88003BED80 /* HighOceanApp.swift in Sources */,
-				FFB969E92A0C6CF900086C18 /* ThumbnailCardView.swift in Sources */,
-				2DB726462A04C558007D7A17 /* CardBackView.swift in Sources */,
-				FFDCB8712A09F20F00477C51 /* ActivityView.swift in Sources */,
-				FFB969932A0A2A9800086C18 /* EmojiButtonView.swift in Sources */,
-				FF594AC12A0DC12600730BDB /* CreatePhotoFrontCardView.swift in Sources */,
-				FF4DAE7A2A0A16D200B2B546 /* HomeView.swift in Sources */,
-				FFB969DE2A0C6C7C00086C18 /* CollectionView.swift in Sources */,
-				FFB969E82A0C6CF900086C18 /* LikedCardCollection.swift in Sources */,
-				FFB969E52A0C6CE500086C18 /* Test.swift in Sources */,
-				FF1373582A0DB3FF00C00AB2 /* UNNotificationCenter.swift in Sources */,
-				0A4791732A08A85B007E1B2F /* Card.swift in Sources */,
-				FFDCB87B2A09F23C00477C51 /* NextBProfileView.swift in Sources */,
-				FF594AC02A0DC12600730BDB /* CardPreview.swift in Sources */,
-				FFDCB8792A09F22C00477C51 /* NextAProfileView.swift in Sources */,
-				FFDCB8812A09F25700477C51 /* ProfileView.swift in Sources */,
-				2D1953322A035B1500353602 /* CardView.swift in Sources */,
-				2DB7264A2A0890FC007D7A17 /* Cards.swift in Sources */,
-				FFDCB8832A09F25C00477C51 /* TotalCardCollectionView.swift in Sources */,
-				FFB969EC2A0C6D9500086C18 /* TotalThumbnailCardView.swift in Sources */,
-				2DB7263E2A04B2DF007D7A17 /* CardFrontView.swift in Sources */,
-				FF594AC62A0DC15100730BDB /* SettingsView.swift in Sources */,
-				FFDCB8752A09F21C00477C51 /* User.swift in Sources */,
-				FF1373532A0D263000C00AB2 /* WeekButtonView.swift in Sources */,
-				FF594AC82A0DD6E700730BDB /* CardContentView.swift in Sources */,
-				2DB726442A04C515007D7A17 /* NewCardView.swift in Sources */,
-				FF594AC22A0DC12600730BDB /* PhotoPicker.swift in Sources */,
-				FFDCB87D2A09F24300477C51 /* NextCProfileView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+        FF4087A72A01FC88003BED80 /* Sources */ = {
+            isa = PBXSourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                FF4087AF2A01FC88003BED80 /* HighOceanApp.swift in Sources */,
+                FFB969E92A0C6CF900086C18 /* ThumbnailCardView.swift in Sources */,
+                2DB726462A04C558007D7A17 /* CardBackView.swift in Sources */,
+                FFDCB8712A09F20F00477C51 /* ActivityView.swift in Sources */,
+                FFB969932A0A2A9800086C18 /* EmojiButtonView.swift in Sources */,
+                FF594AC12A0DC12600730BDB /* CreatePhotoFrontCardView.swift in Sources */,
+                FF4DAE7A2A0A16D200B2B546 /* HomeView.swift in Sources */,
+                FFB969DE2A0C6C7C00086C18 /* CollectionView.swift in Sources */,
+                FFB969E82A0C6CF900086C18 /* LikedCardCollection.swift in Sources */,
+                FFB969E52A0C6CE500086C18 /* Test.swift in Sources */,
+                FF1373582A0DB3FF00C00AB2 /* UNNotificationCenter.swift in Sources */,
+                0A4791732A08A85B007E1B2F /* Card.swift in Sources */,
+                FFDCB87B2A09F23C00477C51 /* NextBProfileView.swift in Sources */,
+                FF594AC02A0DC12600730BDB /* CardPreview.swift in Sources */,
+                FFDCB8792A09F22C00477C51 /* NextAProfileView.swift in Sources */,
+                FFDCB8812A09F25700477C51 /* ProfileView.swift in Sources */,
+                2D1953322A035B1500353602 /* CardView.swift in Sources */,
+                2DB7264A2A0890FC007D7A17 /* Cards.swift in Sources */,
+                FFDCB8832A09F25C00477C51 /* TotalCardCollectionView.swift in Sources */,
+                FFB969EC2A0C6D9500086C18 /* TotalThumbnailCardView.swift in Sources */,
+                2DB7263E2A04B2DF007D7A17 /* CardFrontView.swift in Sources */,
+                FF594AC62A0DC15100730BDB /* SettingsView.swift in Sources */,
+                FFDCB8752A09F21C00477C51 /* User.swift in Sources */,
+                FF1373532A0D263000C00AB2 /* WeekButtonView.swift in Sources */,
+                FF594AC82A0DD6E700730BDB /* CardContentView.swift in Sources */,
+                2DB726442A04C515007D7A17 /* NewCardView.swift in Sources */,
+                FF594AC22A0DC12600730BDB /* PhotoPicker.swift in Sources */,
+                FFDCB87D2A09F24300477C51 /* NextCProfileView.swift in Sources */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		FF4087B72A01FC89003BED80 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		FF4087B82A01FC89003BED80 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		FF4087BA2A01FC89003BED80 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HighOcean/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Sol.HighOcean;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		FF4087BB2A01FC89003BED80 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HighOcean/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Sol.HighOcean;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
+        FF4087B72A01FC89003BED80 /* Debug */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ALWAYS_SEARCH_USER_PATHS = NO;
+                CLANG_ANALYZER_NONNULL = YES;
+                CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+                CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+                CLANG_ENABLE_MODULES = YES;
+                CLANG_ENABLE_OBJC_ARC = YES;
+                CLANG_ENABLE_OBJC_WEAK = YES;
+                CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+                CLANG_WARN_BOOL_CONVERSION = YES;
+                CLANG_WARN_COMMA = YES;
+                CLANG_WARN_CONSTANT_CONVERSION = YES;
+                CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+                CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+                CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+                CLANG_WARN_EMPTY_BODY = YES;
+                CLANG_WARN_ENUM_CONVERSION = YES;
+                CLANG_WARN_INFINITE_RECURSION = YES;
+                CLANG_WARN_INT_CONVERSION = YES;
+                CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+                CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+                CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+                CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+                CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+                CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+                CLANG_WARN_STRICT_PROTOTYPES = YES;
+                CLANG_WARN_SUSPICIOUS_MOVE = YES;
+                CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+                CLANG_WARN_UNREACHABLE_CODE = YES;
+                CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+                COPY_PHASE_STRIP = NO;
+                DEBUG_INFORMATION_FORMAT = dwarf;
+                ENABLE_STRICT_OBJC_MSGSEND = YES;
+                ENABLE_TESTABILITY = YES;
+                GCC_C_LANGUAGE_STANDARD = gnu11;
+                GCC_DYNAMIC_NO_PIC = NO;
+                GCC_NO_COMMON_BLOCKS = YES;
+                GCC_OPTIMIZATION_LEVEL = 0;
+                GCC_PREPROCESSOR_DEFINITIONS = (
+                    "DEBUG=1",
+                    "$(inherited)",
+                );
+                GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+                GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+                GCC_WARN_UNDECLARED_SELECTOR = YES;
+                GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+                GCC_WARN_UNUSED_FUNCTION = YES;
+                GCC_WARN_UNUSED_VARIABLE = YES;
+                IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+                MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+                MTL_FAST_MATH = YES;
+                ONLY_ACTIVE_ARCH = YES;
+                SDKROOT = iphoneos;
+                SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+                SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+            };
+            name = Debug;
+        };
+        FF4087B82A01FC89003BED80 /* Release */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ALWAYS_SEARCH_USER_PATHS = NO;
+                CLANG_ANALYZER_NONNULL = YES;
+                CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+                CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+                CLANG_ENABLE_MODULES = YES;
+                CLANG_ENABLE_OBJC_ARC = YES;
+                CLANG_ENABLE_OBJC_WEAK = YES;
+                CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+                CLANG_WARN_BOOL_CONVERSION = YES;
+                CLANG_WARN_COMMA = YES;
+                CLANG_WARN_CONSTANT_CONVERSION = YES;
+                CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+                CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+                CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+                CLANG_WARN_EMPTY_BODY = YES;
+                CLANG_WARN_ENUM_CONVERSION = YES;
+                CLANG_WARN_INFINITE_RECURSION = YES;
+                CLANG_WARN_INT_CONVERSION = YES;
+                CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+                CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+                CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+                CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+                CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+                CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+                CLANG_WARN_STRICT_PROTOTYPES = YES;
+                CLANG_WARN_SUSPICIOUS_MOVE = YES;
+                CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+                CLANG_WARN_UNREACHABLE_CODE = YES;
+                CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+                COPY_PHASE_STRIP = NO;
+                DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+                ENABLE_NS_ASSERTIONS = NO;
+                ENABLE_STRICT_OBJC_MSGSEND = YES;
+                GCC_C_LANGUAGE_STANDARD = gnu11;
+                GCC_NO_COMMON_BLOCKS = YES;
+                GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+                GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+                GCC_WARN_UNDECLARED_SELECTOR = YES;
+                GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+                GCC_WARN_UNUSED_FUNCTION = YES;
+                GCC_WARN_UNUSED_VARIABLE = YES;
+                IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+                MTL_ENABLE_DEBUG_INFO = NO;
+                MTL_FAST_MATH = YES;
+                SDKROOT = iphoneos;
+                SWIFT_COMPILATION_MODE = wholemodule;
+                SWIFT_OPTIMIZATION_LEVEL = "-O";
+                VALIDATE_PRODUCT = YES;
+            };
+            name = Release;
+        };
+        FF4087BA2A01FC89003BED80 /* Debug */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+                ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+                CODE_SIGN_STYLE = Automatic;
+                CURRENT_PROJECT_VERSION = 1;
+                ENABLE_PREVIEWS = YES;
+                GENERATE_INFOPLIST_FILE = YES;
+                INFOPLIST_FILE = HighOcean/Info.plist;
+                INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+                INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+                INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+                INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+                IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+                LD_RUNPATH_SEARCH_PATHS = (
+                    "$(inherited)",
+                    "@executable_path/Frameworks",
+                );
+                MARKETING_VERSION = 1.0;
+                PRODUCT_BUNDLE_IDENTIFIER = Sol.HighOcean;
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                SWIFT_EMIT_LOC_STRINGS = YES;
+                SWIFT_VERSION = 5.0;
+                TARGETED_DEVICE_FAMILY = "1,2";
+            };
+            name = Debug;
+        };
+        FF4087BB2A01FC89003BED80 /* Release */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+                ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+                CODE_SIGN_STYLE = Automatic;
+                CURRENT_PROJECT_VERSION = 1;
+                ENABLE_PREVIEWS = YES;
+                GENERATE_INFOPLIST_FILE = YES;
+                INFOPLIST_FILE = HighOcean/Info.plist;
+                INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+                INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+                INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+                INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+                IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+                LD_RUNPATH_SEARCH_PATHS = (
+                    "$(inherited)",
+                    "@executable_path/Frameworks",
+                );
+                MARKETING_VERSION = 1.0;
+                PRODUCT_BUNDLE_IDENTIFIER = Sol.HighOcean;
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                SWIFT_EMIT_LOC_STRINGS = YES;
+                SWIFT_VERSION = 5.0;
+                TARGETED_DEVICE_FAMILY = "1,2";
+            };
+            name = Release;
+        };
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FF4087A62A01FC88003BED80 /* Build configuration list for PBXProject "HighOcean" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FF4087B72A01FC89003BED80 /* Debug */,
-				FF4087B82A01FC89003BED80 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FF4087B92A01FC89003BED80 /* Build configuration list for PBXNativeTarget "HighOcean" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FF4087BA2A01FC89003BED80 /* Debug */,
-				FF4087BB2A01FC89003BED80 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
+        FF4087A62A01FC88003BED80 /* Build configuration list for PBXProject "HighOcean" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                FF4087B72A01FC89003BED80 /* Debug */,
+                FF4087B82A01FC89003BED80 /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
+        FF4087B92A01FC89003BED80 /* Build configuration list for PBXNativeTarget "HighOcean" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                FF4087BA2A01FC89003BED80 /* Debug */,
+                FF4087BB2A01FC89003BED80 /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
 /* End XCConfigurationList section */
-	};
-	rootObject = FF4087A32A01FC88003BED80 /* Project object */;
+    };
+    rootObject = FF4087A32A01FC88003BED80 /* Project object */;
 }
