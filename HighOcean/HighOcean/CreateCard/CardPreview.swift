@@ -66,7 +66,7 @@ struct CardPreView: View {
     
     func uploadImageToStorage(_ image: UIImage) {
         var data = Data()
-        data = image.jpegData(compressionQuality: 0.8)!
+        data = image.jpegData(compressionQuality: 0.5)!
         let filePath = UUID().uuidString
         imageURL = filePath
         let metaData = StorageMetadata()
