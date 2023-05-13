@@ -41,7 +41,7 @@ struct TotalCardCollectionView: View {
             
             if self.showModal {
                 ZStack{
-                    CardView(card: $cards.recievedCards[selectedCardIndex], isHeartButton: isHeartButton)
+                    CardView(card: $cards.recievedCards[selectedCardIndex], isHeartButton: isHeartButton, isCheckedPreview: false)
                     
                     VStack{
                         Spacer()

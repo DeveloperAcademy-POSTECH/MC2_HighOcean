@@ -30,7 +30,7 @@ struct CardPreView: View {
             Color("Secondary")
                 .ignoresSafeArea()
             if uploadimage {
-                CardView(card: $newCard, isHeartButton: false)
+                CardView(card: $newCard, isHeartButton: false, isCheckedPreview: true)
             }
         }
         .onAppear {

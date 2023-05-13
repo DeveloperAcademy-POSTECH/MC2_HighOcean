@@ -16,6 +16,7 @@ struct CardView: View {
     @State var isFlipped = false
     
     var isHeartButton: Bool
+    var isCheckedPreview: Bool
     
     let durationAndDelay : CGFloat = 0.3
     
@@ -44,7 +45,9 @@ struct CardView: View {
             CardFrontView(degree: $frontDegree, card: $card)
             CardBackView(degree: $backDegree, card: $card, isHeartButton: isHeartButton)
                 .onAppear(){
-                    card.changeIschecked()
+                    if !isCheckedPreview {
+                        card.changeIschecked()
+                    }
                 }
         }
         .frame(width: UIScreen.main.bounds.width - 90, height: card.show ? 500 : 300)
