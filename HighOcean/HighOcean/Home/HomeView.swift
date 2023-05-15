@@ -223,7 +223,7 @@ struct HomeView: View {
 
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(identifier: "Asia/Seoul")
-        dateFormatter.dateFormat = "HH:mm:ss"
+        dateFormatter.dateFormat = "HH:mm"
 
         let currentDate = Date()
         let currentTimeString = dateFormatter.string(from: currentDate)
