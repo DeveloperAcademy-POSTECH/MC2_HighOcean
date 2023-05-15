@@ -39,10 +39,10 @@ struct CardBackView: View {
             }
             Spacer()
             Text(card.context)
+                .font(.custom(cards.currentUser.familyRule == "부모" ? "NanumGiBbeumBarkEum" : "NanumDdoBagDdoBag", size: 22))
                 .foregroundColor(Color("Primary"))
                 .multilineTextAlignment(.leading)
                 .lineSpacing(5)
-            
             Spacer()
             HStack{
                 HStack{
@@ -74,6 +74,14 @@ struct CardBackView: View {
             }
         }
         .frame(width: 254, height: 437)
-
+        .onAppear {
+            for familyName in UIFont.familyNames {
+                print(familyName)
+                
+                for fontName in UIFont.fontNames(forFamilyName: familyName) {
+                    print("-- \(fontName)")
+                }
+            }
+        }
     }
 }
