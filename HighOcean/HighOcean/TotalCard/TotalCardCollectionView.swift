@@ -27,21 +27,31 @@ struct TotalCardCollectionView: View {
             
             //  픽커 있을 때 (발신 포함)
             VStack{
-                //                Picker("Pick", selection: $selectedPicker){
-                //                    ForEach(tapInfo.allCases, id: \.self) {
-                //                        Text($0.rawValue)
-                //                    }
-                //                }
-                //                .pickerStyle(.segmented)
-                //                .padding()
-                //                CollectionView(cardArray: selectedPicker == .dis ? $cards.recievedCards : $cards.sentCards, showModal: $showModal, selectedCardIndex: $selectedCardIndex)
+                Picker("Pick", selection: $selectedPicker){
+                    ForEach(tapInfo.allCases, id: \.self) {
+                        Text($0.rawValue)
+                    }
+                }
+                .pickerStyle(.segmented)
+                .padding()
+//                                CollectionView(cardArray: selectedPicker == .dis ? $cards.recievedCards : $cards.sentCards, showModal: $showModal, selectedCardIndex: $selectedCardIndex)
                 
-                CollectionView(cardArray:  $cards.recievedCards , showModal: $showModal, selectedCardIndex: $selectedCardIndex)
+                if selectedPicker == tapInfo.dis {
+                    CollectionView(cardArray:  $cards.recievedCards , showModal: $showModal, selectedCardIndex: $selectedCardIndex)
+                } else {
+                    CollectionView(cardArray:  $cards.sentCards , showModal: $showModal, selectedCardIndex: $selectedCardIndex)
+                }
+                
             }
             
             if self.showModal {
                 ZStack{
-                    CardView(card: $cards.recievedCards[selectedCardIndex], isHeartButton: isHeartButton, isCheckedPreview: false)
+                    if selectedPicker == tapInfo.dis {
+                        CardView(card: $cards.recievedCards[selectedCardIndex], isHeartButton: isHeartButton, isCheckedPreview: false)
+                    } else {
+                        CardView(card: $cards.sentCards[selectedCardIndex], isHeartButton: isHeartButton, isCheckedPreview: false)
+                    }
+                    
                     
                     VStack{
                         Spacer()
