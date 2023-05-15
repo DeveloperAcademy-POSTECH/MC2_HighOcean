@@ -142,7 +142,7 @@ struct HomeView: View {
                                             .resizable()
                                             .frame(width: 39, height: 39)
                                             .padding(.trailing, 12)
-                                        Text("저장한 카드")
+                                        Text("좋아요 카드")
                                             .fontWeight(.semibold)
                                             .foregroundColor(.black)
                                     }

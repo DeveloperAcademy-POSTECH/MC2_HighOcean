@@ -52,7 +52,7 @@ struct CardPreView: View {
                     .alert(isPresented: $showingAlert) {
                         Alert(
                             title: Text("진짜 보내용?"),
-                            message: Text("왈왈이가 물어다 드릴게요!"),
+                            message: Text("마음이가 물어다 드릴게요!"),
                             primaryButton: .default(Text("전송"), action: {
                                 Cards(currentUser: user).addNewCard(card: newCard)
                                 firstNaviLinkActive = false
