@@ -59,29 +59,33 @@ struct LikedCardCollection: View {
                            CardView(card: self.$cards.likedCards[self.cards.likedCards.firstIndex(of: selectedCard)!], isHeartButton: true, isCheckedPreview: false)
                        }
                        
-                       VStack{
-                           Spacer()
-
-                           Button(action: {
-                               withAnimation{
-                                   self.showModal.toggle()
-                               }
-                           }, label: {
-                               Image(systemName: "xmark").resizable()
-                                   .frame(width: 15, height: 15)
-                                   .foregroundColor(.black)
-                                   .padding(20)
-                                   .background(Color.white)
-                                   .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                                   .padding(.bottom, 80)
-                           })
-                       }
+//                       VStack{
+//                           Spacer()
+//
+//                           Button(action: {
+//                               withAnimation{
+//                                   self.showModal.toggle()
+//                               }
+//                           }, label: {
+//                               Image(systemName: "xmark").resizable()
+//                                   .frame(width: 15, height: 15)
+//                                   .foregroundColor(.black)
+//                                   .padding(20)
+//                                   .background(Color.white)
+//                                   .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+//                                   .padding(.bottom, 80)
+//                           })
+//                       }
                    }
                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                    .background(Color.black.opacity(0.2))
-                    .edgesIgnoringSafeArea(.all)
+                   .edgesIgnoringSafeArea(.all)
+                   .onTapGesture {
+                       self.showModal.toggle()
+                   }
             }
         }
-        .navigationTitle("저장한 카드")
+        .navigationTitle("좋아요 카드")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }

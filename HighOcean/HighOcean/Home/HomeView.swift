@@ -213,6 +213,7 @@ struct HomeView: View {
                     }
                 }
             }
+            .navigationBarTitleDisplayMode(.inline)
         }
         .accentColor(Color("Accent"))
         .navigationBarBackButtonHidden(true)
