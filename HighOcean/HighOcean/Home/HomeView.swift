@@ -28,194 +28,191 @@ struct HomeView: View {
     }
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                Color("Secondary").ignoresSafeArea()
-                VStack {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color.white)
-                            .frame(width: 369, height: 182)
-                        if user.familyRule == "아이" {
-                            VStack(alignment: .leading) {
-                                Text("지금 무슨 기분이야?")
-                                    .bold()
-                                    .foregroundColor(Color("Primary"))
-                                    .font(.system(size: 21))
-                                HStack {
-                                    EmojiButtonView(buttonIndex: 0, emotionText: "행복해", emojiImagename: "happy", selectedButtonIndex: $selectedButtonIndex)
-                                    Spacer()
-                                    EmojiButtonView(buttonIndex: 1, emotionText: "신나", emojiImagename: "excited", selectedButtonIndex: $selectedButtonIndex)
-                                    Spacer()
-                                    EmojiButtonView(buttonIndex: 2, emotionText: "그저그래", emojiImagename: "soso", selectedButtonIndex: $selectedButtonIndex)
-                                    Spacer()
-                                    EmojiButtonView(buttonIndex: 3, emotionText: "화나", emojiImagename: "mad", selectedButtonIndex: $selectedButtonIndex)
-                                    Spacer()
-                                    EmojiButtonView(buttonIndex: 4, emotionText: "슬퍼", emojiImagename: "sad", selectedButtonIndex: $selectedButtonIndex)
-                                }
-                                
-                            }
-                            .padding(28)
-                        } else {
+        ZStack {
+            Color("Secondary").ignoresSafeArea()
+            VStack {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color.white)
+                        .frame(width: 369, height: 182)
+                    if user.familyRule == "아이" {
+                        VStack(alignment: .leading) {
+                            Text("지금 무슨 기분이야?")
+                                .bold()
+                                .foregroundColor(Color("Primary"))
+                                .font(.system(size: 21))
                             HStack {
-                                VStack(alignment: .leading) {
-                                    Text("평소보다")
-                                        .bold()
-                                        .foregroundColor(Color("Primary"))
-                                        .font(.system(size: 21))
-                                    Spacer()
-                                    Text("늦은 귀가 Mode")
-                                        .bold()
-                                        .foregroundColor(Color("Primary"))
-                                        .font(.system(size: 21))
-                                }
-                                .padding(EdgeInsets(top: 46, leading: 17, bottom: 46, trailing: 23))
-                                EmojiButtonView(buttonIndex: 0, emotionText: "정시 퇴근", emojiImagename: "happy", selectedButtonIndex: $selectedButtonIndex)
+                                EmojiButtonView(buttonIndex: 0, emotionText: "행복해", emojiImagename: "happy", selectedButtonIndex: $selectedButtonIndex)
                                 Spacer()
-                                EmojiButtonView(buttonIndex: 1, emotionText: "야근각", emojiImagename: "mad", selectedButtonIndex: $selectedButtonIndex)
-                            }
-                            .padding(28)
-                        }
-                    }
-                    .onChange(of: selectedButtonIndex) { newMode in
-                        if let uewMode = newMode {
-                            user.mode = uewMode
-                            if user.familyRule == "아이" {
-                                ref.child("mode/child").setValue(selectedButtonIndex)
-                            } else {
-                                ref.child("mode/parent").setValue(selectedButtonIndex)
+                                EmojiButtonView(buttonIndex: 1, emotionText: "신나", emojiImagename: "excited", selectedButtonIndex: $selectedButtonIndex)
+                                Spacer()
+                                EmojiButtonView(buttonIndex: 2, emotionText: "그저그래", emojiImagename: "soso", selectedButtonIndex: $selectedButtonIndex)
+                                Spacer()
+                                EmojiButtonView(buttonIndex: 3, emotionText: "화나", emojiImagename: "mad", selectedButtonIndex: $selectedButtonIndex)
+                                Spacer()
+                                EmojiButtonView(buttonIndex: 4, emotionText: "슬퍼", emojiImagename: "sad", selectedButtonIndex: $selectedButtonIndex)
                             }
                             
                         }
-                    }
-                    
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color.white)
-                            .frame(width: 369, height: 308)
-                        VStack {
-                            if (cards.uncheckedCards.count != 0) && isSendCardButtonEnabled {
-                                Text("왈왈! ")
-                                    .font(.system(size: 17))
+                        .padding(28)
+                    } else {
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text("평소보다")
                                     .bold()
-                                +
-                                Text("\(user.name)")
-                                    .font(.system(size: 17))
-                                    .foregroundColor(Color("Green"))
+                                    .foregroundColor(Color("Primary"))
+                                    .font(.system(size: 21))
+                                Spacer()
+                                Text("늦은 귀가 Mode")
                                     .bold()
-                                +
-                                Text("에게 카드가 새로 도착했멍!")
-                                    .font(.system(size: 17))
-                                    .bold()
-                            } else {
-                                Text("왈! 새로운 카드는 없다멍..")
-                                    .bold()
+                                    .foregroundColor(Color("Primary"))
+                                    .font(.system(size: 21))
                             }
-                            Image((cards.uncheckedCards.count != 0) && isSendCardButtonEnabled ? "walwalHappy" : "walwalSad")
-                                .resizable()
-                                .scaledToFit()
-                            NavigationLink(destination: NewCardView().environmentObject(cards)) {
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .fill((cards.uncheckedCards.count != 0) && isSendCardButtonEnabled ? Color("Accent") : Color("Disabled"))
-                                        .frame(width: 349, height: 54)
-                                    Text("새 카드 확인하기")
-                                        .fontWeight(.semibold)
-                                        .foregroundColor(.white)
-                                        .font(.system(size: 18))
-                                }
-                            }
-                            .disabled(!((cards.uncheckedCards.count != 0) && isSendCardButtonEnabled))
+                            .padding(EdgeInsets(top: 46, leading: 17, bottom: 46, trailing: 23))
+                            EmojiButtonView(buttonIndex: 0, emotionText: "정시 퇴근", emojiImagename: "happy", selectedButtonIndex: $selectedButtonIndex)
+                            Spacer()
+                            EmojiButtonView(buttonIndex: 1, emotionText: "야근각", emojiImagename: "mad", selectedButtonIndex: $selectedButtonIndex)
                         }
-                        .padding(21)
+                        .padding(28)
                     }
-                    
-                    HStack(alignment: .center) {
-                        VStack {
-                            NavigationLink(destination: LikedCardCollection().environmentObject(cards)) {
-                                ZStack(alignment: .leading) {
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .fill(Color.white)
-                                        .frame(width: 172, height: 86)
-                                    HStack(alignment: .center) {
-                                        Image("Book")
-                                            .resizable()
-                                            .frame(width: 39, height: 39)
-                                            .padding(.trailing, 12)
-                                        Text("좋아요 카드")
-                                            .fontWeight(.semibold)
-                                            .foregroundColor(.black)
-                                    }
-                                    .padding(19)
-                                }
-                            }
-                            NavigationLink(destination: TotalCardCollectionView(isHeartButton: true).environmentObject(cards)) {
-                                ZStack(alignment: .leading) {
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .fill(Color.white)
-                                        .frame(width: 172, height: 86)
-                                    HStack {
-                                        Image("Box")
-                                            .resizable()
-                                            .frame(width: 40, height: 34)
-                                            .padding(.trailing, 12)
-                                        Text("전체 카드")
-                                            .fontWeight(.semibold)
-                                            .foregroundColor(.black)
-                                    }
-                                    .padding(19)
-                                }
-                            }
+                }
+                .onChange(of: selectedButtonIndex) { newMode in
+                    if let uewMode = newMode {
+                        user.mode = uewMode
+                        if user.familyRule == "아이" {
+                            ref.child("mode/child").setValue(selectedButtonIndex)
+                        } else {
+                            ref.child("mode/parent").setValue(selectedButtonIndex)
                         }
-                        Spacer()
-                        NavigationLink(destination:CreatePhotoFrontCardView(firstNaviLinkActive: $firstNaviLinkActive, user: user), isActive: $firstNaviLinkActive) {
+                        
+                    }
+                }
+                
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color.white)
+                        .frame(width: 369, height: 308)
+                    VStack {
+                        if (cards.uncheckedCards.count != 0) && isSendCardButtonEnabled {
+                            Text("왈왈! ")
+                                .font(.system(size: 17))
+                                .bold()
+                            +
+                            Text("\(user.name)")
+                                .font(.system(size: 17))
+                                .foregroundColor(Color("Green"))
+                                .bold()
+                            +
+                            Text("에게 카드가 새로 도착했멍!")
+                                .font(.system(size: 17))
+                                .bold()
+                        } else {
+                            Text("왈! 새로운 카드는 없다멍..")
+                                .bold()
+                        }
+                        Image((cards.uncheckedCards.count != 0) && isSendCardButtonEnabled ? "walwalHappy" : "walwalSad")
+                            .resizable()
+                            .scaledToFit()
+                        NavigationLink(destination: NewCardView().environmentObject(cards)) {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 10)
-                                    .fill(isSendCardButtonEnabled ? Color("Accent") : Color("Disabled"))
-                                    .frame(width: 172, height: 185)
-                                VStack{
-                                    Text("카드보내기")
-                                        .fontWeight(.semibold)
-                                        .foregroundColor(.white)
-                                        .font(.system(size: 18))
-                                    Image("CardSend")
+                                    .fill((cards.uncheckedCards.count != 0) && isSendCardButtonEnabled ? Color("Accent") : Color("Disabled"))
+                                    .frame(width: 349, height: 54)
+                                Text("새 카드 확인하기")
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 18))
+                            }
+                        }
+                        .disabled(!((cards.uncheckedCards.count != 0) && isSendCardButtonEnabled))
+                    }
+                    .padding(21)
+                }
+                
+                HStack(alignment: .center) {
+                    VStack {
+                        NavigationLink(destination: LikedCardCollection().environmentObject(cards)) {
+                            ZStack(alignment: .leading) {
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(Color.white)
+                                    .frame(width: 172, height: 86)
+                                HStack(alignment: .center) {
+                                    Image("Book")
                                         .resizable()
-                                        .frame(width: 92, height: 39)
-                                    if !isSendCardButtonEnabled {
-                                        Text("\(sendStartTime)\n뒤에 보낼수 있어요")
-                                            .foregroundColor(.white)
-                                            .font(.system(size: 14))
-                                    }
+                                        .frame(width: 39, height: 39)
+                                        .padding(.trailing, 12)
+                                    Text("좋아요 카드")
+                                        .fontWeight(.semibold)
+                                        .foregroundColor(.black)
+                                }
+                                .padding(19)
+                            }
+                        }
+                        NavigationLink(destination: TotalCardCollectionView(isHeartButton: true).environmentObject(cards)) {
+                            ZStack(alignment: .leading) {
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(Color.white)
+                                    .frame(width: 172, height: 86)
+                                HStack {
+                                    Image("Box")
+                                        .resizable()
+                                        .frame(width: 40, height: 34)
+                                        .padding(.trailing, 12)
+                                    Text("전체 카드")
+                                        .fontWeight(.semibold)
+                                        .foregroundColor(.black)
+                                }
+                                .padding(19)
+                            }
+                        }
+                    }
+                    Spacer()
+                    NavigationLink(destination:CreatePhotoFrontCardView(firstNaviLinkActive: $firstNaviLinkActive, user: user).environmentObject(cards), isActive: $firstNaviLinkActive) {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(isSendCardButtonEnabled ? Color("Accent") : Color("Disabled"))
+                                .frame(width: 172, height: 185)
+                            VStack{
+                                Text("카드보내기")
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 18))
+                                Image("CardSend")
+                                    .resizable()
+                                    .frame(width: 92, height: 39)
+                                if !isSendCardButtonEnabled {
+                                    Text("\(sendStartTime)\n뒤에 보낼수 있어요")
+                                        .foregroundColor(.white)
+                                        .font(.system(size: 14))
                                 }
                             }
                         }
-                        .onAppear {
-                            cards.loadData()
-                            updateButtonAvailability()
-                            subtractTime(from: user.time)
-                        }
-                        .disabled(!isSendCardButtonEnabled)
                     }
-                    .padding(12)
+                    .onAppear {
+                        cards.loadData()
+                        updateButtonAvailability()
+                        subtractTime(from: user.time)
+                    }
+                    .disabled(!isSendCardButtonEnabled)
                 }
                 .padding(12)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Image("Logo")
-                            .resizable()
-                            .frame(width: 137, height: 29)
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: SettingsView(user: user)) {
-                            Image(systemName: "gearshape.fill")
-                                .foregroundColor(Color("Primary"))
-                        }
+            }
+            .padding(12)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Image("Logo")
+                        .resizable()
+                        .frame(width: 137, height: 29)
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: SettingsView(user: user)) {
+                        Image(systemName: "gearshape.fill")
+                            .foregroundColor(Color("Primary"))
                     }
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
         }
-        .accentColor(Color("Accent"))
         .navigationBarBackButtonHidden(true)
     }
     

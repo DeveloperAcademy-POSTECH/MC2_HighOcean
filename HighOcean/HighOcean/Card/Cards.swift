@@ -12,7 +12,7 @@ import FirebaseDatabaseSwift
 class Cards: ObservableObject {
     let ref: DatabaseReference = Database.database().reference()
     
-    let currentUser: User
+    @Published var currentUser: User
     
     @Published var cards: [Card] = []
     @Published var uncheckedCards: [Card] = []

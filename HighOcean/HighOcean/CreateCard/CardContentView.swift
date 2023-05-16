@@ -18,6 +18,8 @@ struct CardContentView: View {
     @State var from: String = ""
     @State private var mode: [String: Int] = [:]
     @Binding var firstNaviLinkActive: Bool
+    @EnvironmentObject var cards: Cards
+    
     
     let user: User
     var body: some View {
@@ -49,17 +51,16 @@ struct CardContentView: View {
                 } else {
                     questionText = NegativeEmotion.randomElement()?[0] ?? ""
                 }
-                
             }
+            
         }
         .padding(20)
         .navigationTitle("카드 쓰기")
         .navigationBarTitleDisplayMode(.inline)
-        .navigationBarBackButtonHidden(true)
         .toolbarRole(.editor)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                NavigationLink(destination: CardPreView(content: content, reciveUser: to, sendUser: from, coverImage: corverImage, firstNaviLinkActive: $firstNaviLinkActive, user: user)) {
+                NavigationLink(destination: CardPreView(content: content, reciveUser: to, sendUser: from, coverImage: corverImage, firstNaviLinkActive: $firstNaviLinkActive, user: user).environmentObject(cards)) {
                     Text("다음")
                 }
             }

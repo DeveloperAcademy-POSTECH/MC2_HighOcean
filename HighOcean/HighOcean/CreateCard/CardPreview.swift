@@ -22,6 +22,7 @@ struct CardPreView: View {
     @State private var newCard: Card = Card(context: "", image: "", createdDate: "", from: "", to: "", creator: "", isLiked: false, isChecked: false, show: false)
     @State private var uploadimage: Bool = false
     @Binding var firstNaviLinkActive: Bool
+    @EnvironmentObject var cards: Cards
     
     let user: User
     
@@ -31,6 +32,7 @@ struct CardPreView: View {
                 .ignoresSafeArea()
             if uploadimage {
                 CardView(card: $newCard, isHeartButton: false, isCheckedPreview: true)
+                    .environmentObject(cards)
             }
         }
         .onAppear {
@@ -42,7 +44,6 @@ struct CardPreView: View {
         }
         .navigationTitle("미리보기")
         .navigationBarTitleDisplayMode(.inline)
-        .navigationBarBackButtonHidden(true)
         .toolbarRole(.editor)
         .toolbar {
             Button (action: {
@@ -56,6 +57,7 @@ struct CardPreView: View {
                             primaryButton: .default(Text("전송"), action: {
                                 Cards(currentUser: user).addNewCard(card: newCard)
                                 firstNaviLinkActive = false
+                                self.presentationMode.wrappedValue.dismiss()
                             }),
                             secondaryButton: .cancel(Text("취소"), action: {})
                         )

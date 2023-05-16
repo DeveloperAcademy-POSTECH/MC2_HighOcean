@@ -147,9 +147,9 @@
 			isa = PBXGroup;
 			children = (
 				FF594ABD2A0DC12600730BDB /* CreatePhotoFrontCardView.swift */,
-				FF594ABE2A0DC12600730BDB /* PhotoPicker.swift */,
 				FF594AC72A0DD6E700730BDB /* CardContentView.swift */,
 				FF594ABC2A0DC12600730BDB /* CardPreview.swift */,
+				FF594ABE2A0DC12600730BDB /* PhotoPicker.swift */,
 				E525A7212A0E87B2000F215B /* QuestionData.swift */,
 			);
 			path = CreateCard;

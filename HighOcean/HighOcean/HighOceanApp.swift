@@ -35,14 +35,16 @@ struct HighOceanApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
         WindowGroup {
+            NavigationView {
             if let savedSettingsData = UserDefaults.standard.data(forKey: "User"),
                let savedUser = try? JSONDecoder().decode(User.self, from: savedSettingsData) {
                 HomeView(user: savedUser)
             } else {
-                NavigationView {
+                
                     ProfileView()
                 }
             }
+            .accentColor(Color("Accent"))
         }
     }
 }
