@@ -21,6 +21,7 @@ struct HomeView: View {
     
     @State private var user: User
     @StateObject private var cards: Cards
+    @EnvironmentObject var appState: AppState
     
     init(user: User) {
         self._user = State(initialValue: user)
@@ -167,7 +168,7 @@ struct HomeView: View {
                         }
                     }
                     Spacer()
-                    NavigationLink(destination:CreatePhotoFrontCardView(firstNaviLinkActive: $firstNaviLinkActive, user: user).environmentObject(cards), isActive: $firstNaviLinkActive) {
+                    NavigationLink(destination:CreatePhotoFrontCardView(firstNaviLinkActive: $firstNaviLinkActive, user: user).environmentObject(cards).environmentObject(appState), isActive: $firstNaviLinkActive) {
                         ZStack {
                             RoundedRectangle(cornerRadius: 10)
                                 .fill(isSendCardButtonEnabled ? Color("Accent") : Color("Disabled"))

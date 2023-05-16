@@ -23,6 +23,7 @@ struct CardPreView: View {
     @State private var uploadimage: Bool = false
     @Binding var firstNaviLinkActive: Bool
     @EnvironmentObject var cards: Cards
+    @EnvironmentObject var appState: AppState
     
     let user: User
     
@@ -56,8 +57,8 @@ struct CardPreView: View {
                             message: Text("마음이가 물어다 드릴게요!"),
                             primaryButton: .default(Text("전송"), action: {
                                 Cards(currentUser: user).addNewCard(card: newCard)
-                                firstNaviLinkActive = false
-                                
+//                                firstNaviLinkActive = false
+                                appState.homeViewId = UUID()
                             }),
                             secondaryButton: .cancel(Text("취소"), action: {})
                         )

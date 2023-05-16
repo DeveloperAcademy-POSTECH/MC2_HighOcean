@@ -22,9 +22,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
                 print("User Notification 권한이 거부되었습니다.")
             }
         }
-
         application.registerForRemoteNotifications()
-
         return true
     }
 }
@@ -33,14 +31,19 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
 @main
 struct HighOceanApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @ObservedObject var appState: AppState = AppState()
+    
     var body: some Scene {
         WindowGroup {
             NavigationView {
             if let savedSettingsData = UserDefaults.standard.data(forKey: "User"),
                let savedUser = try? JSONDecoder().decode(User.self, from: savedSettingsData) {
                 HomeView(user: savedUser)
+                    .id(appState.homeViewId)
+                    .environmentObject(appState)
             } else {
-                    ProfileView()
+                ProfileView()
+                    .environmentObject(appState)
                 }
             }
             .accentColor(Color("Accent"))

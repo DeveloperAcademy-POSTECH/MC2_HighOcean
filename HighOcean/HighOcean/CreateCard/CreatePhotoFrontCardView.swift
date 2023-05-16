@@ -15,6 +15,7 @@ struct CreatePhotoFrontCardView: View {
     @State private var selectedImage: UIImage = (UIImage(named: "DefaultCover") ?? UIImage())
     @Binding var firstNaviLinkActive: Bool
     @EnvironmentObject var cards: Cards
+    @EnvironmentObject var appState: AppState
     let user: User
     
     var body: some View {
@@ -51,7 +52,7 @@ struct CreatePhotoFrontCardView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: CardContentView(corverImage: selectedImage, firstNaviLinkActive: $firstNaviLinkActive, user: user).environmentObject(cards)) {
+                    NavigationLink(destination: CardContentView(corverImage: selectedImage, firstNaviLinkActive: $firstNaviLinkActive, user: user).environmentObject(cards).environmentObject(appState)) {
                         Text("다음")
                     }
                 }

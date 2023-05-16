@@ -30,6 +30,7 @@
 		FF594AC82A0DD6E700730BDB /* CardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF594AC72A0DD6E700730BDB /* CardContentView.swift */; };
 		FF769DD72A123CAD00A0DFF9 /* NanumHappy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF769DD52A123CAD00A0DFF9 /* NanumHappy.ttf */; };
 		FF769DD82A123CAD00A0DFF9 /* NanumDdokkak.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF769DD62A123CAD00A0DFF9 /* NanumDdokkak.ttf */; };
+		FF769E002A134F3900A0DFF9 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF769DFF2A134F3800A0DFF9 /* AppState.swift */; };
 		FFB969932A0A2A9800086C18 /* EmojiButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969922A0A2A9800086C18 /* EmojiButtonView.swift */; };
 		FFB969DE2A0C6C7C00086C18 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969DD2A0C6C7C00086C18 /* CollectionView.swift */; };
 		FFB969E52A0C6CE500086C18 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB969E42A0C6CE500086C18 /* Test.swift */; };
@@ -68,6 +69,7 @@
 		FF594AC72A0DD6E700730BDB /* CardContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardContentView.swift; sourceTree = "<group>"; };
 		FF769DD52A123CAD00A0DFF9 /* NanumHappy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumHappy.ttf; sourceTree = "<group>"; };
 		FF769DD62A123CAD00A0DFF9 /* NanumDdokkak.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumDdokkak.ttf; sourceTree = "<group>"; };
+		FF769DFF2A134F3800A0DFF9 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		FFB969922A0A2A9800086C18 /* EmojiButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiButtonView.swift; sourceTree = "<group>"; };
 		FFB969DD2A0C6C7C00086C18 /* CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		FFB969E42A0C6CE500086C18 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			children = (
 				99B5C7CA2A0B2E7200AB5D0C /* Info.plist */,
 				FF4087AE2A01FC88003BED80 /* HighOceanApp.swift */,
+				FF769DFF2A134F3800A0DFF9 /* AppState.swift */,
 				2DB726432A04C515007D7A17 /* NewCardView.swift */,
 				FFB969E42A0C6CE500086C18 /* Test.swift */,
 				FF4087B22A01FC89003BED80 /* Assets.xcassets */,
@@ -332,6 +335,7 @@
 				FFDCB8752A09F21C00477C51 /* User.swift in Sources */,
 				FF1373532A0D263000C00AB2 /* WeekButtonView.swift in Sources */,
 				FF594AC82A0DD6E700730BDB /* CardContentView.swift in Sources */,
+				FF769E002A134F3900A0DFF9 /* AppState.swift in Sources */,
 				2DB726442A04C515007D7A17 /* NewCardView.swift in Sources */,
 				FF594AC22A0DC12600730BDB /* PhotoPicker.swift in Sources */,
 				FFDCB87D2A09F24300477C51 /* NextCProfileView.swift in Sources */,

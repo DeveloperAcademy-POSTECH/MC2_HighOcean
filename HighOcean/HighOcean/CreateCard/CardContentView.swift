@@ -19,6 +19,7 @@ struct CardContentView: View {
     @State private var mode: [String: Int] = [:]
     @Binding var firstNaviLinkActive: Bool
     @EnvironmentObject var cards: Cards
+    @EnvironmentObject var appState: AppState
     
     
     let user: User
@@ -74,7 +75,7 @@ struct CardContentView: View {
         .toolbarRole(.editor)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                NavigationLink(destination: CardPreView(content: content, reciveUser: to, sendUser: from, coverImage: corverImage, firstNaviLinkActive: $firstNaviLinkActive, user: user).environmentObject(cards)) {
+                NavigationLink(destination: CardPreView(content: content, reciveUser: to, sendUser: from, coverImage: corverImage, firstNaviLinkActive: $firstNaviLinkActive, user: user).environmentObject(cards).environmentObject(appState)) {
                     Text("다음")
                 }
             }

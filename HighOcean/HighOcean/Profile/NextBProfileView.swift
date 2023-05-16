@@ -21,6 +21,7 @@ struct NextBProfileView: View {
     
     @State private var datepk = Date()
     @State var selectedColor = ""
+    @EnvironmentObject var appState: AppState
     
     var body: some View {
 
@@ -87,7 +88,7 @@ struct NextBProfileView: View {
                     )
                 }
                 .background(
-                    NavigationLink(destination: HomeView(user: User(name: userName,date: [isSun, isMon, isTue, isWed, isThu, isFir, isSat], time: datepk,familyRule: familyRule, isAlarm: isAlarm)), isActive: $navigateToHome) {
+                    NavigationLink(destination: HomeView(user: User(name: userName,date: [isSun, isMon, isTue, isWed, isThu, isFir, isSat], time: datepk,familyRule: familyRule, isAlarm: isAlarm)).id(appState.homeViewId).environmentObject(appState), isActive: $navigateToHome) {
                         EmptyView()
                     }
                     .onDisappear {

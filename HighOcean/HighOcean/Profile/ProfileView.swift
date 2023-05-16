@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
     @State private var userName: String = ""
+    @EnvironmentObject var appState: AppState
     
     var body: some View {
         ZStack(){
@@ -33,7 +34,7 @@ struct ProfileView: View {
                         .padding(EdgeInsets(top: 150, leading: 0, bottom: 0, trailing: 0))
                 }
                 Spacer()
-                NavigationLink(destination: NextAProfileView(userName: userName)) {
+                NavigationLink(destination: NextAProfileView(userName: userName).environmentObject(appState)) {
                     Text("다음")
                         .frame(width: 354.0, height:54.0)
                         .font(.system(size: 18))
@@ -44,15 +45,6 @@ struct ProfileView: View {
                 .disabled(userName.isEmpty)
             }
             .padding(20)
-        }
-    }
-}
-
-// 미리보기
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            ProfileView()
         }
     }
 }

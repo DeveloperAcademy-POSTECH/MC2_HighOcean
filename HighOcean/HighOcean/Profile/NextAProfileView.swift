@@ -6,6 +6,7 @@ struct NextAProfileView: View {
     @State private var isParents: Bool = false
     @State private var isChild: Bool = false
     @State private var familyRule:String = ""
+    @EnvironmentObject var appState: AppState
     var body: some View {
 
         ZStack(){
@@ -91,7 +92,7 @@ struct NextAProfileView: View {
                     
                     Spacer()
                     
-                    NavigationLink(destination: NextBProfileView(userName: userName, familyRule: familyRule)) {
+                    NavigationLink(destination: NextBProfileView(userName: userName, familyRule: familyRule).environmentObject(appState)) {
                         Text("다음")
                             .frame(width: 354.0, height:54.0)
                             .font(.system(size: 18))
