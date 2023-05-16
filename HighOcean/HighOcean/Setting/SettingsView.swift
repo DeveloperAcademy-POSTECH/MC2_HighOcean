@@ -105,6 +105,7 @@ struct SettingsView: View {
             let encodedSettings = try? JSONEncoder().encode(user)
             UserDefaults.standard.set(encodedSettings, forKey: "User")
             saveAlarm()
+            self.presentationMode.wrappedValue.dismiss()
         }) {
             Text("저장")
         })

@@ -34,8 +34,6 @@ struct TotalCardCollectionView: View {
                 }
                 .pickerStyle(.segmented)
                 .padding()
-//                                CollectionView(cardArray: selectedPicker == .dis ? $cards.recievedCards : $cards.sentCards, showModal: $showModal, selectedCardIndex: $selectedCardIndex)
-                
                 if selectedPicker == tapInfo.dis {
                     CollectionView(cardArray:  $cards.recievedCards , showModal: $showModal, selectedCardIndex: $selectedCardIndex)
                 } else {
@@ -47,29 +45,10 @@ struct TotalCardCollectionView: View {
             if self.showModal {
                 ZStack{
                     if selectedPicker == tapInfo.dis {
-                        CardView(card: $cards.recievedCards[selectedCardIndex], isHeartButton: isHeartButton, isCheckedPreview: false)
+                        CardView(card: $cards.recievedCards[selectedCardIndex], isHeartButton: isHeartButton, isCheckedPreview: true)
                     } else {
-                        CardView(card: $cards.sentCards[selectedCardIndex], isHeartButton: isHeartButton, isCheckedPreview: false)
+                        CardView(card: $cards.sentCards[selectedCardIndex], isHeartButton: isHeartButton, isCheckedPreview: true)
                     }
-                    
-                    
-//                    VStack{
-//                        Spacer()
-//
-//                        Button(action: {
-//                            withAnimation{
-//                                self.showModal.toggle()
-//                            }
-//                        }, label: {
-//                            Image(systemName: "xmark").resizable()
-//                                .frame(width: 15, height: 15)
-//                                .foregroundColor(.black)
-//                                .padding(20)
-//                                .background(Color.white)
-//                                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-//                                .padding(.bottom, 80)
-//                        })
-//                    }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                 .background(Color.black.opacity(0.2))
