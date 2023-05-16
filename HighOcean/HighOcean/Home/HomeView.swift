@@ -206,7 +206,7 @@ struct HomeView: View {
                         .frame(width: 137, height: 29)
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: SettingsView(user: user)) {
+                    NavigationLink(destination: SettingsView(user: user).environmentObject(appState)) {
                         Image(systemName: "clock")
                             .foregroundColor(Color("Primary"))
                     }

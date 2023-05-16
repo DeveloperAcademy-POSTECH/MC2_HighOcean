@@ -46,6 +46,7 @@ struct HighOceanApp: App {
                     .environmentObject(appState)
                 }
             }
+            .id(appState.rootViewId)
             .accentColor(Color("Accent"))
         }
     }

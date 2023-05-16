@@ -24,6 +24,7 @@ struct SettingsView: View {
     @State private var datepk = Date()
     @State var selectedColor = ""
     @State var isAlarm = false
+    @EnvironmentObject var appState: AppState
     
     var body: some View {
         ZStack {
@@ -71,6 +72,16 @@ struct SettingsView: View {
                 .frame(width: 353, height: 315)
                 .background(Color.white)
                 .cornerRadius(8)
+                Spacer()
+                Button(action: {
+                    UserDefaults.standard.removeObject(forKey: "User")
+                    appState.rootViewId = UUID()
+                }) {
+                    Text("Logout")
+                        .bold()
+                        .font(.system(size: 12))
+                        .foregroundColor(Color("Disabled"))
+                }
             }
             .padding(EdgeInsets(top: 30, leading: 20, bottom: 135, trailing: 20))
         }
