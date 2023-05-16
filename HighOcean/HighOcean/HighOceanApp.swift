@@ -40,7 +40,6 @@ struct HighOceanApp: App {
                let savedUser = try? JSONDecoder().decode(User.self, from: savedSettingsData) {
                 HomeView(user: savedUser)
             } else {
-                
                     ProfileView()
                 }
             }

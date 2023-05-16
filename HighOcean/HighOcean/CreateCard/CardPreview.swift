@@ -57,7 +57,7 @@ struct CardPreView: View {
                             primaryButton: .default(Text("전송"), action: {
                                 Cards(currentUser: user).addNewCard(card: newCard)
                                 firstNaviLinkActive = false
-                                self.presentationMode.wrappedValue.dismiss()
+                                
                             }),
                             secondaryButton: .cancel(Text("취소"), action: {})
                         )

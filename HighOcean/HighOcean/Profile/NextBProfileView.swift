@@ -78,9 +78,6 @@ struct NextBProfileView: View {
                         title: Text("알림을 보내겠습니까?"),
                         message: Text("확인을 누르면 알림이 전송됩니다."),
                         primaryButton: .default(Text("승인"), action: {
-                            
-                            
-                            
                             isAlarm = true
                             navigateToHome = true
                         }),
