@@ -24,7 +24,16 @@ struct CardContentView: View {
     let user: User
     var body: some View {
         VStack(alignment: .leading) {
-            Text(questionText)
+            HStack {
+                Image("quastionIcon")
+                    .resizable()
+                    .frame(width: 58, height: 58)
+                Text(questionText)
+                    .foregroundColor(.white)
+            }
+            .padding(12)
+            .background(Color("Accent"))
+            .cornerRadius(10)
             
             TextEditor(text: $content)
                 .background(.white)

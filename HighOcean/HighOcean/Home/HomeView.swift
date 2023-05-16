@@ -206,7 +206,7 @@ struct HomeView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink(destination: SettingsView(user: user)) {
-                        Image(systemName: "gearshape.fill")
+                        Image(systemName: "clock")
                             .foregroundColor(Color("Primary"))
                     }
                 }
