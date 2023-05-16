@@ -20,7 +20,6 @@ struct CardPreView: View {
     @State private var showingAlert = false
     @State private var imageURL: String = ""
     @State private var newCard: Card = Card(context: "", image: "", createdDate: "", from: "", to: "", creator: "", isLiked: false, isChecked: false, show: false)
-    @State private var uploadimage: Bool = false
     @Binding var firstNaviLinkActive: Bool
     @EnvironmentObject var cards: Cards
     @EnvironmentObject var appState: AppState
@@ -31,10 +30,8 @@ struct CardPreView: View {
         ZStack {
             Color("Secondary")
                 .ignoresSafeArea()
-            if uploadimage {
-                CardView(card: $newCard, isHeartButton: false, isCheckedPreview: true)
-                    .environmentObject(cards)
-            }
+            CardView(card: $newCard, isHeartButton: false, isCheckedPreview: true)
+                .environmentObject(cards)
         }
         .onAppear {
             let formatter = DateFormatter()
@@ -75,7 +72,6 @@ struct CardPreView: View {
         let metaData = StorageMetadata()
         metaData.contentType = "image/png"
         storage.reference().child(filePath).putData(data, metadata: metaData) { (metaData, error) in
-            uploadimage = true
             if let error = error {
                 return
             }

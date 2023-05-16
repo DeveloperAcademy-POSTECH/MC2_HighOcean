@@ -45,17 +45,16 @@ struct CardView: View {
         ZStack{
             CardFrontView(degree: $frontDegree, card: $card)
             CardBackView(degree: $backDegree, card: $card, isHeartButton: isHeartButton)
-                .onAppear(){
-                    if !isCheckedPreview {
-                        card.changeIschecked()
-                    }
-                }
         }
         .frame(width: UIScreen.main.bounds.width - 90, height: card.show ? 500 : 300)
         .onTapGesture {
             flipCard()
-            card.editCheckedCard()
             
+            if !isCheckedPreview {
+                print(isCheckedPreview)
+                card.editCheckedCard()
+                
+            }
         }
     }
 }

@@ -90,11 +90,7 @@ class Cards: ObservableObject {
             ref.child("photoCard/\(card.id)/isLiked").setValue(false)
         }
     }
-    
-    func editCheckedCard(card: Card, isChecked: Bool) {
-        ref.child("photoCard/\(card.id)/isChecked").setValue(isChecked)
-    }
-    
+
     func editCard(card: Card) {
         let updates: [String : Any] = [
             "id": card.id,
