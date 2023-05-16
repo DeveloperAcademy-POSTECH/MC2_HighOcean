@@ -51,7 +51,6 @@ struct CardView: View {
             flipCard()
             
             if !isCheckedPreview {
-                print(isCheckedPreview)
                 card.editCheckedCard()
                 
             }
