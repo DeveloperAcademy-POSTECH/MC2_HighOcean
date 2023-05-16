@@ -7,11 +7,11 @@
 
 import SwiftUI
 import FirebaseStorage
+import Kingfisher
 
 struct TotalThumbnailCardView: View {
     @Binding var degree : Double
     @Binding var card: Card
-    @State private var downloadedImage: UIImage = UIImage(named: "DefaultCover")!
     private let storage = Storage.storage()
     
     var body: some View {
@@ -20,7 +20,12 @@ struct TotalThumbnailCardView: View {
                 .fill(.white)
                 .shadow(radius: 3)
                 .frame(width: 111, height: 181)
-            Image(uiImage: downloadedImage)
+            KFImage(URL(string: "https://firebasestorage.googleapis.com/v0/b/mc2highocean.appspot.com/o/\(card.image)?alt=media")!)
+                .placeholder {
+                    Image("DefaultCover")
+                        .resizable()
+                        .frame(width: 97, height: 164)
+                }
                 .resizable()
                 .frame(width: 97, height: 164)
             LinearGradient(
@@ -30,9 +35,6 @@ struct TotalThumbnailCardView: View {
                 .opacity(0.3)
                 .blendMode(.multiply)
             DateAndDay
-        }
-        .onAppear {
-            downloadImage(imageName: card.image)
         }
         .rotation3DEffect(Angle(degrees: degree), axis: (x: 0, y: 1, z: 0))
     }
@@ -80,16 +82,5 @@ struct TotalThumbnailCardView: View {
         formatter.locale = Locale(identifier: "ko")
         formatter.dateFormat = "E요일"
         return formatter.string(from: date)
-    }
-    
-    func downloadImage(imageName: String) {
-        storage.reference(forURL: "gs://mc2highocean.appspot.com/\(imageName)").downloadURL { (url, error) in
-            if let url = url {
-                let data = NSData(contentsOf: url)
-                downloadedImage = UIImage(data: data! as Data)!
-            } else {
-                downloadedImage = UIImage(named: "DefaultCover")!
-            }
-        }
     }
 }
