@@ -34,10 +34,6 @@ struct Card: Identifiable, Equatable, Codable, Hashable{  // Codable -> Encode, 
         self.show = show
     }
     
-    mutating func changeIschecked(){
-        self.isChecked = true
-    }
-    
     mutating func changeIsLiked(){
         self.isLiked.toggle()
     }
@@ -50,7 +46,8 @@ struct Card: Identifiable, Equatable, Codable, Hashable{  // Codable -> Encode, 
         hasher.combine(id)
     }
     
-    func editCheckedCard() {
+    mutating func editCheckedCard() {
+        self.isChecked = true
         let ref: DatabaseReference = Database.database().reference()
         ref.child("photoCard/\(self.id)/isChecked").setValue(true)
     }
