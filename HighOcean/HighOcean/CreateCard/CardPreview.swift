@@ -20,6 +20,7 @@ struct CardPreView: View {
     @State private var showingAlert = false
     @State private var imageURL: String = ""
     @State private var newCard: Card = Card(context: "", image: "", createdDate: "", from: "", to: "", creator: "", isLiked: false, isChecked: false, show: false, familyRule: "아이")
+    @State private var isUpload = false
     @Binding var firstNaviLinkActive: Bool
     @EnvironmentObject var cards: Cards
     @EnvironmentObject var appState: AppState
@@ -30,8 +31,14 @@ struct CardPreView: View {
         ZStack {
             Color("Secondary")
                 .ignoresSafeArea()
-            CardView(card: $newCard, isHeartButton: false, isCheckedPreview: true)
-                .environmentObject(cards)
+            if isUpload {
+                CardView(card: $newCard, isHeartButton: false, isCheckedPreview: true)
+                    .environmentObject(cards)
+            } else {
+                Text("마음포카를 제작중이에요.\n잠시만 기다려주세요")
+                    .foregroundColor(Color("Disabled"))
+                    .multilineTextAlignment(.center)
+            }
         }
         .onAppear {
             let formatter = DateFormatter()
@@ -72,6 +79,7 @@ struct CardPreView: View {
         let metaData = StorageMetadata()
         metaData.contentType = "image/png"
         storage.reference().child(filePath).putData(data, metadata: metaData) { (metaData, error) in
+            isUpload = true
             if let error = error {
                 return
             }
