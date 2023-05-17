@@ -20,8 +20,9 @@ struct Card: Identifiable, Equatable, Codable, Hashable{  // Codable -> Encode, 
     var isLiked: Bool
     var isChecked: Bool
     var show: Bool
+    var familyRule: String
     
-    init(context: String, image: String, createdDate: String, from: String, to: String, creator: String, isLiked: Bool, isChecked: Bool, show: Bool, id: String = UUID().uuidString){
+    init(context: String, image: String, createdDate: String, from: String, to: String, creator: String, isLiked: Bool, isChecked: Bool, show: Bool, familyRule: String, id: String = UUID().uuidString){
         self.id = id
         self.context = context
         self.image = image
@@ -32,6 +33,7 @@ struct Card: Identifiable, Equatable, Codable, Hashable{  // Codable -> Encode, 
         self.isLiked = isLiked
         self.isChecked = isChecked
         self.show = show
+        self.familyRule = familyRule
     }
     
     mutating func changeIsLiked(){

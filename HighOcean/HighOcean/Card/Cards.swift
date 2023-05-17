@@ -28,17 +28,17 @@ class Cards: ObservableObject {
     }
     
     func dataSort() {
-        likedCards = cards
+        sentCards = cards
+            .filter { $0.familyRule == currentUser.familyRule }
+            .sorted{ $0.createdDate > $1.createdDate }
+        recievedCards = cards
+            .filter { $0.familyRule != currentUser.familyRule }
+            .sorted{ $0.createdDate > $1.createdDate }
+        likedCards = recievedCards
             .filter { $0.isLiked && ($0.creator != currentUser.name)}
             .sorted { $0.createdDate > $1.createdDate }
-        uncheckedCards = cards
-            .filter { !$0.isChecked && ($0.creator != currentUser.name)}                             // 확인한 카드 필터링
-            .sorted{ $0.createdDate > $1.createdDate }          // 최신순 소팅
-        sentCards = cards
-            .filter { $0.creator == currentUser.name }            // 보낸 카드 필터링
-            .sorted{ $0.createdDate > $1.createdDate }          // 최신순 소팅
-        recievedCards = cards
-            .filter { $0.creator != currentUser.name }            // 받은 카드 필터링
+        uncheckedCards = recievedCards
+            .filter { !$0.isChecked && ($0.creator != currentUser.name)}
             .sorted{ $0.createdDate > $1.createdDate }
         if recievedCards.count != 0 {
             self.isNewCards = true
@@ -79,7 +79,8 @@ class Cards: ObservableObject {
             "creator": card.creator,
             "isLiked": card.isLiked,
             "isChecked": card.isChecked,
-            "show": card.show
+            "show": card.show,
+            "familyRule": card.familyRule
         ])
     }
     
@@ -102,7 +103,8 @@ class Cards: ObservableObject {
             "creator": card.creator,
             "isLiked": card.isLiked,
             "isChecked": card.isChecked,
-            "show": card.show
+            "show": card.show,
+            "familyRule": card.familyRule
         ]
         
         let childUpdates = ["photo/\(card.id)": updates]

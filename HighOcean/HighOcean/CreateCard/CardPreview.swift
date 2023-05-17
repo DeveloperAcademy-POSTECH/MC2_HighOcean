@@ -19,7 +19,7 @@ struct CardPreView: View {
     
     @State private var showingAlert = false
     @State private var imageURL: String = ""
-    @State private var newCard: Card = Card(context: "", image: "", createdDate: "", from: "", to: "", creator: "", isLiked: false, isChecked: false, show: false)
+    @State private var newCard: Card = Card(context: "", image: "", createdDate: "", from: "", to: "", creator: "", isLiked: false, isChecked: false, show: false, familyRule: "아이")
     @Binding var firstNaviLinkActive: Bool
     @EnvironmentObject var cards: Cards
     @EnvironmentObject var appState: AppState
@@ -38,7 +38,7 @@ struct CardPreView: View {
             formatter.dateFormat = "yy-MM-dd"
             let createDate = formatter.string(from: Date())
             uploadImageToStorage(coverImage)
-            newCard = Card(context: content, image: imageURL, createdDate: createDate, from: sendUser, to: reciveUser, creator: user.name, isLiked: false, isChecked: false, show: false)
+            newCard = Card(context: content, image: imageURL, createdDate: createDate, from: sendUser, to: reciveUser, creator: user.name, isLiked: false, isChecked: false, show: false, familyRule: cards.currentUser.familyRule)
         }
         .navigationTitle("미리보기")
         .navigationBarTitleDisplayMode(.inline)
