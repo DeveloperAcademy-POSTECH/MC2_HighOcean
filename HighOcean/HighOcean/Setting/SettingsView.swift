@@ -75,6 +75,7 @@ struct SettingsView: View {
                 Spacer()
                 Button(action: {
                     UserDefaults.standard.removeObject(forKey: "User")
+                    self.userNotifivationCenter.removeAllPendingNotificationRequests()
                     appState.rootViewId = UUID()
                 }) {
                     Text("Logout")
